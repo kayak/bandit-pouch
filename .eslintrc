@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": ["react", "import"],
+  "rules": {
+    "max-len": ["error", { "code": 120 }],
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off"
+  }
+}

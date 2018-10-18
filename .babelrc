@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["last 4 versions", "not ie <= 8"]
+        }
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-syntax-export-default-from"
+  ]
+}
