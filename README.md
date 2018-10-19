@@ -15,3 +15,6 @@ Using npm:
 $ npm install bandit-pouch
 ```
 
+## Documentation
+
+Documentation is available here: https://kayak.github.io/bandit-pouch/
