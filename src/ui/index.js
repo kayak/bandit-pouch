@@ -1,3 +1,4 @@
+import Abbreviation from './Abbreviation';
 import ErrorPage from './ErrorPage';
 import PageNotFound from './PageNotFound';
 import {
@@ -23,6 +24,7 @@ export {
   TopPanel,
   ErrorPage,
   PageNotFound,
+  Abbreviation,
   HorizontalSplit,
   NotificationList,
   NotificationItem,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Provider, connect } from 'react-redux';
@@ -31,24 +31,56 @@ const Values = connect(
   return (
     <div>
       <p>Debug values</p>
-      <Code language="json">{JSON.stringify(debug, null, 2)}</Code>
+      <JSONCode json={debug} />
     </div>
   );
 });
 
-const FormPage = ({ data }) => {
-  const [article] = getArticles(data);
-  return (
-    <Provider store={store}>
-      <Layout>
-        <Markdown title="Form components" html={article.html} />
+const JSONCode = ({ json }) => (
+  <Code language="json">{JSON.stringify(json, null, 2)}</Code>
+);
 
-        <ExampleForm handleSubmit={console.log} />
-        <Values />
-      </Layout>
-    </Provider>
-  );
+JSONCode.propTypes = {
+  json: PropTypes.object.isRequired,
 };
+
+class FormPage extends Component {
+  constructor(...args) {
+    super(...args);
+    this.state = { values: false };
+  }
+
+  onSubmit(values) {
+    this.setState({ values });
+  }
+
+  render() {
+    const { data } = this.props;
+    const { values } = this.state;
+    const [article] = getArticles(data);
+
+    return (
+      <Provider store={store}>
+        <Layout>
+          <h1>Form components</h1>
+          <hr />
+          <ExampleForm onSubmit={e => this.onSubmit(e)} />
+
+          {values && (
+            <>
+              <p>Submitted values</p>
+              <JSONCode json={values} />
+            </>
+          )}
+
+          <Values />
+
+          <Markdown html={article.html} />
+        </Layout>
+      </Provider>
+    );
+  }
+}
 
 FormPage.propTypes = {
   data: PropTypes.object.isRequired,

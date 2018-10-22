@@ -21,7 +21,7 @@ import { CHILDREN_PROP_TYPE } from '../utils';
  *              - 'error' if an error has been found
  *              - 'success' if there is no error and the field has been touched.
  */
-function getValidationState(touched, error) {
+export function getValidationState(touched, error) {
   if (!touched) return undefined;
   // Ensure the error prop is showing a real error. Sometimes an empty array is passed which still
   // indicates there are no errors. If this happens we don't want to use an error class.

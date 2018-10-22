@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
@@ -14,10 +15,12 @@ import {
   Page,
   Left,
   Right,
+  tooltip,
   Content,
   TopPanel,
   ErrorPage,
   PageNotFound,
+  Abbreviation,
   HorizontalSplit,
   NotificationList,
 } from 'bandit-pouch';
@@ -25,6 +28,22 @@ import {
 import Layout from '../components/layout';
 import { Tabs } from '../components/markdown';
 
+const AbbreviationExample = () => {
+  const date = moment().subtract(3, 'm');
+
+  return (
+    <div>
+      <p>
+        This example was shown
+        &nbsp;
+        <Abbreviation
+          label={date.fromNow()}
+          tooltip={date.format('YYYY-MM-DD H:mm:ss')}
+        />
+      </p>
+    </div>
+  );
+};
 
 const LayoutExample = () => (
   <Page title="My awesome app">
@@ -126,8 +145,9 @@ const LayoutPage = ({ data }) => (
       id="ui-tabs"
       data={data}
       examples={{
-        'ui-layout': [<LayoutExample />],
         'ui-pages': [<PagesExample />],
+        'ui-layout': [<LayoutExample />],
+        'ui-abbreviation': [<AbbreviationExample />],
         'ui-notifications': [<NotificationsExample />],
       }}
       defaultActiveKey="ui-layout"
