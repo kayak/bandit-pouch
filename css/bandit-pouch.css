@@ -1,3 +1,5 @@
+@import "react-input-range/lib/css/index.css";
+
 #notification-container {
     position: fixed;
     bottom: 0;
@@ -34,3 +36,4 @@ div[id="notification-container"] {
     z-index: 5;
     margin: 20px;
 }
+

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import FormField from './FormField';
 
-import 'react-input-range/lib/css/index.css';
-
 const parse = value => _.toNumber(value);
 
 const RangeField = ({

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Alert } from 'react-bootstrap';
 
-import './notifications.css';
-
 const SECONDS = 1000;
 
 /**
