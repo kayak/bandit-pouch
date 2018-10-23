@@ -15,12 +15,14 @@ import {
   Page,
   Left,
   Right,
-  tooltip,
+  Loader,
   Content,
   TopPanel,
   ErrorPage,
   PageNotFound,
   Abbreviation,
+  CenteredLoader,
+  LoadingWrapper,
   HorizontalSplit,
   NotificationList,
 } from 'bandit-pouch';
@@ -44,6 +46,18 @@ const AbbreviationExample = () => {
     </div>
   );
 };
+
+const LoadersExample = () => (
+  <div>
+    <p>Simple loader wrapper inside a `div` container</p>
+    <div style={{ padding: '20px' }}>
+      <Loader type="ball-spin-fade-loader" />
+    </div>
+    <br />
+    <p>Vertically and Horizontally centered loader</p>
+    <CenteredLoader type="line-scale-pulse-out" />
+  </div>
+);
 
 const LayoutExample = () => (
   <Page title="My awesome app">
@@ -74,6 +88,72 @@ const LayoutExample = () => (
     </HorizontalSplit>
   </Page>
 );
+
+const LoadedPage = ({ model }) => (
+  <div>
+    <h1>List page</h1>
+    <ul>
+      {model.map(({ id, title }) => (
+        <li key={id}>
+          <p>{title}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+LoadedPage.propTypes = {
+  model: PropTypes.array.isRequired,
+};
+
+LoadedPage.mocks = [{ id: 1, title: 'Foo' }, { id: 2, title: 'Bar' }, { id: 3, title: 'Baz' }];
+
+class LoadingWrapperExample extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      error: null,
+      found: true,
+      loading: false,
+      model: [...LoadedPage.mocks],
+    };
+  }
+
+  fetch(options = {}) {
+    this.setState({
+      error: null,
+      found: true,
+      loading: true,
+      model: [],
+    }, () => setTimeout(() => {
+      this.setState(state => ({ ...state, ...options, loading: false }));
+    }, 2000));
+  }
+
+  render() {
+    const {
+      loading, error, found, model,
+    } = this.state;
+
+    return (
+      <div style={{ minHeight: '460px' }}>
+        <ButtonGroup>
+          <Button onClick={() => this.fetch({ model: [...LoadedPage.mocks] })}>Fetch data</Button>
+          <Button onClick={() => this.fetch({ error: 'Remote server error' })}>Fetch data with an error</Button>
+          <Button onClick={() => this.fetch({ found: false })}>Fetch data with a not find status</Button>
+        </ButtonGroup>
+
+        <LoadingWrapper
+          component={LoadedPage}
+          loading={loading}
+          found={found}
+          error={error}
+          model={model}
+        />
+      </div>
+    );
+  }
+}
 
 const PagesExample = () => (
   <Row>
@@ -147,8 +227,10 @@ const LayoutPage = ({ data }) => (
       examples={{
         'ui-pages': [<PagesExample />],
         'ui-layout': [<LayoutExample />],
+        'ui-loaders': [<LoadersExample />],
         'ui-abbreviation': [<AbbreviationExample />],
         'ui-notifications': [<NotificationsExample />],
+        'ui-loading-wrapper': [<LoadingWrapperExample />],
       }}
       defaultActiveKey="ui-layout"
     />

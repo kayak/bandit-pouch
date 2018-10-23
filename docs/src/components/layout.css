@@ -7,3 +7,7 @@
 .markdown-content p {
   margin: 8px auto 16px;
 }
+
+.loader > .loader-inner > div {
+  background: #337ab7;
+}

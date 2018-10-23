@@ -9,6 +9,7 @@ import Header from './header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/github.css';
+import '../../../dist/bandit-pouch.css';
 import './layout.css';
 
 const LayoutBody = ({ children, data }) => {
