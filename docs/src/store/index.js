@@ -5,6 +5,12 @@ const reducer = combineReducers({
   form: formReducer,
 });
 
-export default createStore(reducer, {}, compose(
-  window.devToolsExtension && process.env.NODE_ENV !== 'production' ? window.devToolsExtension() : f => f,
-));
+const middleware = [];
+if (typeof window !== 'undefined') {
+  const { devToolsExtension } = window;
+  if (devToolsExtension && process.env.NODE_ENV !== 'production') {
+    middleware.push(devToolsExtension());
+  }
+}
+
+export default createStore(reducer, {}, compose(...middleware));
