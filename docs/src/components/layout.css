@@ -11,3 +11,7 @@
 .loader > .loader-inner > div {
   background: #337ab7;
 }
+
+.github-button-wrapper {
+  margin: 6px;
+}

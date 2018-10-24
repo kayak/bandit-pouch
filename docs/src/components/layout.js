@@ -5,6 +5,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import Header from './header';
+import Footer from './footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
@@ -25,8 +26,12 @@ const LayoutBody = ({ children, data }) => {
         }, {
           name: 'keywords', content: 'kayak, react, redux',
         }]}
+        script={[{
+          type: 'text/javascript', src: 'https://buttons.github.io/buttons.js',
+        }]}
       >
         <html lang="en" />
+        <link rel="canonical" href="https://kayak.github.io/bandit-pouch" />
       </Helmet>
       <Header siteTitle={siteMetadata.title} />
 
@@ -37,8 +42,10 @@ const LayoutBody = ({ children, data }) => {
           </Col>
         </Row>
       </Grid>
+
+      <Footer {...siteMetadata.library} />
     </>
-  )
+  );
 };
 
 LayoutBody.propTypes = {
@@ -50,14 +57,18 @@ const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
-        title,
-        description,
+        title
+        description
+        library {
+          name
+          version
+        }
       }
     }
   }
 `;
 
-const Layout = ({children}) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={query}
     render={data => (

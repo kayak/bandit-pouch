@@ -1,8 +1,12 @@
+const _ = require('lodash');
+const pkg = require('../package-lock');
+
 module.exports = {
   pathPrefix: 'bandit-pouch',
   siteMetadata: {
     title: 'Bandit Pouch',
     description: 'Common React components and utilities',
+    library: _.pick(pkg, ['name', 'version']),
   },
   plugins: [
     'gatsby-plugin-react-helmet',
