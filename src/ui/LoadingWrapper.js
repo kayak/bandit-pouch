@@ -17,7 +17,7 @@ const LoadingWrapper = ({
   loading,
   error,
   found,
-  ...props,
+  ...props
 }) => {
   if (loading) {
     return <Loader />;

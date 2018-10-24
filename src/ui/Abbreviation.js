@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
  * Used to wrap a label in abbreviation tags if a valid tooltip is provided. We differentiate the abbr style
  * depending on the type passed in so that the dotted line is shown properly on the metric labels.
  */
-const Abbreviation = ({ label, type, tooltip, ...props }) => {
+const Abbreviation = ({
+  label, type, tooltip, ...props
+}) => {
   if (tooltip) {
     return (
       <abbr
