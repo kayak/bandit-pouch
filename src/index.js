@@ -19,6 +19,9 @@ export {
   HorizontalSplit,
   NotificationList,
   NotificationItem,
+  DynamicRow,
+  MagicRow,
+  DropdownButton,
 } from './ui';
 
 export {
@@ -33,6 +36,8 @@ export {
   TextAreaField,
   TextField,
   Validators,
+  KeyValueFieldArray,
+  VerticalFieldArray,
 } from './forms';
 
 export {
