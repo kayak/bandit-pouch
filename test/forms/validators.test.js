@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { expect } from 'chai';
 
-import validators, { formatTemplate } from '../../src/forms/validators';
+import * as validators from '../../src/forms/validators';
 
 describe('validators', () => {
   describe('#required', () => {
@@ -295,6 +295,6 @@ describe('validators', () => {
   });
 
   describe('formatTemplate', () => expect(
-    formatTemplate('First: {0}, Third: {2}, Second: {1}, Unknown: {3}', [1, 2, 3]),
+    validators.formatTemplate('First: {0}, Third: {2}, Second: {1}, Unknown: {3}', [1, 2, 3]),
   ).to.equal('First: 1, Third: 3, Second: 2, Unknown: {3}'));
 });
