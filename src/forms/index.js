@@ -1,25 +1,11 @@
-import CheckboxField from './CheckboxField';
-import FieldError from './FieldError';
-import InputField from './InputField';
-import PasswordField from './PasswordField';
-import RangeField from './RangeField';
-import SelectField from './SelectField';
-import SpinnerField from './SpinnerField';
-import SubmitResetRow from './SubmitResetRow';
-import TextAreaField from './TextAreaField';
-import TextField from './TextField';
-import Validators from './validators';
-
-export {
-  CheckboxField,
-  FieldError,
-  InputField,
-  PasswordField,
-  RangeField,
-  SelectField,
-  SpinnerField,
-  SubmitResetRow,
-  TextAreaField,
-  TextField,
-  Validators,
-};
+export CheckboxField from './CheckboxField';
+export FieldError from './FieldError';
+export InputField from './InputField';
+export PasswordField from './PasswordField';
+export RangeField from './RangeField';
+export SelectField from './SelectField';
+export SpinnerField from './SpinnerField';
+export SubmitResetRow from './SubmitResetRow';
+export TextAreaField from './TextAreaField';
+export TextField from './TextField';
+export * as Validators from './validators';

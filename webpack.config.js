@@ -53,9 +53,9 @@ const testConfig = {
 const commonJSConfig = {
   mode: 'production',
   output: {
-    filename: '[name].js',
+    filename: 'index.js',
     libraryTarget: 'commonjs',
-    path: path.resolve(__dirname, 'dist/lib'),
+    path: path.resolve(__dirname, 'dist/cjs'),
   },
   plugins: [
     new PeerDepsExternalsPlugin(),

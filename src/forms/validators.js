@@ -71,7 +71,7 @@ export const formatTemplate = (template, args) => template.replace(TEMPLATE_REGE
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const required = (errorTemplate = 'Required') => (value) => {
+export const required = (errorTemplate = 'Required') => (value) => {
   if (_.isNull(value) || _.isUndefined(value) || (_.isString(value) && !value.trim())) {
     return errorTemplate;
   }
@@ -87,7 +87,7 @@ const required = (errorTemplate = 'Required') => (value) => {
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const regex = (pattern, errorTemplate = 'Must match the pattern {0}') => {
+export const regex = (pattern, errorTemplate = 'Must match the pattern {0}') => {
   assert(_.isRegExp(pattern), 'Pattern arg must be a regex');
 
   return (value) => {
@@ -107,7 +107,7 @@ const regex = (pattern, errorTemplate = 'Must match the pattern {0}') => {
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const url = (errorTemplate = 'May contain only letters, numbers, dashes and underscores') => regex(
+export const url = (errorTemplate = 'May contain only letters, numbers, dashes and underscores') => regex(
   URL_REGEX, errorTemplate,
 );
 
@@ -117,7 +117,7 @@ const url = (errorTemplate = 'May contain only letters, numbers, dashes and unde
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const alpha = (errorTemplate = 'May contain only letters, underscores, dashes and spaces') => regex(
+export const alpha = (errorTemplate = 'May contain only letters, underscores, dashes and spaces') => regex(
   ALPHANUMERIC_REGEX, errorTemplate,
 );
 
@@ -127,7 +127,7 @@ const alpha = (errorTemplate = 'May contain only letters, underscores, dashes an
  * @param {Array} values Allowed values
  * @return {String|undefined}
  */
-const containing = (values = []) => (value) => {
+export const containing = (values = []) => (value) => {
   if (!_.includes(values, value)) {
     return `The following values are allowed: [${_.join(values, ', ')}]`;
   }
@@ -139,7 +139,7 @@ const containing = (values = []) => (value) => {
  * @param {Array} values Disallowed values
  * @return {String|undefined}
  */
-const excluding = (values = []) => (value) => {
+export const excluding = (values = []) => (value) => {
   if (_.includes(values, value)) {
     return `The following values are not allowed: [${_.join(values, ', ')}]`;
   }
@@ -202,7 +202,7 @@ const minErrorTemplates = {
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const min = (limit, errorTemplate) => {
+export const min = (limit, errorTemplate) => {
   assert(isValidLimitArg(limit), 'Limit arg must be a positive whole number');
 
   return validateLength(
@@ -224,7 +224,7 @@ const maxErrorTemplates = {
  * @param {String} errorTemplate Error message template
  * @return {String|undefined}
  */
-const max = (limit, errorTemplate) => {
+export const max = (limit, errorTemplate) => {
   assert(isValidLimitArg(limit), 'Limit arg must be a positive whole number');
 
   return validateLength(
@@ -248,7 +248,7 @@ const betweenErrorTemplates = {
  * @return {String|undefined}
  */
 // eslint-disable-next-line no-shadow
-const between = (min, max, errorTemplate) => {
+export const between = (min, max, errorTemplate) => {
   assert(isValidLimitArg(min), 'Min arg must be a positive whole number');
   assert(isValidLimitArg(max), 'Max arg must be a positive whole number');
   assert(min < max, 'Min arg can not be larger than max arg');
@@ -257,16 +257,4 @@ const between = (min, max, errorTemplate) => {
     k => min <= k && max >= k,
     v => formatTemplate(errorTemplate || betweenErrorTemplates[typeof v], [min, max]),
   );
-};
-
-export default {
-  required,
-  regex,
-  url,
-  alpha,
-  containing,
-  excluding,
-  min,
-  max,
-  between,
 };

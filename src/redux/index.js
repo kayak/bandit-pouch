@@ -1,5 +1,4 @@
-import states from './states';
-
+export states from './states';
 export {
   createActionWithPayloadAndMeta,
   createActionWithPayload,
@@ -22,7 +21,3 @@ export {
   requestDelete,
   requestDetails,
 } from './requests';
-
-export {
-  states,
-};

@@ -1,57 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
-import Select from 'react-select';
 import PropTypes from 'prop-types';
 
-import FormField, { getValidationState } from './FormField';
-
-function resolveSelectComponent(async, creatable) {
-  if (async) {
-    return creatable ? Select.AsyncCreatable : Select.Async;
-  }
-  return creatable ? Select.Creatable : Select;
-}
-
-function getStatefulStyles({ touched, error }) {
-  const state = getValidationState(touched, error);
-
-  return {
-    valueContainer: base => ({
-      ...base,
-      outline: 'none',
-    }),
-    control: (base, { isFocused }) => {
-      let colors = [];
-
-      if (state === 'success') {
-        colors = ['#3c763d', '#67b168'];
-      } else if (state === 'error') {
-        colors = ['#a94442', '#ce8483'];
-      } else if (isFocused) {
-        colors = ['#66afe9', 'rgba(102,175,233,.6)'];
-      }
-
-      if (_.isEmpty(colors)) {
-        return base;
-      }
-
-      const style = {
-        borderColor: colors[0],
-        boxShadow: `inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px ${colors[1]}`,
-      };
-
-      return {
-        ...base,
-        borderColor: style.borderColor,
-        boxShadow: 'none',
-        '&:hover': {
-          ...base['&:hover'],
-          ...style,
-        },
-      };
-    },
-  };
-}
+import Select from '../ui/Select';
+import FormField from './FormField';
 
 /**
  * Component that encapsulates the `react-select` component
@@ -75,19 +27,15 @@ const SelectField = ({
   denormalize,
   ...props
 }) => {
-  const Component = resolveSelectComponent(async, creatable);
   const denormalized = (denormalize ? denormalize(input.value) : input.value) || defaultValue;
-  const selected = _.filter(options, { [valueKey]: denormalized });
-  const styles = getStatefulStyles(meta);
 
   return (
     <FormField id={input.id} label={label} help={help} meta={meta}>
-      <Component
-        value={selected}
+      <Select
+        value={denormalized}
         options={options}
         clearable={clearable}
         multi={multi}
-        styles={styles}
         onChange={(selection) => {
           let value = selection;
 
