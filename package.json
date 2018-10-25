@@ -31,6 +31,9 @@
       "src/**/*.js"
     ]
   },
+  "files": [
+    "dist/**/*"
+  ],
   "peerDependencies": {
     "axios": ">=0.15.0",
     "axios-request-manager": ">=1.0.1",

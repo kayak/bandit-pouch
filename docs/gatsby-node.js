@@ -17,6 +17,15 @@ exports.onCreateWebpackConfig = ({
   });
 };
 
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-proposal-export-namespace-from',
+  });
+  actions.setBabelPlugin({
+    name: '@babel/plugin-proposal-export-default-from',
+  });
+};
+
 exports.createPages = ({ graphql, boundActionCreators }) => new Promise((resolve, reject) => {
   componentsQuery(graphql).then(({ data, errors }) => {
     if (errors) {
