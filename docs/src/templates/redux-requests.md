@@ -59,11 +59,11 @@ import {
   requestPatch,
   requestDelete,
   requestDetails,
-} from 'bandit-pouch/redux/requests';
+} from 'bandit-pouch';
 import Actions from './actions'
 
-export const getResources = dispatch => () => dispatch(
-  requestList('/api/resources', Actions),
+export const getResources = dispatch => (queryParameters = {}) => dispatch(
+  requestList('/api/resources', queryParameters, Actions),
 );
 
 export const getResource = dispatch => id => dispatch(
