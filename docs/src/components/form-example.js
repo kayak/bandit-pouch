@@ -1,9 +1,6 @@
-import React  from 'react';
-import { Form, Field, reduxForm } from 'redux-form';
-import { Col, Row } from 'react-bootstrap';
-
 import {
   CheckboxField,
+  KeyValueFieldArray,
   PasswordField,
   RangeField,
   SelectField,
@@ -12,7 +9,19 @@ import {
   TextAreaField,
   TextField,
   Validators,
+  VerticalFieldArray,
 } from 'bandit-pouch';
+import React from 'react';
+import {
+  Col,
+  Row,
+} from 'react-bootstrap';
+import {
+  Field,
+  FieldArray,
+  Form,
+  reduxForm,
+} from 'redux-form';
 
 const FormFields = () => (
   <section>
@@ -94,6 +103,56 @@ const FormFields = () => (
           label="Text area field label"
           placeholder="Write me a story"
           validate={[Validators.between(10, 200)]}
+        />
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={12}>
+        <FieldArray
+          component={KeyValueFieldArray}
+          name="keyvaluearray"
+          label="Key value field array label"
+          keyField={
+              <Field
+                component={TextField}
+                name="metric"
+                placeholder="Metric..."
+                validate={[Validators.required()]}
+              />
+          }
+          valueField={
+              <Field
+                component={TextField}
+                name="description"
+                placeholder="Description..."
+                validate={[Validators.required()]}
+              />
+          }
+          validate={[Validators.required()]}
+          help="To add key-value items to your forms."
+          emptyMessage={<i className="text-muted">At least one key-value item is required.</i>}
+        />
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={12}>
+        <FieldArray
+          component={VerticalFieldArray}
+          name="verticalrray"
+          label="Vertical array field title"
+          innerComponent={({field}) => (
+            <Field
+              component={TextField}
+              name={`${field}.description`}
+              placeholder="Description..."
+              validate={[Validators.required()]}
+            />
+          )}
+          validate={[Validators.required()]}
+          help="To add items to your forms."
+          emptyMessage={<i className="text-muted">At least one item is required.</i>}
+          sortable={true}
+          duplicable={true}
         />
       </Col>
     </Row>

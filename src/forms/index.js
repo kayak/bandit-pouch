@@ -1,4 +1,8 @@
 export CheckboxField from './CheckboxField';
+export {
+  KeyValueFieldArray,
+  VerticalFieldArray,
+} from './FieldArray';
 export FieldError from './FieldError';
 export InputField from './InputField';
 export PasswordField from './PasswordField';
