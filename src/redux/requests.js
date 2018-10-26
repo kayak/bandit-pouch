@@ -30,21 +30,23 @@ const handleError = (dispatch, actions, name, ...args) => (error) => {
  * accept an object that contains a list of results.
  *
  * @param {String} url     URL of the endpoint
+ * @param {Object} query   URL query parameters
  * @param {Object} actions Redux Actions object
  * @param {Object} headers Custom HTTP Headers
  * @return {Function}
  */
-export const requestList = (url, actions = {}, headers = {}) => (dispatch) => {
-  dispatch(invokeAction(actions, 'requestList'));
+export const requestList = (url, query = {}, actions = {}, headers = {}) => (dispatch) => {
+  dispatch(invokeAction(actions, 'requestList', query));
 
   const cancelToken = manager.cancelAxiosAndGetNextToken(url);
 
   return axios.get(url, {
+    params: query,
     cancelToken,
     headers: constructHeaders(headers),
   }).then(
-    handleSuccess(dispatch, actions, 'receiveList'),
-    handleError(dispatch, actions, 'receiveList'),
+    handleSuccess(dispatch, actions, 'receiveList', query),
+    handleError(dispatch, actions, 'receiveList', query),
   );
 };
 
@@ -59,7 +61,7 @@ export const requestList = (url, actions = {}, headers = {}) => (dispatch) => {
  * @return {Function}
  */
 export const requestDetails = (alias, url, actions, headers = {}) => (dispatch) => {
-  dispatch(invokeAction(actions, 'requestDetails'));
+  dispatch(invokeAction(actions, 'requestDetails', alias));
 
   const cancelToken = manager.cancelAxiosAndGetNextToken(url);
 
@@ -93,7 +95,7 @@ export const requestStore = (alias, data, url, actions, creating = false, header
   const executor = creating ? axios.post : axios.put;
   const cancelToken = manager.cancelAxiosAndGetNextToken(url);
 
-  return executor(url, {
+  return executor(url, data, {
     cancelToken,
     headers: constructHeaders(headers),
   }).then(
@@ -128,7 +130,7 @@ export const requestPatch = (alias, url, data, actions, headers = {}) => (dispat
 
   const cancelToken = manager.cancelAxiosAndGetNextToken(url);
 
-  return axios.patch(url, {
+  return axios.patch(url, data, {
     cancelToken,
     headers: constructHeaders(headers),
   }).then(
