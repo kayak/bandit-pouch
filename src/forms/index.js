@@ -12,4 +12,6 @@ export SpinnerField from './SpinnerField';
 export SubmitResetRow from './SubmitResetRow';
 export TextAreaField from './TextAreaField';
 export TextField from './TextField';
+export FormField from './FormField';
+export MonthPickerField from './MonthPickerField';
 export * as Validators from './validators';

@@ -77,7 +77,7 @@ Select.propTypes = {
 Select.defaultProps = {
   value: null,
   valueKey: 'value',
-  labelKey: 'value',
+  labelKey: 'label',
   options: [],
   loadOptions: null,
   creatable: false,
