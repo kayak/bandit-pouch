@@ -138,9 +138,15 @@ class LoadingWrapperExample extends React.Component {
     return (
       <div style={{ minHeight: '460px' }}>
         <ButtonGroup>
-          <Button onClick={() => this.fetch({ model: [...LoadedPage.mocks] })}>Fetch data</Button>
-          <Button onClick={() => this.fetch({ error: 'Remote server error' })}>Fetch data with an error</Button>
-          <Button onClick={() => this.fetch({ found: false })}>Fetch data with a not find status</Button>
+          <Button onClick={() => this.fetch({ model: [...LoadedPage.mocks] })}>
+            Fetch data
+          </Button>
+          <Button onClick={() => this.fetch({ error: { message: 'Remote server error', status: 500, icon: 'warning' } })}>
+            Fetch data with an error
+          </Button>
+          <Button onClick={() => this.fetch({ found: false })}>
+            Fetch data with a not find status
+          </Button>
         </ButtonGroup>
 
         <LoadingWrapper
@@ -158,9 +164,12 @@ class LoadingWrapperExample extends React.Component {
 const PagesExample = () => (
   <Row>
     <Col xs={12}>
-      <ErrorPage icon="exclamation" className="text-danger">
-        <p>An error message</p>
-      </ErrorPage>
+      <ErrorPage
+        status="503"
+        icon="exclamation-circle"
+        className="text-danger"
+        message="An error message"
+      />
     </Col>
     <Col xs={12}>
       <PageNotFound />

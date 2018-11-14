@@ -1,0 +1,36 @@
+#notification-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#notification-container .alert {
+    position: relative;
+    min-width: 220px;
+    opacity: 1;
+    animation: fadeIn ease-in 0.25s;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+div[id="notification-container"] {
+    z-index: 5;
+    margin: 20px;
+}

@@ -1,0 +1,18 @@
+.loader-container {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 15px;
+    vertical-align: bottom;
+}
+
+.ball-scale-ripple-multiple > div {
+    border-color: #000;
+}
+
+.ball-clip-rotate-pulse > div:first-child {
+    background-color: #000;
+}
+
+.ball-clip-rotate-pulse > div:last-child {
+    border-color: #000 transparent;
+}

@@ -1,0 +1,66 @@
+.month-picker.dropdown {
+    display: block;
+}
+
+.month-picker .dropdown-toggle {
+    display: block;
+    text-decoration: none;
+}
+
+.month-picker .form-control[readonly] {
+    background: #ffffff;
+}
+
+.month-picker-body {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.month-picker-header,
+.month-picker-months {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.month-picker-header {
+    padding: 6px 20px;
+}
+
+.month-picker-year {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.month-picker-months {
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.month-picker-months li {
+    width: 33.33%;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+}
+
+.month-picker-months li a {
+    display: block;
+    padding: 10px 4px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.month-picker-months li a:hover {
+    background: rgba(0, 0, 0, .05);
+}
+
+.month-picker-months li a.active {
+    text-decoration: none;
+    background: #337ab7;
+    color: #ffffff;
+}

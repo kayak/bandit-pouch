@@ -4,10 +4,25 @@ import { Table } from 'react-bootstrap';
 
 const PropType = ({ prop }) => {
   const { type = {}, parentType = {} } = prop;
+  let name;
   if (parentType && parentType.name) {
-    return (<span>{parentType.name}</span>);
+    ({ name } = parentType);
+  } else {
+    ({ name } = type);
   }
-  return (<span>{type && type.name}</span>);
+
+  const { value = [] } = type;
+
+  return (
+    <div style={{ display: 'flex' }}>
+      <span>{name}</span>
+      {Array.isArray(value) && (
+        <ul className="nav" style={{ color: 'rgb(236, 171, 32)', marginLeft: '5px' }}>
+          {value.map(t => (<li key={t.name}>{t.name}</li>))}
+        </ul>
+      )}
+    </div>
+  );
 };
 
 PropType.propTypes = {
@@ -35,11 +50,11 @@ const ComponentProps = ({ propMetaData = [], ..._props }) => (
   <Table responsive hover {..._props}>
     <thead>
       <tr>
-        <th width="20%">Prop Name</th>
-        <th width="10%">Type</th>
+        <th width="15%">Prop Name</th>
+        <th width="20%">Type</th>
         <th width="10%">Is Required</th>
         <th width="15%">Default Value</th>
-        <th width="45%">Description</th>
+        <th width="40%">Description</th>
       </tr>
     </thead>
     <tbody>

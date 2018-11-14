@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
+import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import ErrorPage from './ErrorPage';
 import PageNotFound from './PageNotFound';
 import { CenteredLoader } from './Loaders';
@@ -28,7 +29,14 @@ const LoadingWrapper = ({
   }
 
   if (error) {
-    return <ErrorPage className="text-danger" icon="exclamation">{error}</ErrorPage>;
+    if (_.isFunction(error)) {
+      const Error = error;
+      return <Error />;
+    }
+    if (_.isPlainObject(error)) {
+      return <ErrorPage {...error} />;
+    }
+    return <ErrorPage message={error} />;
   }
 
   return <Child {...props} />;
@@ -59,9 +67,14 @@ LoadingWrapper.propTypes = {
    */
   found: PropTypes.bool,
   /**
-   * Error message that should be show. The message is shown using the `ErrorPage` component
+   * Error message that should be show. The message is shown using the `ErrorPage` component.
+   * You can pass a component function or a simple message as a string.
    */
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.string,
+  ]),
 };
 
 LoadingWrapper.defaultProps = {

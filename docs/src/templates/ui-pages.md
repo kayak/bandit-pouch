@@ -12,9 +12,12 @@ import {
 
 const AppLayout = () => (
   <>
-    <ErrorPage icon="exclamation" className="text-danger">
-      <p>An error message</p>
-    </ErrorPage>
+    <ErrorPage
+      status="503"
+      icon="exclamation-circle"
+      className="text-danger"
+      message="An error message"
+    />
     <PageNotFound />
   </>
 )

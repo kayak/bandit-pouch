@@ -95,7 +95,15 @@ const FormFields = () => (
       </Col>
     </Row>
     <Row>
-      <Col xs={12}>
+      <Col xs={3}>
+        <Field
+          component={MonthPickerField}
+          name="month"
+          label="Year month picker"
+          help="Select the starting month of your journey"
+        />
+      </Col>
+      <Col xs={9}>
         <Field
           component={TextAreaField}
           name="textarea"
