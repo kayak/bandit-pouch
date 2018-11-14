@@ -9,7 +9,7 @@
     "test": "cross-env NODE_ENV=test mocha-webpack --webpack-env test --opts mocha-webpack.opts",
     "coverage": "nyc --reporter=lcov --reporter=text npm run test",
     "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
-    "css": "postcss --e production -o dist/bandit-pouch.css css/**/*.css",
+    "css": "postcss --e production -o dist/bandit-pouch.css css/bandit-pouch.css",
     "cjs": "webpack --env cjs",
     "esm": "cross-env NODE_ENV=production babel src -d dist/esm --copy-files",
     "build": "npm run lint && npm run css && npm run cjs && npm run esm",
