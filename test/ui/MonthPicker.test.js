@@ -3,10 +3,12 @@ import moment from 'moment';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
+import { Dropdown } from 'react-bootstrap';
 import MonthPicker, { formatDisplay, formatValue, toState } from '../../src/ui/MonthPicker';
 
 describe('MonthPicker', () => {
   let wrapper;
+  let onClose;
   let onChange;
 
   context('methods', () => {
@@ -39,7 +41,8 @@ describe('MonthPicker', () => {
   context('with default date', () => {
     beforeEach(() => {
       onChange = spy();
-      wrapper = mount(<MonthPicker value="2018-12" onChange={onChange} />);
+      onClose = spy();
+      wrapper = mount(<MonthPicker value="2018-12" onChange={onChange} onClose={onClose} />);
     });
 
     it('should render formatted value', () => expect(
@@ -55,11 +58,28 @@ describe('MonthPicker', () => {
       wrapper.find('.month-picker-year').text(),
     ).to.equal('2018'));
 
+    it('should update view when value changes', () => {
+      wrapper.setProps({ value: '2019-03' });
+      expect(wrapper.find('input').props().value).to.equal('March, 2019');
+      expect(wrapper.find('.month-picker-year').text()).to.equal('2019');
+      expect(wrapper.find('a.month-picker-month.active').text()).to.equal('Mar');
+    });
+
     it('should open and close dropdown', () => {
       wrapper.find('a.dropdown-toggle').simulate('click');
       expect(wrapper.state('opened')).to.equal(true);
       wrapper.find('a.dropdown-toggle').simulate('click');
       expect(wrapper.state('opened')).to.equal(false);
+    });
+
+    it('should trigger onClose', () => {
+      wrapper.find('a.dropdown-toggle').simulate('click');
+      expect(wrapper.state('opened')).to.equal(true);
+      const toggle = wrapper.find(Dropdown).prop('onToggle');
+      expect(toggle).to.be.a('function');
+      toggle(false, null, { source: 'rootClose' });
+      expect(onClose.calledOnce).to.equal(true);
+      expect(onClose.calledWith('2018-12', 2018, 11)).to.equal(true);
     });
 
     it('should select month', () => {
