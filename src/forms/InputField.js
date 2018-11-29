@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormControl } from 'react-bootstrap';
 
@@ -13,22 +13,72 @@ import FormField from './FormField';
  *  - textarea
  *  - select (but use the SelectField component instead)
  */
-const InputField = ({
-  input, label, help, meta, onChangeValue, componentClass, ...props
-}) => (
-  <FormField id={input.id} label={label} help={help} meta={meta}>
-    <FormControl
-      {...input}
-      {...props}
-      componentClass={componentClass}
-      onChange={(selected) => {
-        input.onChange(selected);
-        onChangeValue(selected);
-      }}
-    />
-    <FormControl.Feedback />
-  </FormField>
-);
+class InputField extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onChange = this.onChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+  }
+
+  state = {
+    value: _.get(this.props, 'input.value'),
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (_.get(this.props, 'input.value') !== _.get(nextProps, 'input.value')) {
+      this.setState({
+        value: nextProps.input.value,
+      });
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const prevProps = this.props;
+    const prevState = this.state;
+
+    return (
+      _.get(prevProps, 'label') !== _.get(nextProps, 'label')
+      || _.get(prevProps, 'help') !== _.get(nextProps, 'help')
+      || _.get(prevProps, 'meta.touched') !== _.get(nextProps, 'meta.touched')
+      || _.get(prevProps, 'meta.error') !== _.get(nextProps, 'meta.error')
+      || !_.isEqual(prevState, nextState)
+    );
+  }
+
+  onChange(event) {
+    this.setState({
+      value: event.target.value,
+    });
+  }
+
+  onBlur() {
+    const {input, onChangeValue} = this.props;
+    const {value} = this.state;
+    input.onBlur(value);
+    if (onChangeValue) onChangeValue(value);
+  }
+
+  render() {
+    const {
+      input, label, help, meta, componentClass, onChangeValue, ...props
+    } = this.props;
+
+    return (
+      <FormField id={input.id} label={label} help={help} meta={meta}>
+        <FormControl
+          {...input}
+          {...props}
+          value={this.state.value}
+          componentClass={componentClass}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+        />
+        <FormControl.Feedback/>
+      </FormField>
+    );
+  }
+}
 
 InputField.propTypes = {
   /**
