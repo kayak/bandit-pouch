@@ -32,16 +32,16 @@ describe('utils', () => {
   });
 
   describe('deprecate', () => {
-    // const warn = sinon.stub(console, 'warn');
+    const warn = sinon.stub(console, 'warn');
     const deprecated = deprecate('Do not use this function', i => 5 + i);
 
-    // afterEach(() => warn.resetHistory());
+    afterEach(() => warn.resetHistory());
 
     it('should return function', () => expect(deprecated).to.be.a('function'));
     it('should print message and return result', () => {
       expect(deprecated(1)).to.equal(6);
-      // expect(warn.calledOnce).to.equal(true);
-      // expect(warn.calledWithMatch('DEPRECATION: Do not use this function')).to.equal(true);
+      expect(warn.calledOnce).to.equal(true);
+      expect(warn.calledWithMatch('DEPRECATION: Do not use this function')).to.equal(true);
     });
   });
 
