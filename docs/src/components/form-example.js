@@ -1,28 +1,22 @@
 import {
   CheckboxField,
+  DateRangePickerField,
   KeyValueFieldArray,
   MonthPickerField,
   PasswordField,
   RangeField,
+  SectionFieldArray,
   SelectField,
+  SortableSectionFieldArray,
   SpinnerField,
   SubmitResetRow,
   TextAreaField,
   TextField,
   Validators,
-  VerticalFieldArray,
 } from 'bandit-pouch';
 import React from 'react';
-import {
-  Col,
-  Row,
-} from 'react-bootstrap';
-import {
-  Field,
-  FieldArray,
-  Form,
-  reduxForm,
-} from 'redux-form';
+import { Col, Row } from 'react-bootstrap';
+import { Field, FieldArray, Form, reduxForm } from 'redux-form';
 
 const FormFields = () => (
   <section>
@@ -45,8 +39,11 @@ const FormFields = () => (
           placeholder="Enter your password"
           validate={[
             Validators.required(),
-            Validators.regex(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/, 'Password should contain at least 1 '
-              + 'lower case  character, upper case character and a digit'),
+            Validators.regex(
+              /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/,
+              'Password should contain at least 1 ' +
+                'lower case  character, upper case character and a digit'
+            ),
             Validators.min(6),
             Validators.max(12),
           ]}
@@ -59,21 +56,22 @@ const FormFields = () => (
           label="Select field label"
           placeholder="Select a value"
           validate={[Validators.required(), Validators.containing(['foo'])]}
-          options={[{
-            value: 'foo', label: 'Foo',
-          }, {
-            value: 'bar', label: 'Bar',
-          }]}
+          options={[
+            {
+              value: 'foo',
+              label: 'Foo',
+            },
+            {
+              value: 'bar',
+              label: 'Bar',
+            },
+          ]}
         />
       </Col>
     </Row>
     <Row>
       <Col xs={4}>
-        <Field
-          component={CheckboxField}
-          name="checkbox"
-          label="Tick me"
-        />
+        <Field component={CheckboxField} name="checkbox" label="Tick me" />
       </Col>
       <Col xs={4}>
         <Field
@@ -85,7 +83,7 @@ const FormFields = () => (
           validate={[Validators.between(2, 6)]}
         />
       </Col>
-      <Col xs={4}>
+      <Col xs={2}>
         <Field
           component={RangeField}
           name="range"
@@ -95,9 +93,19 @@ const FormFields = () => (
           validate={[Validators.between(0, 20)]}
         />
       </Col>
+      <Col xs={2}>
+        <Field
+          component={RangeField}
+          name="intervalrange"
+          label="Interval Range"
+          min={0}
+          max={20}
+          validate={[Validators.between(0, 20)]}
+        />
+      </Col>
     </Row>
     <Row>
-      <Col xs={3}>
+      <Col xs={6}>
         <Field
           component={MonthPickerField}
           name="month"
@@ -105,7 +113,15 @@ const FormFields = () => (
           help="Select the starting month of your journey"
         />
       </Col>
-      <Col xs={9}>
+      <Col xs={6}>
+        <Field
+          component={DateRangePickerField}
+          name="daterangepicker"
+          label="Date range picker"
+          help="Select the date range of your journey"
+        />
+      </Col>
+      <Col xs={12}>
         <Field
           component={TextAreaField}
           name="textarea"
@@ -122,34 +138,38 @@ const FormFields = () => (
           name="keyvaluearray"
           label="Key value field array label"
           keyField={
-              <Field
-                component={TextField}
-                name="metric"
-                placeholder="Metric..."
-                validate={[Validators.required()]}
-              />
+            <Field
+              component={TextField}
+              name="metric"
+              placeholder="Metric..."
+              validate={[Validators.required()]}
+            />
           }
           valueField={
-              <Field
-                component={TextField}
-                name="description"
-                placeholder="Description..."
-                validate={[Validators.required()]}
-              />
+            <Field
+              component={TextField}
+              name="description"
+              placeholder="Description..."
+              validate={[Validators.required()]}
+            />
           }
           validate={[Validators.required()]}
           help="To add key-value items to your forms."
-          emptyMessage={<i className="text-muted">At least one key-value item is required.</i>}
+          emptyMessage={
+            <i className="text-muted">
+              At least one key-value item is required.
+            </i>
+          }
         />
       </Col>
     </Row>
     <Row>
       <Col xs={12}>
         <FieldArray
-          component={VerticalFieldArray}
-          name="verticalrray"
-          label="Vertical array field title"
-          innerComponent={({field}) => (
+          component={SectionFieldArray}
+          name="sectionarray"
+          label="Section array field title"
+          innerComponent={({ field }) => (
             <Field
               component={TextField}
               name={`${field}.description`}
@@ -159,14 +179,38 @@ const FormFields = () => (
           )}
           validate={[Validators.required()]}
           help="To add items to your forms."
-          emptyMessage={<i className="text-muted">At least one item is required.</i>}
-          sortable={true}
-          duplicable={true}
+          emptyMessage={
+            <i className="text-muted">At least one item is required.</i>
+          }
+          duplicable
+        />
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={12}>
+        <FieldArray
+          component={SortableSectionFieldArray}
+          name="sortablesectionarray"
+          label="Sortable section array field title"
+          innerComponent={({ field }) => (
+            <Field
+              component={TextField}
+              name={`${field}.description`}
+              placeholder="Description..."
+              validate={[Validators.required()]}
+            />
+          )}
+          validate={[Validators.required()]}
+          help="To add items to your forms. Try sorting them as well."
+          emptyMessage={
+            <i className="text-muted">At least one item is required.</i>
+          }
+          duplicable
         />
       </Col>
     </Row>
   </section>
-);
+)
 
 const ExampleForm = ({
   handleSubmit, pristine, submitting, error, reset,
@@ -187,4 +231,7 @@ const ExampleForm = ({
 export default reduxForm({
   form: 'example',
   anyTouched: false,
+  initialValues: {
+    intervalrange: [5, 15],
+  },
 })(ExampleForm);
