@@ -60,16 +60,16 @@ class FieldArrayElement extends Component {
       <Panel bsStyle={bsStyle}>
         <Panel.Body>
           <div>
-          {dragHandleProps && (
-            <FontAwesome
-              name="arrows"
-              style={{
-                fontSize: '150%',
-                marginRight: 6,
-              }}
-              {...dragHandleProps}
-            />
-          )}
+            {dragHandleProps && (
+              <FontAwesome
+                name="arrows"
+                style={{
+                  fontSize: '150%',
+                  marginRight: 6,
+                }}
+                {...dragHandleProps}
+              />
+            )}
 
             <button
               type="button"

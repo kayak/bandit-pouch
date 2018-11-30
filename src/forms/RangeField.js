@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import FormField from './FormField';
 
-const parse = (value) => (
+const parse = value => (
   _.isArray(value) ? { min: _.toNumber(value[0]), max: _.toNumber(value[1]) } : _.toNumber(value)
 );
-const format = (value) => (
+const format = value => (
   _.isObject(value) ? [value.min, value.max] : value
 );
 
@@ -26,14 +26,15 @@ class RangeField extends Component {
 
   render() {
     const {
-      input, label, formatLabel, disabled, help, min, max, step, meta, onChangeValue
+      input, label, formatLabel, disabled, help, min, max, step, meta, onChangeValue,
     } = this.props;
+    const { value } = this.state;
 
     return (
       <FormField id={input.id} label={label} help={help} meta={meta}>
         <InputRange
           draggableTrack
-          value={parse(this.state.value)}
+          value={parse(value)}
           defaultValue={0}
           style={{
             display: 'block',
@@ -44,16 +45,16 @@ class RangeField extends Component {
           step={step}
           disabled={disabled}
           formatLabel={formatLabel}
-          onChange={(value) => {
-            const newValue = format(value);
+          onChange={(newValue) => {
+            const formattedValue = format(newValue);
             this.setState({
-              value: newValue,
+              value: formattedValue,
             });
           }}
-          onChangeComplete={value => {
-            const newValue = format(value);
-            input.onBlur(newValue);
-            onChangeValue(newValue);
+          onChangeComplete={(newValue) => {
+            const formattedValue = format(newValue);
+            input.onBlur(formattedValue);
+            onChangeValue(formattedValue);
           }}
         />
       </FormField>

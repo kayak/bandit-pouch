@@ -53,8 +53,8 @@ class InputField extends Component {
   }
 
   onBlur() {
-    const {input, onChangeValue} = this.props;
-    const {value} = this.state;
+    const { input, onChangeValue } = this.props;
+    const { value } = this.state;
     input.onBlur(value);
     if (onChangeValue) onChangeValue(value);
   }
@@ -63,18 +63,19 @@ class InputField extends Component {
     const {
       input, label, help, meta, componentClass, onChangeValue, ...props
     } = this.props;
+    const { value } = this.state;
 
     return (
       <FormField id={input.id} label={label} help={help} meta={meta}>
         <FormControl
           {...input}
           {...props}
-          value={this.state.value}
+          value={value}
           componentClass={componentClass}
           onChange={this.onChange}
           onBlur={this.onBlur}
         />
-        <FormControl.Feedback/>
+        <FormControl.Feedback />
       </FormField>
     );
   }

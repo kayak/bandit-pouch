@@ -46,7 +46,7 @@ class VerticalFieldArray extends Component {
     /**
      * The element/text that will be displayed when no element exist
      */
-    emptyMessage: PropTypes.element,
+    emptyMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /**
      * The component that will be rendered as an element
      */
