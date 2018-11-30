@@ -11,7 +11,7 @@ import {
 
 export default class SortableList extends Component {
   static propTypes = {
-    direction: PropTypes.string.isRequired,
+    direction: PropTypes.string,
     onDragEnd: PropTypes.func.isRequired,
   };
 

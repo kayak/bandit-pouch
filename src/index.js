@@ -41,8 +41,9 @@ export {
   Validators,
   MonthPickerField,
   KeyValueFieldArray,
-  VerticalFieldArray,
   DateRangePickerField,
+  SectionFieldArray,
+  SortableSectionFieldArray,
 } from './forms';
 
 export {

@@ -1,7 +1,8 @@
 export CheckboxField from './CheckboxField';
 export {
   KeyValueFieldArray,
-  VerticalFieldArray,
+  SectionFieldArray,
+  SortableSectionFieldArray,
 } from './FieldArray';
 export FieldError from './FieldError';
 export InputField from './InputField';
