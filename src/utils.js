@@ -10,9 +10,8 @@ export const CHILDREN_PROP_TYPE = PropTypes.oneOfType([
   PropTypes.element,
 ]);
 
-
 // eslint-disable-next-line no-confusing-arrow
-const debug = func => process.env.NODE_ENV !== 'production' ? func : _.noop;
+export const debug = wrapper => process.env.NODE_ENV === 'production' ? _.noop : wrapper;
 
 /**
  * Utility function that creates a Tooltip element with the supplied text.
@@ -63,6 +62,12 @@ export const assert = debug((condition, message = '') => {
   }
 });
 
+const printDeprecationWarning = debug((message) => {
+  const { stack } = new Error();
+  // eslint-disable-next-line no-console
+  console.warn(`DEPRECATION: ${message}\n\t${stack.split('\n').slice(3).join('\n\t')}`);
+});
+
 /**
  * Display a deprecation warning with the provided message and a stack trace
  * (Chrome and Firefox only) when the assigned method is called.
@@ -75,9 +80,7 @@ export const assert = debug((condition, message = '') => {
  * @param {String} message A description of the deprecation.
  * @param {Function} func  Function that should be deprecated.
  */
-export const deprecate = debug((message, func) => function (...args) { // eslint-disable-line func-names
-  const { stack } = new Error();
-  // eslint-disable-next-line no-console
-  console.warn(`DEPRECATION: ${message}\n\t${stack.split('\n').slice(2).join('\n\t')}`);
+export const deprecate = (message, func) => function (...args) { // eslint-disable-line func-names
+  printDeprecationWarning(message);
   return func.apply(this, args);
-});
+};
