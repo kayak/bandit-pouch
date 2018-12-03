@@ -34,11 +34,11 @@ SpinnerField.propTypes = {
   /**
    * Minimum value
    */
-  min: PropTypes.number.isRequired,
+  min: PropTypes.number,
   /**
    * Maximum value
    */
-  max: PropTypes.number.isRequired,
+  max: PropTypes.number,
   /**
    * Counter step
    */
@@ -77,6 +77,8 @@ SpinnerField.propTypes = {
 
 SpinnerField.defaultProps = {
   step: 1,
+  min: null,
+  max: null,
   help: null,
   label: null,
   disabled: false,

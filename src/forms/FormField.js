@@ -75,7 +75,7 @@ FormField.propTypes = {
   /**
    * Input label text
    */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Input help text
    */

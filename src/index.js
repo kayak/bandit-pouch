@@ -23,6 +23,7 @@ export {
   DynamicRow,
   MagicRow,
   DropdownButton,
+  DateRangePicker,
 } from './ui';
 
 export {
@@ -40,7 +41,9 @@ export {
   Validators,
   MonthPickerField,
   KeyValueFieldArray,
-  VerticalFieldArray,
+  DateRangePickerField,
+  SectionFieldArray,
+  SortableSectionFieldArray,
 } from './forms';
 
 export {

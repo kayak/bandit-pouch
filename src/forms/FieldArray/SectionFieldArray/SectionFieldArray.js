@@ -1,7 +1,5 @@
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
 import {
   FormControl,
   Glyphicon,
@@ -9,16 +7,13 @@ import {
 } from 'react-bootstrap';
 import { DropdownButton } from '../../../ui';
 import { Utils } from '../../..';
-
 import FormField from '../../FormField';
-import FieldArrayElement from './FieldArrayElement';
-import SortableList from './SortableList';
-
+import FieldArrayElement from '../FieldArrayElement';
 
 /**
- * Component that renders a vertical field array using the provided innerComponent prop as its elements.
+ * Component that renders a section field array using the provided innerComponent prop as its elements.
  */
-class VerticalFieldArray extends Component {
+class SectionFieldArray extends Component {
   static propTypes = {
     /**
      * Fields object passed by the React Form
@@ -48,11 +43,11 @@ class VerticalFieldArray extends Component {
     /**
      * The element/text that will be displayed when no element exist
      */
-    emptyMessage: PropTypes.element,
+    emptyMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /**
      * The component that will be rendered as an element
      */
-    innerComponent: PropTypes.element.isRequired,
+    innerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
     /**
      * This label is used in the default renderKey prop. It is the prefix used in the element name
      */
@@ -69,16 +64,6 @@ class VerticalFieldArray extends Component {
      * If elements are able to be duplicated or not
      */
     duplicable: PropTypes.bool,
-    /**
-     * If elements are able to be sorted or not
-     */
-    sortable: PropTypes.bool,
-    /**
-     * A function that receives the value object and its index and returns a key prop that will be used by the
-     * element
-     */
-    // eslint-disable-next-line react/require-default-props
-    renderKey: PropTypes.func,
     /**
      * A function that receives the value object and its index and returns an element to be displayed as the element
      * header
@@ -110,7 +95,6 @@ class VerticalFieldArray extends Component {
     addTooltip: 'Click to add',
     minimizable: true,
     duplicable: false,
-    sortable: false,
     initialFieldValue: {},
     onAdd: null,
     onDuplicate: null,
@@ -122,16 +106,6 @@ class VerticalFieldArray extends Component {
 
   componentDidMount() {
     this.setState({ firstRender: false });
-  }
-
-  shouldComponentUpdate(nextProps) {
-    const {
-      fields,
-    } = this.props;
-
-    return _.some([
-      !_.isEqual(fields.getAll() !== nextProps.fields.getAll()),
-    ]);
   }
 
   renderField(field, index) {
@@ -148,9 +122,7 @@ class VerticalFieldArray extends Component {
         duplicable,
         onDuplicate,
         onRemove,
-        innerRef,
       } = this.props;
-
 
     const {
       firstRender,
@@ -165,9 +137,6 @@ class VerticalFieldArray extends Component {
         {...innerProps}
         index={index}
         field={field}
-        ref={/* Work with @connected components */
-          ref => innerRef && innerRef(_.get(ref, 'refs.wrappedInstance', ref))
-        }
       />
     );
 
@@ -202,7 +171,6 @@ class VerticalFieldArray extends Component {
         meta,
         help,
         initialFieldValue,
-        sortable,
         addTooltip,
         addChoices,
         onAdd,
@@ -226,22 +194,7 @@ class VerticalFieldArray extends Component {
         help={help}
         meta={meta}
       >
-        {sortable ? (
-          <SortableList
-            dragHandle
-            onDragEnd={({ source, destination }) => {
-              if (!destination) {
-                return null;
-              }
-
-              return fields.move(source.index, destination.index);
-            }}
-          >
-            {fieldArray}
-          </SortableList>
-        ) : (
-          fieldArray
-        )}
+        {fieldArray}
 
         {emptyMessage && fields.length === 0 && (
           <div style={{ textAlign: 'center', margin: '10px 0px' }}>{emptyMessage}</div>
@@ -251,7 +204,6 @@ class VerticalFieldArray extends Component {
           overlay={Utils.tooltip(addTooltip)}
         >
           <DropdownButton
-            id="field-list-add-button-bottom"
             className="text-center"
             title={<Glyphicon glyph="plus" />}
             style={{ display: 'block' }}
@@ -268,4 +220,4 @@ class VerticalFieldArray extends Component {
   }
 }
 
-export default VerticalFieldArray;
+export default SectionFieldArray;

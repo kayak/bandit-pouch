@@ -6,6 +6,7 @@ export DynamicRow from './DynamicRow';
 export MagicRow from './MagicRow';
 export PageNotFound from './PageNotFound';
 export LoadingWrapper from './LoadingWrapper';
+export DateRangePicker from './DateRangePicker';
 export {
   Page,
   Left,

@@ -11,13 +11,17 @@ import {
 
 export default class SortableList extends Component {
   static propTypes = {
-    direction: PropTypes.string.isRequired,
+    direction: PropTypes.oneOf(['vertical', 'horizontal']),
     onDragEnd: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    direction: 'vertical',
   };
 
   render() {
     const {
-      direction = 'vertical',
+      direction,
       type,
       onDragEnd,
       dragHandle,

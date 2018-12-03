@@ -1,14 +1,11 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
-
 import {
   Glyphicon,
   OverlayTrigger,
   Panel,
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import { Utils } from '../../..';
-
+import { Utils } from '../..';
 
 class FieldArrayElement extends Component {
   constructor({ initiallyMinimized }) {
@@ -16,22 +13,20 @@ class FieldArrayElement extends Component {
     this.state = {
       minimized: initiallyMinimized,
     };
+
+    this.switchMinimizationState = this.switchMinimizationState.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { label } = this.props;
-    const { minimized } = this.state;
+    const { label, minimized } = this.state;
 
-    return _.some([
-      label !== nextProps.label,
-      minimized !== nextState.minimized,
-    ]);
+    return label !== nextProps.label || nextState.minimized === false || minimized !== nextState.minimized;
   }
 
-  setMinimized(minimized) {
+  switchMinimizationState() {
     this.setState(prevState => ({
       ...prevState,
-      minimized,
+      minimized: !prevState.minimized,
     }));
   }
 
@@ -76,12 +71,20 @@ class FieldArrayElement extends Component {
               />
             )}
 
-            <h4
-              style={{ display: 'inline' }}
-              className={bsStyle ? `text-${bsStyle}` : undefined}
+            <button
+              type="button"
+              style={{
+                border: 0, padding: 0, cursor: 'pointer', backgroundColor: 'inherit',
+              }}
+              onClick={this.switchMinimizationState}
             >
-              {label || <i>Unnamed</i>}
-            </h4>
+              <h4
+                style={{ display: 'inline' }}
+                className={bsStyle ? `text-${bsStyle}` : undefined}
+              >
+                {label || <i>Unnamed</i>}
+              </h4>
+            </button>
 
             {onRemove && (
               <OverlayTrigger
@@ -110,7 +113,7 @@ class FieldArrayElement extends Component {
                   className="pull-right close"
                   aria-label="Minimize"
                   style={{ marginRight: 10, fontSize: 15 }}
-                  onClick={() => this.setMinimized(!minimized)}
+                  onClick={this.switchMinimizationState}
                 >
                   <span aria-hidden={minimized}>
                     <Glyphicon glyph={minimized ? 'plus' : 'minus'} />
@@ -147,6 +150,5 @@ class FieldArrayElement extends Component {
     );
   }
 }
-
 
 export default FieldArrayElement;

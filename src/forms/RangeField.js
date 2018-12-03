@@ -1,34 +1,66 @@
 import _ from 'lodash';
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import FormField from './FormField';
 
-const parse = value => _.toNumber(value);
-
-const RangeField = ({
-  input, label, formatLabel, disabled, help, min, max, step, meta, onChangeValue,
-}) => (
-  <FormField id={input.id} label={label} help={help} meta={meta}>
-    <InputRange
-      value={parse(input.value)}
-      style={{
-        display: 'block',
-        width: '100%',
-      }}
-      min={min}
-      max={max}
-      step={step}
-      disabled={disabled}
-      formatLabel={formatLabel}
-      onChange={(value) => {
-        input.onChange(value);
-        onChangeValue(value);
-      }}
-      onChangeComplete={value => input.onBlur(value)}
-    />
-  </FormField>
+const parse = value => (
+  _.isArray(value) ? { min: _.toNumber(value[0]), max: _.toNumber(value[1]) } : _.toNumber(value)
 );
+const format = value => (
+  _.isObject(value) ? [value.min, value.max] : value
+);
+
+class RangeField extends Component {
+  state = {
+    value: _.get(this.props, 'input.value'),
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (_.get(this.props, 'input.value') !== _.get(nextProps, 'input.value')) {
+      this.setState({
+        value: nextProps.input.value,
+      });
+    }
+  }
+
+  render() {
+    const {
+      input, label, formatLabel, disabled, help, min, max, step, meta, onChangeValue,
+    } = this.props;
+    const { value } = this.state;
+
+    return (
+      <FormField id={input.id} label={label} help={help} meta={meta}>
+        <InputRange
+          draggableTrack
+          value={parse(value)}
+          defaultValue={0}
+          style={{
+            display: 'block',
+            width: '100%',
+          }}
+          minValue={min}
+          maxValue={max}
+          step={step}
+          disabled={disabled}
+          formatLabel={formatLabel}
+          onChange={(newValue) => {
+            const formattedValue = format(newValue);
+            this.setState({
+              value: formattedValue,
+            });
+          }}
+          onChangeComplete={(newValue) => {
+            const formattedValue = format(newValue);
+            input.onBlur(formattedValue);
+            onChangeValue(formattedValue);
+          }}
+        />
+      </FormField>
+    );
+  }
+}
 
 RangeField.propTypes = {
   /**

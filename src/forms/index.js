@@ -1,7 +1,8 @@
 export CheckboxField from './CheckboxField';
 export {
   KeyValueFieldArray,
-  VerticalFieldArray,
+  SectionFieldArray,
+  SortableSectionFieldArray,
 } from './FieldArray';
 export FieldError from './FieldError';
 export InputField from './InputField';
@@ -14,4 +15,5 @@ export TextAreaField from './TextAreaField';
 export TextField from './TextField';
 export FormField from './FormField';
 export MonthPickerField from './MonthPickerField';
+export DateRangePickerField from './DateRangePickerField';
 export * as Validators from './validators';

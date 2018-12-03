@@ -43,7 +43,7 @@ Select.propTypes = {
   /**
    * Currently selected value
    */
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
   /**
    * Key used to extract the value from the options object. Defaults to `value`
    */
@@ -59,7 +59,7 @@ Select.propTypes = {
   /**
    * Callback used to load options asynchronously. It can also be a Promise
    */
-  loadOptions: PropTypes.func,
+  loadOptions: PropTypes.oneOfType([PropTypes.func, PropTypes.instanceOf(Promise)]),
   /**
    * Should the value from the select's input field be created when it's missing in the options
    */

@@ -1,7 +1,9 @@
 import KeyValueFieldArray from './KeyValueFieldArray';
-import VerticalFieldArray from './VerticalFieldArray';
+import SectionFieldArray from './SectionFieldArray';
+import SortableSectionFieldArray from './SortableSectionFieldArray';
 
 export {
   KeyValueFieldArray,
-  VerticalFieldArray,
+  SectionFieldArray,
+  SortableSectionFieldArray,
 };

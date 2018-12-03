@@ -60,7 +60,7 @@ DropdownButton.propTypes = {
   /**
    * The title that will be displayed when using the dropdown button
    */
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Callback function that returns the selected menu value, when dropdown mode is available
    */
