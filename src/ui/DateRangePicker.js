@@ -60,30 +60,28 @@ class DateRangePicker extends Component {
 
   setDates(startDate, endDate) {
     const {
-      dateFormat,
       onChange,
     } = this.props;
 
     if (onChange) {
       onChange({
         window: null,
-        start: startDate.format(dateFormat),
-        end: endDate.format(dateFormat),
+        start: startDate,
+        end: endDate,
       });
     }
   }
 
   setWindow(window, startDate, endDate) {
     const {
-      dateFormat,
       onChange,
     } = this.props;
 
     if (onChange) {
       onChange({
         window,
-        start: startDate.format(dateFormat),
-        end: endDate.format(dateFormat),
+        start: startDate,
+        end: endDate,
       });
     }
   }
