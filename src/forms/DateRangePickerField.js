@@ -42,11 +42,11 @@ DateRangePickerField.propTypes = {
   /**
    * A minimum date.
    */
-  minDate: PropTypes.string,
+  minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**
    * A maximum date.
    */
-  maxDate: PropTypes.string,
+  maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**
    * A date format as a string.
    */
