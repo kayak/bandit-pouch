@@ -101,13 +101,19 @@ class DateRangePicker extends Component {
       return [startDate, endDate, window];
     }
 
-    if (_.isUndefined(start) && _.isUndefined(end)) {
-      const [startDate, endDate] = ranges[dateFormat];
-      return [startDate, endDate, dateFormat];
-    }
+    let startDate = null;
+    let endDate = null;
 
-    const startDate = moment.utc(start);
-    const endDate = moment.utc(end);
+    if (
+      (_.isUndefined(start) && _.isUndefined(end))
+      || (!moment.utc(start).isValid() || !moment.utc(end).isValid())
+    ) {
+      startDate = moment.utc().startOf('day');
+      endDate = moment.utc();
+    } else {
+      startDate = moment.utc(start);
+      endDate = moment.utc(end);
+    }
 
     const inputValue = `${startDate.format(dateFormat)} - ${endDate.format(dateFormat)}`;
     return [startDate, endDate, inputValue];
