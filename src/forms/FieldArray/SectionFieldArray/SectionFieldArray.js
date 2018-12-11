@@ -61,6 +61,10 @@ class SectionFieldArray extends Component {
      */
     minimizable: PropTypes.bool,
     /**
+     * If a minimizable component should be initially minimized or not
+     */
+    initiallyMinimized: PropTypes.bool,
+    /**
      * If elements are able to be duplicated or not
      */
     duplicable: PropTypes.bool,
@@ -94,6 +98,7 @@ class SectionFieldArray extends Component {
     labelDefault: 'New',
     addTooltip: 'Click to add',
     minimizable: true,
+    initiallyMinimized: true,
     duplicable: false,
     initialFieldValue: {},
     onAdd: null,
@@ -119,6 +124,7 @@ class SectionFieldArray extends Component {
         renderLabel = (value, idx) => `${labelDefault} ${idx + 1}`,
         bsStyle,
         minimizable,
+        initiallyMinimized,
         duplicable,
         onDuplicate,
         onRemove,
@@ -145,7 +151,7 @@ class SectionFieldArray extends Component {
         key={key}
         label={label}
         bsStyle={bsStyle}
-        initiallyMinimized={minimizable && firstRender}
+        initiallyMinimized={initiallyMinimized && firstRender}
         minimizable={minimizable}
         duplicable={duplicable}
         onRemove={() => {

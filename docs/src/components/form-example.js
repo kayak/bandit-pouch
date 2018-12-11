@@ -174,6 +174,7 @@ const FormFields = () => (
             <Field
               component={TextField}
               name={`${field}.description`}
+              label="Description"
               placeholder="Description..."
               validate={[Validators.required()]}
             />
@@ -197,6 +198,7 @@ const FormFields = () => (
             <Field
               component={TextField}
               name={`${field}.description`}
+              label="Description"
               placeholder="Description..."
               validate={[Validators.required()]}
             />
