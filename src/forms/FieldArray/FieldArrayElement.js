@@ -8,10 +8,10 @@ import FontAwesome from 'react-fontawesome';
 import { Utils } from '../..';
 
 class FieldArrayElement extends Component {
-  constructor({ initiallyMinimized }) {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      minimized: initiallyMinimized,
+      minimized: props.minimizable && props.initiallyMinimized,
     };
 
     this.switchMinimizationState = this.switchMinimizationState.bind(this);
@@ -56,6 +56,15 @@ class FieldArrayElement extends Component {
       style.overflow = 'hidden';
     }
 
+    const headerLabel = (
+      <h4
+        style={{ display: 'inline' }}
+        className={bsStyle ? `text-${bsStyle}` : undefined}
+      >
+        {minimizable ? (label || <i>Unnamed</i>) : label}
+      </h4>
+    );
+
     return (
       <Panel bsStyle={bsStyle}>
         <Panel.Body>
@@ -71,20 +80,17 @@ class FieldArrayElement extends Component {
               />
             )}
 
-            <button
-              type="button"
-              style={{
-                border: 0, padding: 0, cursor: 'pointer', backgroundColor: 'inherit',
-              }}
-              onClick={this.switchMinimizationState}
-            >
-              <h4
-                style={{ display: 'inline' }}
-                className={bsStyle ? `text-${bsStyle}` : undefined}
+            {minimizable ? (
+              <button
+                type="button"
+                style={{
+                  border: 0, padding: 0, cursor: 'pointer', backgroundColor: 'inherit',
+                }}
+                onClick={this.switchMinimizationState}
               >
-                {label || <i>Unnamed</i>}
-              </h4>
-            </button>
+                {headerLabel}
+              </button>
+            ) : headerLabel}
 
             {onRemove && (
               <OverlayTrigger
