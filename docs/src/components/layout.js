@@ -11,7 +11,8 @@ import 'react-select/dist/react-select.css';
 import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/github.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-daterangepicker/daterangepicker.css';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import '../../../dist/bandit-pouch.css';
 import './layout.css';
 

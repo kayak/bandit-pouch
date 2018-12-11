@@ -118,6 +118,7 @@ const FormFields = () => (
           component={DateRangePickerField}
           name="daterangepicker"
           label="Date range picker"
+          placement="left"
           help="Select the date range of your journey"
         />
       </Col>

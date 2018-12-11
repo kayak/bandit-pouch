@@ -5,7 +5,6 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "bootstrap": "3.3.7",
-    "bootstrap-daterangepicker": "3.0.3",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
     "gatsby": "^2.0.19",
@@ -22,7 +21,7 @@
     "react": "^16.5.1",
     "react-beautiful-dnd": "9.0.2",
     "react-bootstrap": "^0.32.4",
-    "react-bootstrap-daterangepicker": "4.1.0",
+    "react-date-range": "1.0.0-beta",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",

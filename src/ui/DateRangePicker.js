@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FormControl } from 'react-bootstrap';
-import BootstrapDateRangePicker from 'react-bootstrap-daterangepicker';
-import moment from 'moment';
 import _ from 'lodash';
+import { FormControl, Overlay } from 'react-bootstrap';
+import { DateRangePicker as ReactDateRangePicker } from 'react-date-range';
+import moment from 'moment';
 
 const TODAY = 'Today';
 const YESTERDAY = 'Yesterday';
 const PREVIOUS_WEEK = 'Previous Week';
+const PREVIOUS_MONTH = 'Previous Month';
 const LAST_7_DAYS = 'Last 7 Days';
 
-export const CUSTOM_RANGE = 'Custom Range';
+/* Only display these options in the UI. The others are included for legacy support (bookmarked URLs) */
+export const VISIBLE_RANGES = [
+  TODAY,
+  YESTERDAY,
+  'Two days ago',
+  LAST_7_DAYS,
+  'Current Week',
+  PREVIOUS_WEEK,
+  'Current Month',
+  'Year to Date',
+];
 export const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
 
 export function getDatePickerRanges(date = moment()) {
@@ -31,7 +42,7 @@ export function getDatePickerRanges(date = moment()) {
     'Current Week': [moment(today).startOf('w'), today],
     [PREVIOUS_WEEK]: [moment(lastWeekEnd).startOf('w'), lastWeekEnd],
     'Current Month': [moment(today).startOf('M'), today],
-    'Previous Month': [moment(lastMonthEnd).startOf('M'), lastMonthEnd],
+    [PREVIOUS_MONTH]: [moment(lastMonthEnd).startOf('M'), lastMonthEnd],
     'Previous 3 Months': [moment(lastMonthEnd).startOf('M').subtract(2, 'M'), lastMonthEnd],
     'Previous 6 Months': [moment(lastMonthEnd).startOf('M').subtract(5, 'M'), lastMonthEnd],
     [LAST_7_DAYS]: [moment(yesterdayEnd).startOf('day').subtract(6, 'd'), yesterdayEnd],
@@ -42,20 +53,118 @@ export function getDatePickerRanges(date = moment()) {
   };
 }
 
+export function getDatePickerInputRanges(date = moment()) {
+  const ranges = getDatePickerRanges(date);
+  const yesterdayEnd = ranges[YESTERDAY][1];
+  const previousMonthEnd = ranges[PREVIOUS_MONTH][1];
+
+  return {
+    'days up to today': { interval: 'day', endDate: yesterdayEnd },
+    'months up to this month': { interval: 'month', endDate: previousMonthEnd },
+  };
+}
+
+// eslint-disable-next-line react/prop-types
+function CustomPopover({ children }) {
+  return (
+    <div
+      style={{
+        zIndex: 10000,
+        position: 'absolute',
+        backgroundColor: 'white',
+        boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
+        border: '1px solid #CCC',
+        borderRadius: 3,
+        marginLeft: -5,
+        marginTop: 5,
+        padding: 10,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function getStaticRanges(ranges) {
+  return _.keys(ranges).map(label => ({
+    label,
+    range: () => ({
+      window: label,
+      startDate: ranges[label][0],
+      endDate: ranges[label][1],
+    }),
+    isSelected() {
+      const definedRange = this.range();
+      return this.label === definedRange.window;
+    },
+  }));
+}
+
+function getInputRanges(inputRanges) {
+  return _.keys(inputRanges).map(label => ({
+    /*
+     * This is a modified version of the default. The math has been replaced with moment and
+     * the calculation of the range has been changed to exclude "today" from it.
+     *
+     * See https://github.com/Adphorus/react-date-range/blob/master/src/defaultRanges.js#L90
+     */
+    label,
+    range: (value) => {
+      const inputRange = inputRanges[label];
+      const input = Math.abs(Number(value));
+      const amount = Math.max(input, 1) - 1;
+      return {
+        startDate: moment(inputRange.endDate).startOf(inputRange.interval).subtract(amount, inputRange.interval),
+        endDate: inputRange.endDate,
+      };
+    },
+    getCurrentValue: ({ startDate, endDate }) => {
+      const inputRange = inputRanges[label];
+      const isSameEndDate = endDate.isSame(inputRange.endDate, 'day');
+      const diff = inputRange.endDate.diff(startDate, inputRange.interval) + 1;
+      if (!isSameEndDate || diff < 1) return '-';
+      if (!startDate) return '∞';
+      return diff;
+    },
+  }));
+}
+
 /**
  * Date Range Picker Component that shows a dropdown where you can select a date range.
  */
 class DateRangePicker extends Component {
+  state = {
+    show: false,
+  };
+
   constructor(props) {
     super(props);
-    this.onApply = this.onApply.bind(this);
     this.setDates = this.setDates.bind(this);
     this.setWindow = this.setWindow.bind(this);
+    this.onToggle = this.onToggle.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.initializeFilterValue = this.initializeFilterValue.bind(this);
   }
 
-  onApply(evt, { chosenLabel: window, startDate, endDate }) {
-    return (CUSTOM_RANGE === window ? this.setDates(startDate, endDate) : this.setWindow(window, startDate, endDate));
+  shouldComponentUpdate(nextProps, nextState) {
+    const prevProps = this.props;
+    const prevState = this.state;
+
+    return (
+      !_.isEqual(_.get(prevProps, 'value'), _.get(nextProps, 'value'))
+      || _.get(prevProps, 'dateFormat') !== _.get(nextProps, 'dateFormat')
+      || _.get(prevState, 'show') !== _.get(nextState, 'show')
+    );
+  }
+
+  onToggle() {
+    const { show } = this.state;
+    this.setState({ show: !show });
+  }
+
+  onChange(value) {
+    const { selection: { window, startDate, endDate } } = value;
+    return (_.isNil(window) ? this.setDates(startDate, endDate) : this.setWindow(window, startDate, endDate));
   }
 
   setDates(startDate, endDate) {
@@ -66,8 +175,8 @@ class DateRangePicker extends Component {
     if (onChange) {
       onChange({
         window: null,
-        start: startDate,
-        end: endDate,
+        start: moment(startDate),
+        end: moment(endDate),
       });
     }
   }
@@ -80,8 +189,8 @@ class DateRangePicker extends Component {
     if (onChange) {
       onChange({
         window,
-        start: startDate,
-        end: endDate,
+        start: moment(startDate),
+        end: moment(endDate),
       });
     }
   }
@@ -106,13 +215,13 @@ class DateRangePicker extends Component {
 
     if (
       (_.isUndefined(start) && _.isUndefined(end))
-      || (!moment.utc(start).isValid() || !moment.utc(end).isValid())
+      || (!moment(start).isValid() || !moment(end).isValid())
     ) {
-      startDate = moment.utc().startOf('day');
-      endDate = moment.utc();
+      startDate = moment().startOf('day');
+      endDate = moment();
     } else {
-      startDate = moment.utc(start);
-      endDate = moment.utc(end);
+      startDate = moment(start);
+      endDate = moment(end);
     }
 
     const inputValue = `${startDate.format(dateFormat)} - ${endDate.format(dateFormat)}`;
@@ -121,34 +230,58 @@ class DateRangePicker extends Component {
 
   render() {
     const {
-      minDate, maxDate, dateFormat, ranges,
+      minDate, maxDate, dateFormat, ranges, inputRanges, placement, numCalendarMonths, calendarDirection,
+      disabledDates,
     } = this.props;
+    const { show } = this.state;
     const [startDate, endDate, inputValue] = this.initializeFilterValue(ranges);
 
-    return (
-      <BootstrapDateRangePicker
-        style={{ width: '100%' }}
-        opens="right"
-        locale={{ format: dateFormat }}
-        ranges={ranges}
+    const DateRangePopOver = (
+      <CustomPopover>
+        <ReactDateRangePicker
+          showSelectionPreview
 
-        minDate={minDate}
-        maxDate={maxDate}
+          months={numCalendarMonths}
+          direction={calendarDirection}
+          dateDisplayFormat={dateFormat}
+          scroll={{ enabled: true }}
 
-        startDate={startDate}
-        endDate={endDate}
+          minDate={minDate || undefined}
+          maxDate={maxDate || undefined}
+          disabledDates={disabledDates}
 
-        onApply={this.onApply}
-        showDropdowns
-        alwaysShowCalendars
-        autoUpdateInput={false}
-      >
-        <FormControl
-          className="date-picker"
-          value={inputValue}
-          onChange={_.identity}
+          ranges={[{ key: 'selection', startDate, endDate }]}
+          staticRanges={!_.isNil(ranges) ? getStaticRanges(ranges) : undefined}
+          inputRanges={!_.isNil(inputRanges) ? getInputRanges(inputRanges) : undefined}
+
+          onChange={this.onChange}
         />
-      </BootstrapDateRangePicker>
+      </CustomPopover>
+    );
+
+    return (
+      <span>
+        <FormControl
+          value={inputValue}
+          onClick={this.onToggle}
+          onChange={_.identity}
+          ref={(input) => {
+            this.target = input;
+          }}
+        />
+        <Overlay
+          container={this}
+          show={show}
+          rootClose
+          onHide={this.onToggle}
+          trigger="click"
+          placement={placement}
+          // eslint-disable-next-line react/no-find-dom-node
+          target={() => this.target}
+        >
+          {DateRangePopOver}
+        </Overlay>
+      </span>
     );
   }
 }
@@ -163,22 +296,46 @@ DateRangePicker.propTypes = {
     window: PropTypes.string,
   }),
   /**
-   * A minimum date.
+   * A minimum date. Anything prior to it will be disabled.
    */
   minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**
-   * A maximum date.
+   * A maximum date. Anything after it will be disabled.
    */
   maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**
-   * A date format as a string.
+   * A date format as a string. Check out date-fns's format option for syntax.
    */
   dateFormat: PropTypes.string,
   /**
    * An object with labels as keys and tuples shaped as [startDate, endDate] as values. Those will be used as
    * the window ranges that will be available for selection. See getDatePickerRanges function for more info.
+   * For disabling ranges, set this to empty list.
    */
   ranges: PropTypes.objectOf(PropTypes.array),
+  /**
+   * An object with labels as keys and an object shaped as {interval, endDate} as values. Those will be used as
+   * the input ranges that will be available for selection. See getDatePickerInputRanges function for more info.
+   * For disabling input ranges, set this to empty list.
+   */
+  inputRanges: PropTypes.objectOf(PropTypes.object),
+  /**
+   * Sets the direction of the calendar overlay.
+   */
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  /**
+   * The amount of calendar months that will be rendered.
+   */
+  numCalendarMonths: PropTypes.number,
+  /**
+   * The direction of calendar months. This is only relevant when you have more than one as numCalendarMonths.
+   */
+  calendarDirection: PropTypes.oneOf(['vertical', 'horizontal']),
+  /**
+   * A list of dates that will be disabled for selection. For the purpose of specifying a valid selection interval,
+   * use minDate and maxDate props instead.
+   */
+  disabledDates: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.string])),
   /**
    * Callback invoked when the date range changes. This function is invoked with an object that can contain either
    * a window or start/end dates.
@@ -195,7 +352,12 @@ DateRangePicker.defaultProps = {
   minDate: null,
   maxDate: null,
   dateFormat: DEFAULT_DATE_FORMAT,
-  ranges: getDatePickerRanges(),
+  ranges: _.pickBy(getDatePickerRanges(), (value, key) => VISIBLE_RANGES.includes(key)),
+  inputRanges: getDatePickerInputRanges(),
+  placement: 'bottom',
+  numCalendarMonths: 1,
+  calendarDirection: 'vertical',
+  disabledDates: [],
   onChange: _.noop,
 };
 
