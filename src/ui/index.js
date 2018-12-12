@@ -1,6 +1,5 @@
 export Select from './Select';
 export ErrorPage from './ErrorPage';
-export Abbreviation from './Abbreviation';
 export DropdownButton from './DropdownButton';
 export DynamicRow from './DynamicRow';
 export MagicRow from './MagicRow';

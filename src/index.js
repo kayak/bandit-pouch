@@ -14,7 +14,6 @@ export {
   TopPanel,
   ErrorPage,
   PageNotFound,
-  Abbreviation,
   LoadingWrapper,
   CenteredLoader,
   HorizontalSplit,
