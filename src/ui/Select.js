@@ -16,11 +16,6 @@ function resolveSelectComponent(async, creatable) {
  * Please checkout `react-select` documentation for usage.
  */
 const Select = ({
-  value,
-  options,
-  valueKey,
-  labelKey,
-  multi,
   async,
   creatable,
   ...props
@@ -30,46 +25,54 @@ const Select = ({
   return (
     <ResolvedSelectComponent
       {...props}
-      multi={multi}
-      value={value}
-      options={options}
-      valueKey={valueKey}
-      labelKey={labelKey}
     />
   );
 };
 
 Select.propTypes = {
   /**
-   * Currently selected value
+   * Currently selected value. Provide an array of values when multi prop is set.
    */
   value: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
   /**
-   * Key used to extract the value from the options object. Defaults to `value`
+   * Key used to extract the value from the options object.
    */
   valueKey: PropTypes.string,
   /**
-   * Key used to extract the label from the options object. Defaults to `label`
+   * Key used to extract the label from the options object.
    */
   labelKey: PropTypes.string,
   /**
-   * Available select options
+   * An array of option objects available for selection. If the label is not present, then the
+   * value will be displayed. How the value/label will be extracted from the option objects depends on
+   * the valueKey and labelKey props respectively. This prop is required, unless async and loadOptions
+   * props are set.
    */
   options: PropTypes.arrayOf(PropTypes.any),
   /**
-   * Callback used to load options asynchronously. It can also be a Promise
+   * Callback used to load options asynchronously. It can also be a Promise. This must be set when in
+   * async mode.
    */
   loadOptions: PropTypes.oneOfType([PropTypes.func, PropTypes.instanceOf(Promise)]),
   /**
-   * Should the value from the select's input field be created when it's missing in the options
+   * Whether the component should show a loading indicator. This is handled automatically when async prop
+   * is set.
+   */
+  isLoading: PropTypes.bool,
+  /**
+   * Whether a clear button will be displayed, for easily resetting the value prop.
+   */
+  clearable: PropTypes.bool,
+  /**
+   * Whether options can be created by user input when they do not exist already.
    */
   creatable: PropTypes.bool,
   /**
-   * Should this component accept multiple values
+   * Whether multiple values can be selected at once. Otherwise this component will behave as a normal combo box.
    */
   multi: PropTypes.bool,
   /**
-   * Loads the data from a promise or a callback
+   * Whether to load the data from a promise or a callback. Options prop is optional when this is set.
    */
   async: PropTypes.bool,
 };
@@ -80,6 +83,8 @@ Select.defaultProps = {
   labelKey: 'label',
   options: [],
   loadOptions: null,
+  isLoading: false,
+  clearable: false,
   creatable: false,
   async: false,
   multi: false,
