@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
@@ -20,7 +19,6 @@ import {
   TopPanel,
   ErrorPage,
   PageNotFound,
-  Abbreviation,
   CenteredLoader,
   LoadingWrapper,
   HorizontalSplit,
@@ -29,23 +27,6 @@ import {
 
 import Layout from '../components/layout';
 import { Tabs } from '../components/markdown';
-
-const AbbreviationExample = () => {
-  const date = moment().subtract(3, 'm');
-
-  return (
-    <div>
-      <p>
-        This example was shown
-        &nbsp;
-        <Abbreviation
-          label={date.fromNow()}
-          tooltip={date.format('YYYY-MM-DD H:mm:ss')}
-        />
-      </p>
-    </div>
-  );
-};
 
 const LoadersExample = () => (
   <div>
@@ -237,7 +218,6 @@ const LayoutPage = ({ data }) => (
         'ui-pages': [<PagesExample />],
         'ui-layout': [<LayoutExample />],
         'ui-loaders': [<LoadersExample />],
-        'ui-abbreviation': [<AbbreviationExample />],
         'ui-notifications': [<NotificationsExample />],
         'ui-loading-wrapper': [<LoadingWrapperExample />],
       }}

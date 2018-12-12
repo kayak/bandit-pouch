@@ -6,7 +6,7 @@ import Select from '../ui/Select';
 import FormField from './FormField';
 
 /**
- * Component that encapsulates the `react-select` component
+ * Component that encapsulates the `react-select` component.
  */
 const SelectField = ({
   input,
@@ -14,52 +14,40 @@ const SelectField = ({
   defaultValue,
   help,
   meta,
-  options,
   valueKey,
-  isLoading,
-  clearable,
   multi,
-  creatable,
-  async,
   onChangeValue,
   innerRef,
   onChangeWithValue = true,
-  denormalize,
   ...props
-}) => {
-  const denormalized = (denormalize ? denormalize(input.value) : input.value) || defaultValue;
+}) => (
+  <FormField id={input.id} label={label} help={help} meta={meta}>
+    <Select
+      {...props}
+      value={input.value || defaultValue}
+      multi={multi}
+      valueKey={valueKey}
+      onChange={(selection) => {
+        let value = selection;
 
-  return (
-    <FormField id={input.id} label={label} help={help} meta={meta}>
-      <Select
-        value={denormalized}
-        options={options}
-        clearable={clearable}
-        multi={multi}
-        onChange={(selection) => {
-          let value = selection;
+        // Passing the onChangeWithValue prop means the React-Select 'value' key will be used
+        // onChangeValue.  If this is false, the entire option object is stored, meaning additional data
+        // can be stored onChangeValue if needed.
+        if (onChangeWithValue) {
+          value = multi
+            ? selection && _.map(selection, valueKey)
+            : selection && selection[valueKey];
+        }
 
-          // Passing the onChangeWithValue prop means the React-Select 'value' key will be used
-          // onChangeValue.  If this is false, the entire option object is stored, meaning additional data
-          // can be stored onChangeValue if needed.
-          if (onChangeWithValue) {
-            value = multi
-              ? selection && _.map(selection, valueKey)
-              : selection && selection[valueKey];
-          }
-
-          input.onChange(value);
-          onChangeValue(value);
-        }}
-        onBlur={() => input.onBlur()}
-        onFocus={() => input.onFocus()}
-        isLoading={isLoading}
-        ref={innerRef}
-        {...props}
-      />
-    </FormField>
-  );
-};
+        input.onChange(value);
+        if (onChangeValue) onChangeValue(value);
+      }}
+      onBlur={() => input.onBlur()}
+      onFocus={() => input.onFocus()}
+      ref={innerRef}
+    />
+  </FormField>
+);
 
 SelectField.propTypes = {
   /**
@@ -85,39 +73,52 @@ SelectField.propTypes = {
     ]),
   }),
   /**
-   * Key used to extract the value from the options object. Defaults to `value`
+   * Key used to extract the value from the options object.
    */
   valueKey: PropTypes.string,
   /**
-   * Default value for the select field
+   * Key used to extract the label from the options object.
+   */
+  labelKey: PropTypes.string,
+  /**
+   * The default value for the select field.
    */
   defaultValue: PropTypes.string,
   /**
-   * Available select options
+   * An array of option objects available for selection. If the label is not present, then the
+   * value will be displayed. How the value/label will be extracted from the option objects depends on
+   * the valueKey and labelKey props respectively. This prop is required, unless async and loadOptions
+   * props are set.
    */
   options: PropTypes.arrayOf(PropTypes.any),
   /**
-   * Should the component show a loading indicator
+   * Callback used to load options asynchronously. It can also be a Promise. This must be set when in
+   * async mode.
+   */
+  loadOptions: PropTypes.oneOfType([PropTypes.func, PropTypes.instanceOf(Promise)]),
+  /**
+   * Whether the component should show a loading indicator. This is handled automatycally when async prop
+   * is set.
    */
   isLoading: PropTypes.bool,
   /**
-   * Can a value be deselected
+   * Whether a clear button will be displayed, for easily resetting the value prop.
    */
   clearable: PropTypes.bool,
   /**
-   * Could a
+   * Whether options can be created by user input when they do not exist already.
    */
   creatable: PropTypes.bool,
   /**
-   * Is the data loaded asynchronously
+   * Whether multiple values can be selected at once. Otherwise this component will behave as a normal combo box.
+   */
+  multi: PropTypes.bool,
+  /**
+   * Whether to load the data from a promise or a callback. Options prop is optional when this is set.
    */
   async: PropTypes.bool,
   /**
-   * Function that can transform the original input value
-   */
-  denormalize: PropTypes.bool,
-  /**
-   * Callback executed when a value is selected
+   * Callback function that returns the value of the input when it's changed.
    */
   onChangeValue: PropTypes.func,
   /**
@@ -136,13 +137,15 @@ SelectField.defaultProps = {
   meta: { touched: false, error: [] },
   defaultValue: null,
   valueKey: 'value',
+  labelKey: 'label',
   options: [],
+  loadOptions: null,
   isLoading: false,
   clearable: false,
   creatable: false,
   async: false,
-  denormalize: false,
-  onChangeValue: () => {},
+  multi: false,
+  onChangeValue: null,
   onChangeWithValue: true,
 };
 
