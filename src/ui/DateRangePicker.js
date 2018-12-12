@@ -129,6 +129,11 @@ function getInputRanges(inputRanges) {
   }));
 }
 
+function parseDate(date) {
+  const transformedDate = moment(date);
+  return (_.isNil(date) || !transformedDate.isValid()) ? undefined : transformedDate.toDate();
+}
+
 /**
  * Date Range Picker Component that shows a dropdown where you can select a date range.
  */
@@ -139,8 +144,6 @@ class DateRangePicker extends Component {
 
   constructor(props) {
     super(props);
-    this.setDates = this.setDates.bind(this);
-    this.setWindow = this.setWindow.bind(this);
     this.onToggle = this.onToggle.bind(this);
     this.onChange = this.onChange.bind(this);
     this.initializeFilterValue = this.initializeFilterValue.bind(this);
@@ -163,34 +166,17 @@ class DateRangePicker extends Component {
   }
 
   onChange(value) {
+    const { onChange } = this.props;
     const { selection: { window, startDate, endDate } } = value;
-    return (_.isNil(window) ? this.setDates(startDate, endDate) : this.setWindow(window, startDate, endDate));
-  }
 
-  setDates(startDate, endDate) {
-    const {
-      onChange,
-    } = this.props;
+    const newStartDate = moment(startDate).startOf('day');
+    const newEndDate = moment(endDate).endOf('day');
 
     if (onChange) {
       onChange({
-        window: null,
-        start: moment(startDate),
-        end: moment(endDate),
-      });
-    }
-  }
-
-  setWindow(window, startDate, endDate) {
-    const {
-      onChange,
-    } = this.props;
-
-    if (onChange) {
-      onChange({
-        window,
-        start: moment(startDate),
-        end: moment(endDate),
+        window: _.isNil(window) ? null : window,
+        start: newStartDate,
+        end: newEndDate,
       });
     }
   }
@@ -218,13 +204,16 @@ class DateRangePicker extends Component {
       || (!moment(start).isValid() || !moment(end).isValid())
     ) {
       startDate = moment().startOf('day');
-      endDate = moment();
+      endDate = moment().endOf('day');
     } else {
       startDate = moment(start);
       endDate = moment(end);
     }
 
     const inputValue = `${startDate.format(dateFormat)} - ${endDate.format(dateFormat)}`;
+
+    // For most of ReactDateRangePicker internals, using moment dates are not supported. For the range
+    // prop that's ok though.
     return [startDate, endDate, inputValue];
   }
 
@@ -246,9 +235,9 @@ class DateRangePicker extends Component {
           dateDisplayFormat={dateFormat}
           scroll={{ enabled: true }}
 
-          minDate={minDate || undefined}
-          maxDate={maxDate || undefined}
-          disabledDates={disabledDates}
+          minDate={parseDate(minDate)}
+          maxDate={parseDate(maxDate)}
+          disabledDates={disabledDates.map(parseDate).filter(date => date !== undefined)}
 
           ranges={[{ key: 'selection', startDate, endDate }]}
           staticRanges={!_.isNil(ranges) ? getStaticRanges(ranges) : undefined}
