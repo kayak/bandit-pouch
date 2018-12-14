@@ -42,7 +42,7 @@ TextAreaField.propTypes = {
    */
   onChangeValue: PropTypes.func,
   /**
-   * Is this field disabled
+   * Whether the field is disabled or not.
    */
   disabled: PropTypes.bool,
   /**

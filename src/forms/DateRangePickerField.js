@@ -42,6 +42,10 @@ DateRangePickerField.propTypes = {
    */
   help: PropTypes.string,
   /**
+   * Whether the field is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * A minimum date. Anything prior to it will be disabled.
    */
   minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -101,6 +105,7 @@ DateRangePickerField.propTypes = {
 DateRangePickerField.defaultProps = {
   help: null,
   label: null,
+  disabled: false,
   minDate: null,
   maxDate: null,
   dateFormat: DEFAULT_DATE_FORMAT,

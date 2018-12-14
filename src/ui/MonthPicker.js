@@ -120,22 +120,26 @@ class MonthPicker extends Component {
 
   render() {
     const {
+      disabled,
+    } = this.props;
+    const {
       opened, year, month, months, display,
     } = this.state;
 
     return (
       <Dropdown
-        readOnly
-        open={opened}
         id="month-dropdown"
         className="month-picker"
+        open={opened}
+        disabled={disabled}
         onToggle={this.onToggle}
       >
-        <Dropdown.Toggle useAnchor noCaret>
+        <Dropdown.Toggle useAnchor noCaret disabled={disabled}>
           <FormControl
-            readOnly
-            value={display}
             componentClass="input"
+            value={display}
+            disabled={disabled}
+            onChange={_.identity}
           />
         </Dropdown.Toggle>
 
@@ -173,6 +177,10 @@ MonthPicker.propTypes = {
    */
   value: PropTypes.string,
   /**
+   * Whether the component is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Callback invoked when the dropdown menu closes. This function is invoked with
    * formatted string value, year and month arguments.
    */
@@ -186,6 +194,7 @@ MonthPicker.propTypes = {
 
 MonthPicker.defaultProps = {
   value: null,
+  disabled: false,
   onClose: _.noop,
   onChange: _.noop,
 };

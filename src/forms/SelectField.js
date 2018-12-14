@@ -63,6 +63,10 @@ SelectField.propTypes = {
    */
   help: PropTypes.string,
   /**
+   * Whether the field is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Metadata object that is passed by the React Form
    */
   meta: PropTypes.shape({
@@ -134,6 +138,7 @@ SelectField.propTypes = {
 SelectField.defaultProps = {
   help: null,
   label: null,
+  disabled: false,
   meta: { touched: false, error: [] },
   defaultValue: null,
   valueKey: 'value',

@@ -34,6 +34,10 @@ class VerticalFieldArray extends Component {
      */
     help: PropTypes.string,
     /**
+     * Whether the field is disabled or not.
+     */
+    disabled: PropTypes.bool,
+    /**
      * Metadata object that is passed by the React Form
      */
     meta: PropTypes.shape({
@@ -102,6 +106,7 @@ class VerticalFieldArray extends Component {
   static defaultProps = {
     help: null,
     label: null,
+    disabled: false,
     emptyMessage: null,
     meta: { touched: false, error: [] },
     labelDefault: 'New',
@@ -199,6 +204,7 @@ class VerticalFieldArray extends Component {
         fields,
         meta,
         help,
+        disabled,
         initialFieldValue,
         addTooltip,
         addChoices,
@@ -248,7 +254,7 @@ class VerticalFieldArray extends Component {
             title={<Glyphicon glyph="plus" />}
             style={{ display: 'block' }}
             bsStyle="primary"
-            disabled={addChoices && addChoices.length === 0}
+            disabled={disabled || (addChoices && addChoices.length === 0)}
             onSelect={pushItem}
           >
             {addChoices}

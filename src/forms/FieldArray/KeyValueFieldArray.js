@@ -20,7 +20,7 @@ import FormField from '../FormField';
  * Component that renders a key-value field array.
  */
 const KeyValueFieldArray = ({
-  fields, meta, label, help, keyField, valueField, emptyMessage,
+  fields, meta, label, help, disabled, keyField, valueField, emptyMessage,
 }) => (
   <FormField
     label={(
@@ -28,9 +28,10 @@ const KeyValueFieldArray = ({
         {label}
 
         <Button
-          onClick={() => fields.push({})}
           bsSize="xs"
           style={{ marginLeft: 6 }}
+          disabled={disabled}
+          onClick={() => fields.push({})}
         >
           <Glyphicon glyph="plus" />
         </Button>
@@ -66,7 +67,10 @@ const KeyValueFieldArray = ({
                   placement="top"
                   overlay={Utils.tooltip('Remove')}
                 >
-                  <Button onClick={() => fields.remove(idx)}>
+                  <Button
+                    disabled={disabled}
+                    onClick={() => fields.remove(idx)}
+                  >
                     <Glyphicon glyph="remove" />
                   </Button>
                 </OverlayTrigger>
@@ -99,6 +103,10 @@ KeyValueFieldArray.propTypes = {
    */
   help: PropTypes.string,
   /**
+   * Whether the field is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Metadata object that is passed by the React Form
    */
   meta: PropTypes.shape({
@@ -125,6 +133,7 @@ KeyValueFieldArray.propTypes = {
 KeyValueFieldArray.defaultProps = {
   help: null,
   label: null,
+  disabled: false,
   emptyMessage: null,
   meta: { touched: false, error: [] },
 };

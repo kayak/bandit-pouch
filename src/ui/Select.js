@@ -35,6 +35,10 @@ Select.propTypes = {
    */
   value: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
   /**
+   * Whether the component is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Key used to extract the value from the options object.
    */
   valueKey: PropTypes.string,
@@ -79,6 +83,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
   value: null,
+  disabled: false,
   valueKey: 'value',
   labelKey: 'label',
   options: [],

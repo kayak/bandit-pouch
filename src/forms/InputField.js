@@ -40,6 +40,7 @@ class InputField extends Component {
     return (
       _.get(prevProps, 'label') !== _.get(nextProps, 'label')
       || _.get(prevProps, 'help') !== _.get(nextProps, 'help')
+      || _.get(prevProps, 'disabled') !== _.get(nextProps, 'disabled')
       || _.get(prevProps, 'meta.touched') !== _.get(nextProps, 'meta.touched')
       || _.get(prevProps, 'meta.error') !== _.get(nextProps, 'meta.error')
       || !_.isEqual(prevState, nextState)
@@ -95,6 +96,10 @@ InputField.propTypes = {
    */
   help: PropTypes.string,
   /**
+   * Whether the field is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Metadata object that is passed by the React Form
    */
   meta: PropTypes.shape({
@@ -117,6 +122,7 @@ InputField.propTypes = {
 InputField.defaultProps = {
   help: null,
   label: null,
+  disabled: false,
   meta: { touched: false, error: [] },
   onChangeValue: _.noop,
   componentClass: 'input',
