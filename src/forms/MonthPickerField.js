@@ -14,9 +14,9 @@ const MonthPickerField = ({
 }) => (
   <FormField id={input.id} label={label} help={help} meta={meta}>
     <MonthPicker
+      {...props}
       name={input.name}
       value={input.value}
-      {...props}
       onClose={input.onBlur}
       onChange={(selected) => {
         input.onChange(selected);
@@ -41,6 +41,10 @@ MonthPickerField.propTypes = {
    */
   help: PropTypes.string,
   /**
+   * Whether the field is disabled or not.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Metadata object that is passed by the React Form
    */
   meta: PropTypes.shape({
@@ -59,6 +63,7 @@ MonthPickerField.propTypes = {
 MonthPickerField.defaultProps = {
   help: null,
   label: null,
+  disabled: false,
   meta: { touched: false, error: [] },
   onChangeValue: _.noop,
 };

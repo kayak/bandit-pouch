@@ -35,7 +35,7 @@ CheckboxField.propTypes = {
    */
   help: PropTypes.string,
   /**
-   * Is this field disabled
+   * Whether the field is disabled or not.
    */
   disabled: PropTypes.bool,
   /**

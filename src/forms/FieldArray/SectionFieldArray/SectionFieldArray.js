@@ -31,6 +31,10 @@ class SectionFieldArray extends Component {
      */
     help: PropTypes.string,
     /**
+     * Whether the field is disabled or not.
+     */
+    disabled: PropTypes.bool,
+    /**
      * Metadata object that is passed by the React Form
      */
     meta: PropTypes.shape({
@@ -93,6 +97,7 @@ class SectionFieldArray extends Component {
   static defaultProps = {
     help: null,
     label: null,
+    disabled: false,
     emptyMessage: null,
     meta: { touched: false, error: [] },
     labelDefault: 'New',
@@ -176,6 +181,7 @@ class SectionFieldArray extends Component {
         fields,
         meta,
         help,
+        disabled,
         initialFieldValue,
         addTooltip,
         addChoices,
@@ -214,7 +220,7 @@ class SectionFieldArray extends Component {
             title={<Glyphicon glyph="plus" />}
             style={{ display: 'block' }}
             bsStyle="primary"
-            disabled={addChoices && addChoices.length === 0}
+            disabled={disabled || (addChoices && addChoices.length === 0)}
             onSelect={pushItem}
           >
             {addChoices}

@@ -156,6 +156,7 @@ class DateRangePicker extends Component {
     return (
       !_.isEqual(_.get(prevProps, 'value'), _.get(nextProps, 'value'))
       || _.get(prevProps, 'dateFormat') !== _.get(nextProps, 'dateFormat')
+      || _.get(prevProps, 'disabled') !== _.get(nextProps, 'disabled')
       || _.get(prevState, 'show') !== _.get(nextState, 'show')
     );
   }
@@ -220,7 +221,7 @@ class DateRangePicker extends Component {
   render() {
     const {
       minDate, maxDate, dateFormat, ranges, inputRanges, placement, numCalendarMonths, calendarDirection,
-      disabledDates,
+      disabledDates, disabled,
     } = this.props;
     const { show } = this.state;
     const [startDate, endDate, inputValue] = this.initializeFilterValue(ranges);
@@ -252,6 +253,7 @@ class DateRangePicker extends Component {
       <span>
         <FormControl
           value={inputValue}
+          disabled={disabled}
           onClick={this.onToggle}
           onChange={_.identity}
           ref={(input) => {
@@ -260,7 +262,7 @@ class DateRangePicker extends Component {
         />
         <Overlay
           container={this}
-          show={show}
+          show={show && !disabled}
           rootClose
           onHide={this.onToggle}
           trigger="click"
@@ -292,6 +294,10 @@ DateRangePicker.propTypes = {
    * A maximum date. Anything after it will be disabled.
    */
   maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
+   * Whether the component is disabled or not.
+   */
+  disabled: PropTypes.bool,
   /**
    * A date format as a string. Check out date-fns's format option for syntax.
    */
@@ -340,6 +346,7 @@ DateRangePicker.defaultProps = {
   },
   minDate: null,
   maxDate: null,
+  disabled: false,
   dateFormat: DEFAULT_DATE_FORMAT,
   ranges: _.pickBy(getDatePickerRanges(), (value, key) => VISIBLE_RANGES.includes(key)),
   inputRanges: getDatePickerInputRanges(),
