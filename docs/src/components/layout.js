@@ -38,7 +38,7 @@ const LayoutBody = ({ children, data }) => {
       </Helmet>
       <Header siteTitle={siteMetadata.title} />
 
-      <Grid>
+      <Grid style={{ paddingBottom: '20px' }}>
         <Row>
           <Col xs={12}>
             {children}

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -18,6 +19,8 @@ import {
   Content,
   TopPanel,
   ErrorPage,
+  IconButton,
+  CenteredRow,
   PageNotFound,
   CenteredLoader,
   LoadingWrapper,
@@ -64,6 +67,22 @@ const LayoutExample = () => (
               <Button bsStyle="primary">Learn more</Button>
             </p>
           </Jumbotron>
+
+          <CenteredRow>
+            <h3 style={{ margin: '20px auto' }}>Centered title</h3>
+          </CenteredRow>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Sed risus ultricies tristique nulla aliquet enim. Ante metus dictum at tempor commodo ullamcorper.
+            </p>
+            <p>
+              Faucibus nisl tincidunt eget nullam non nisi est sit amet. At augue eget arcu dictum varius duis.
+              Cursus sit amet dictum sit amet justo donec enim. Vestibulum morbi blandit cursus risus at ultrices mi tempus.
+              Curabitur gravida arcu ac tortor dignissim. Eget nulla facilisi etiam dignissim diam quis enim.
+            </p>
+            <p>A arcu cursus vitae congue mauris rhoncus aenean.</p>
+          </div>
         </Content>
       </Right>
     </HorizontalSplit>
@@ -122,7 +141,9 @@ class LoadingWrapperExample extends React.Component {
           <Button onClick={() => this.fetch({ model: [...LoadedPage.mocks] })}>
             Fetch data
           </Button>
-          <Button onClick={() => this.fetch({ error: { message: 'Remote server error', status: 500, icon: 'warning' } })}>
+          <Button
+            onClick={() => this.fetch({ error: { message: 'Remote server error', status: 500, icon: 'warning' } })}
+          >
             Fetch data with an error
           </Button>
           <Button onClick={() => this.fetch({ found: false })}>
@@ -209,6 +230,16 @@ class NotificationsExample extends React.Component {
   }
 }
 
+const ButtonsExample = () => (
+  <div>
+    <IconButton icon="play" bsStyle="primary" />
+    &nbsp;
+    <IconButton icon="stop" label="Stahp!" bsStyle="danger" />
+    &nbsp;
+    <IconButton icon="pause" tooltip="Pause the player" />
+  </div>
+);
+
 const LayoutPage = ({ data }) => (
   <Layout>
     <Tabs
@@ -218,6 +249,7 @@ const LayoutPage = ({ data }) => (
         'ui-pages': [<PagesExample />],
         'ui-layout': [<LayoutExample />],
         'ui-loaders': [<LoadersExample />],
+        'ui-buttons': [<ButtonsExample />],
         'ui-notifications': [<NotificationsExample />],
         'ui-loading-wrapper': [<LoadingWrapperExample />],
       }}

@@ -19,8 +19,10 @@ export {
   HorizontalSplit,
   NotificationList,
   NotificationItem,
+  CenteredRow,
   DynamicRow,
   MagicRow,
+  IconButton,
   DropdownButton,
   DateRangePicker,
 } from './ui';
