@@ -17,6 +17,8 @@ import {
   Right,
   Loader,
   Content,
+  Tooltip,
+  Popover,
   TopPanel,
   ErrorPage,
   IconButton,
@@ -231,13 +233,29 @@ class NotificationsExample extends React.Component {
 }
 
 const ButtonsExample = () => (
-  <div>
-    <IconButton icon="play" bsStyle="primary" />
-    &nbsp;
-    <IconButton icon="stop" label="Stahp!" bsStyle="danger" />
-    &nbsp;
-    <IconButton icon="pause" tooltip="Pause the player" />
-  </div>
+  <Row>
+    <Col xs={12}>
+      <p>Basic usage</p>
+      <IconButton icon="play" bsStyle="primary" />
+      &nbsp;
+      <IconButton icon="stop" label="Stahp!" bsStyle="danger" />
+      <hr />
+    </Col>
+    <Col xs={12}>
+      <p>With a Popover overlay</p>
+      <Popover title="Login" text="Enter your credentials">
+        <IconButton icon="user" />
+      </Popover>
+      <hr />
+    </Col>
+    <Col xs={12}>
+      <p>With a Tooltip</p>
+      <Tooltip text="Pause the player">
+        <IconButton icon="pause" />
+      </Tooltip>
+      <hr />
+    </Col>
+  </Row>
 );
 
 const LayoutPage = ({ data }) => (

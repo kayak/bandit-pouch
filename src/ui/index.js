@@ -8,6 +8,8 @@ export LoadingWrapper from './LoadingWrapper';
 export DateRangePicker from './DateRangePicker';
 export CenteredRow from './CenteredRow';
 export IconButton from './IconButton';
+export Popover from './Popover';
+export Tooltip from './Tooltip';
 export {
   Page,
   Left,

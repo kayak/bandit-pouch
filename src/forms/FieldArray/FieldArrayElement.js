@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-  Glyphicon,
-  OverlayTrigger,
   Panel,
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import { Utils } from '../..';
+import { IconButton, Tooltip } from '../..';
+
+const TOOLBAR_BUTTON_STYLE = { marginRight: 10, fontSize: 15 };
 
 class FieldArrayElement extends Component {
   constructor(props) {
@@ -73,7 +73,7 @@ class FieldArrayElement extends Component {
               <FontAwesome
                 name="arrows"
                 style={{
-                  fontSize: '150%',
+                  fontSize: 16,
                   marginRight: 6,
                 }}
                 {...dragHandleProps}
@@ -93,56 +93,42 @@ class FieldArrayElement extends Component {
             ) : headerLabel}
 
             {onRemove && (
-              <OverlayTrigger
-                placement="top"
-                overlay={Utils.tooltip('Remove')}
-              >
-                <button
-                  type="button"
-                  className="pull-right close"
-                  aria-label="Remove"
-                  style={{ marginRight: 10, fontSize: 15 }}
+              <Tooltip text="Remove" placement="top">
+                <IconButton
+                  icon="times"
+                  bsSize="xs"
+                  bsStyle="link"
                   onClick={onRemove}
-                >
-                  <Glyphicon glyph="remove" />
-                </button>
-              </OverlayTrigger>
+                  className="pull-right close"
+                  style={TOOLBAR_BUTTON_STYLE}
+                />
+              </Tooltip>
             )}
 
             {minimizable && (
-              <OverlayTrigger
-                placement="top"
-                overlay={Utils.tooltip(minimized ? 'Maximize' : 'Minimize')}
-              >
-                <button
-                  type="button"
+              <Tooltip text={minimized ? 'Maximize' : 'Minimize'} placement="top">
+                <IconButton
+                  bsSize="xs"
+                  bsStyle="link"
+                  style={TOOLBAR_BUTTON_STYLE}
                   className="pull-right close"
-                  aria-label="Minimize"
-                  style={{ marginRight: 10, fontSize: 15 }}
+                  icon={minimized ? 'plus' : 'minus'}
                   onClick={this.switchMinimizationState}
-                >
-                  <span aria-hidden={minimized}>
-                    <Glyphicon glyph={minimized ? 'plus' : 'minus'} />
-                  </span>
-                </button>
-              </OverlayTrigger>
+                />
+              </Tooltip>
             )}
 
             {duplicable && (
-              <OverlayTrigger
-                placement="top"
-                overlay={Utils.tooltip('Duplicate')}
-              >
-                <button
-                  type="button"
-                  className="pull-right close"
-                  aria-label="Duplicate"
-                  style={{ marginRight: 10, fontSize: 15 }}
+              <Tooltip text="Duplicate" placement="top">
+                <IconButton
+                  icon="copy"
+                  bsSize="xs"
+                  bsStyle="link"
                   onClick={onDuplicate}
-                >
-                  <Glyphicon glyph="duplicate" />
-                </button>
-              </OverlayTrigger>
+                  className="pull-right close"
+                  style={TOOLBAR_BUTTON_STYLE}
+                />
+              </Tooltip>
             )}
           </div>
 

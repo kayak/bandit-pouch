@@ -11,6 +11,8 @@ export {
   Select,
   Loader,
   Content,
+  Tooltip,
+  Popover,
   TopPanel,
   ErrorPage,
   PageNotFound,
