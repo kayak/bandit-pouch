@@ -17,7 +17,9 @@ const CenteredRow = ({ className, children, ...props }) => (
 
 CenteredRow.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.node, PropTypes.element,
+  ]).isRequired,
 };
 
 CenteredRow.defaultProps = {
