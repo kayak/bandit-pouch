@@ -19,9 +19,12 @@ const Headline = ({
         {title} {subtitle && (<small className="help-text">{subtitle}</small>)}
       </h1>
     </header>
-    <aside className="headline-actions">
-      {children}
-    </aside>
+
+    {children && (
+      <aside className="headline-actions">
+        {children}
+      </aside>
+    )}
   </div>
 );
 
@@ -29,11 +32,15 @@ Headline.propTypes = {
   /**
    * Headline title
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.node, PropTypes.element,
+  ]).isRequired,
   /**
    * Headline subtitle
    */
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.node, PropTypes.element,
+  ]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
   /**
    * Component class name

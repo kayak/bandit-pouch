@@ -23,11 +23,15 @@ Headline.propTypes = {
   /**
    * Headline title
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.node, PropTypes.element,
+  ]).isRequired,
   /**
    * Headline subtitle
    */
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.node, PropTypes.element,
+  ]),
   /**
    * Component class name
    */
