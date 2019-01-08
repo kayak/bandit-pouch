@@ -6,15 +6,13 @@ import {
   FormControl,
   Glyphicon,
   InputGroup,
-  OverlayTrigger,
+  Tooltip,
 } from 'react-bootstrap';
-
 import { FormSection } from 'redux-form';
-
-import { MagicRow } from '../../ui';
-import { Utils } from '../..';
-import FormField from '../FormField';
-
+import {
+  MagicRow,
+  FormField,
+} from '../..';
 
 /**
  * Component that renders a key-value field array.
@@ -63,17 +61,14 @@ const KeyValueFieldArray = ({
               {valueField}
 
               <InputGroup.Button>
-                <OverlayTrigger
-                  placement="top"
-                  overlay={Utils.tooltip('Remove')}
-                >
+                <Tooltip text="Remove" placement="top">
                   <Button
                     disabled={disabled}
                     onClick={() => fields.remove(idx)}
                   >
                     <Glyphicon glyph="remove" />
                   </Button>
-                </OverlayTrigger>
+                </Tooltip>
               </InputGroup.Button>
             </InputGroup>
           </FormSection>

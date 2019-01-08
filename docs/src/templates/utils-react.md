@@ -17,10 +17,16 @@ export default () => (
     <OverlayTrigger placement="top" overlay={tooltip('Tooltip text')}>
       <Button>Show tooltip!</Button>
     </OverlayTrigger>
+    <Tooltip placement="top" text="Tooltip text">
+      <Button>Show tooltip!</Button>
+    </Tooltip>
     
     <OverlayTrigger trigger="click" placement="right" overlay={popover('Popover title', 'Popover text')}>
       <Button>Show Popover!</Button>
     </OverlayTrigger>
+    <Popover placement="top" title="Popover title" text="Popover text">
+      <Button>Hover me!</Button>
+    </Popover>
   </div>
 );
 ```

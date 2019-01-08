@@ -1,4 +1,6 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
+import moment from 'moment';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
@@ -16,17 +18,38 @@ import {
   Right,
   Loader,
   Content,
+  Tooltip,
+  Popover,
   TopPanel,
+  Headline,
   ErrorPage,
+  ValueLabel,
+  IconButton,
+  CenteredRow,
   PageNotFound,
   CenteredLoader,
   LoadingWrapper,
   HorizontalSplit,
+  SectionHeadline,
   NotificationList,
 } from 'bandit-pouch';
 
 import Layout from '../components/layout';
 import { Tabs } from '../components/markdown';
+
+const DateLabel = ({ date }) => {
+  const instance = moment(date);
+
+  return (
+    <Tooltip text={instance.format('dddd, MMMM Do YYYY, h:mm a')} placement="right">
+      <time>{instance.fromNow()}</time>
+    </Tooltip>
+  );
+};
+
+DateLabel.propTypes = {
+  date: PropTypes.any.isRequired,
+};
 
 const LoadersExample = () => (
   <div>
@@ -43,7 +66,7 @@ const LoadersExample = () => (
 const LayoutExample = () => (
   <Page title="My awesome app">
     <TopPanel>
-      <h1>My awesome app</h1>
+      <Headline title="My awesome app" className="text-bold" />
     </TopPanel>
     <HorizontalSplit>
       <Left>
@@ -67,6 +90,47 @@ const LayoutExample = () => (
         </Content>
       </Right>
     </HorizontalSplit>
+    <Content>
+      <CenteredRow>
+        <h3 className="m-0">Centered row cell with a title</h3>
+      </CenteredRow>
+      <article>
+        <Headline title="Page headline" subtitle="Subtitle">
+          <ButtonGroup>
+            <Tooltip text="Copy text" placement="top">
+              <IconButton icon="copy" bsSize="sm" />
+            </Tooltip>
+            <Tooltip text="Share" placement="top">
+              <IconButton icon="share" bsSize="sm" />
+            </Tooltip>
+          </ButtonGroup>
+        </Headline>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Sed risus ultricies tristique nulla aliquet enim. Ante metus dictum at tempor commodo ullamcorper.
+        </p>
+        <SectionHeadline title="Section headline" subtitle="Subtitle" />
+        <p>
+          Faucibus nisl tincidunt eget nullam non nisi est sit amet. At augue eget arcu dictum varius duis.
+          Cursus sit amet dictum sit amet justo donec enim. Vestibulum morbi blandit cursus risus at ultrices mi tempus.
+          Curabitur gravida arcu ac tortor dignissim. Eget nulla facilisi etiam dignissim diam quis enim.
+        </p>
+        <p>A arcu cursus vitae congue mauris rhoncus aenean.</p>
+
+        <footer>
+          <hr />
+          <Row className="text-right">
+            <Col xsOffset={8} xs={2}>
+              <ValueLabel label="Author" value="John Doe" />
+            </Col>
+            <Col xs={2}>
+              <ValueLabel label="Published" value={<DateLabel date={moment().subtract('hours', 6)} />} />
+            </Col>
+          </Row>
+
+        </footer>
+      </article>
+    </Content>
   </Page>
 );
 
@@ -122,7 +186,9 @@ class LoadingWrapperExample extends React.Component {
           <Button onClick={() => this.fetch({ model: [...LoadedPage.mocks] })}>
             Fetch data
           </Button>
-          <Button onClick={() => this.fetch({ error: { message: 'Remote server error', status: 500, icon: 'warning' } })}>
+          <Button
+            onClick={() => this.fetch({ error: { message: 'Remote server error', status: 500, icon: 'warning' } })}
+          >
             Fetch data with an error
           </Button>
           <Button onClick={() => this.fetch({ found: false })}>
@@ -209,6 +275,32 @@ class NotificationsExample extends React.Component {
   }
 }
 
+const ButtonsExample = () => (
+  <Row>
+    <Col xs={12}>
+      <p>Basic usage</p>
+      <IconButton icon="play" bsStyle="primary" />
+      &nbsp;
+      <IconButton icon="stop" label="Stahp!" bsStyle="danger" />
+      <hr />
+    </Col>
+    <Col xs={12}>
+      <p>With a Popover overlay</p>
+      <Popover title="Login" text="Enter your credentials">
+        <IconButton icon="user" />
+      </Popover>
+      <hr />
+    </Col>
+    <Col xs={12}>
+      <p>With a Tooltip</p>
+      <Tooltip text="Pause the player">
+        <IconButton icon="pause" />
+      </Tooltip>
+      <hr />
+    </Col>
+  </Row>
+);
+
 const LayoutPage = ({ data }) => (
   <Layout>
     <Tabs
@@ -218,6 +310,7 @@ const LayoutPage = ({ data }) => (
         'ui-pages': [<PagesExample />],
         'ui-layout': [<LayoutExample />],
         'ui-loaders': [<LoadersExample />],
+        'ui-buttons': [<ButtonsExample />],
         'ui-notifications': [<NotificationsExample />],
         'ui-loading-wrapper': [<LoadingWrapperExample />],
       }}

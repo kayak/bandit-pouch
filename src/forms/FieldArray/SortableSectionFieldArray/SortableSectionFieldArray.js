@@ -1,14 +1,15 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 import {
   FormControl,
-  Glyphicon,
-  OverlayTrigger,
 } from 'react-bootstrap';
-import { DropdownButton } from '../../../ui';
-import { Utils } from '../../..';
-import FormField from '../../FormField';
+import {
+  DropdownButton,
+  FormField,
+  Tooltip,
+} from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import SortableList from './SortableList';
 
@@ -245,13 +246,10 @@ class VerticalFieldArray extends Component {
         {emptyMessage && fields.length === 0 && (
           <div style={{ textAlign: 'center', margin: '10px 0px' }}>{emptyMessage}</div>
         )}
-        <OverlayTrigger
-          placement="top"
-          overlay={Utils.tooltip(addTooltip)}
-        >
+        <Tooltip text={addTooltip} placement="top">
           <DropdownButton
             className="text-center"
-            title={<Glyphicon glyph="plus" />}
+            title={<FontAwesome name="plus" />}
             style={{ display: 'block' }}
             bsStyle="primary"
             disabled={disabled || (addChoices && addChoices.length === 0)}
@@ -259,7 +257,7 @@ class VerticalFieldArray extends Component {
           >
             {addChoices}
           </DropdownButton>
-        </OverlayTrigger>
+        </Tooltip>
         <FormControl.Feedback />
       </FormField>
     );
