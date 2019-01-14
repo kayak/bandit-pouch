@@ -229,8 +229,12 @@ describe('validators', () => {
 
     it('throws error for invalid minimum value', () => {
       expect(() => validators.min()).to.throw();
-      expect(() => validators.min(-1)).to.throw();
-      expect(() => validators.min(0.5)).to.throw();
+      expect(() => validators.min('invalid')).to.throw();
+    });
+
+    it('allows negative values for min validators', () => {
+      const minValidator = validators.min(-5, 'Invalid');
+      expect(minValidator(-5)).to.equal(undefined);
     });
   });
 
@@ -258,8 +262,12 @@ describe('validators', () => {
 
     it('throws error for invalid maximum value', () => {
       expect(() => validators.max()).to.throw();
-      expect(() => validators.max(-1)).to.throw();
-      expect(() => validators.max(0.5)).to.throw();
+      expect(() => validators.max('invalid')).to.throw();
+    });
+
+    it('allows negative values for max validators', () => {
+      const maxValidator = validators.max(-5, 'Invalid');
+      expect(maxValidator(-5)).to.equal(undefined);
     });
   });
 
@@ -287,10 +295,13 @@ describe('validators', () => {
 
     it('throws error for invalid ranges', () => {
       expect(() => validators.between(null, 1)).to.throw();
-      expect(() => validators.between(-1, 1)).to.throw();
-      expect(() => validators.between(0.5, 1)).to.throw();
       expect(() => validators.between(5, 3)).to.throw();
       expect(() => validators.between(1, null)).to.throw();
+    });
+
+    it('Allows negative minimum and maximum ranges', () => {
+      const negativeValidator = validators.between(-5, -3);
+      expect(negativeValidator(-4)).to.equal(undefined);
     });
   });
 

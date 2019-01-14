@@ -146,7 +146,7 @@ export const excluding = (values = []) => (value) => {
 };
 
 function isValidLimitArg(limit) {
-  return _.isInteger(limit) && limit >= 0;
+  return _.isNumber(limit);
 }
 
 function getLength(value) {
@@ -203,7 +203,7 @@ const minErrorTemplates = {
  * @return {String|undefined}
  */
 export const min = (limit, errorTemplate) => {
-  assert(isValidLimitArg(limit), 'Limit arg must be a positive whole number');
+  assert(isValidLimitArg(limit), 'Limit arg must be a number');
 
   return validateLength(
     k => limit <= k,
@@ -225,7 +225,7 @@ const maxErrorTemplates = {
  * @return {String|undefined}
  */
 export const max = (limit, errorTemplate) => {
-  assert(isValidLimitArg(limit), 'Limit arg must be a positive whole number');
+  assert(isValidLimitArg(limit), 'Limit arg must be a number');
 
   return validateLength(
     k => limit >= k,
@@ -249,8 +249,8 @@ const betweenErrorTemplates = {
  */
 // eslint-disable-next-line no-shadow
 export const between = (min, max, errorTemplate) => {
-  assert(isValidLimitArg(min), 'Min arg must be a positive whole number');
-  assert(isValidLimitArg(max), 'Max arg must be a positive whole number');
+  assert(isValidLimitArg(min), 'Min arg must be a number');
+  assert(isValidLimitArg(max), 'Max arg must be a number');
   assert(min < max, 'Min arg can not be larger than max arg');
 
   return validateLength(
