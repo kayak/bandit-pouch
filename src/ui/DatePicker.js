@@ -7,6 +7,7 @@ import { FormControl } from 'react-bootstrap';
 import DatePickerOverlay from './DatePickerOverlay';
 import {
   DEFAULT_DATE_FORMAT,
+  parseDate,
 } from './DateRangePicker';
 
 class DatePicker extends Component {
@@ -39,7 +40,7 @@ class DatePicker extends Component {
 
   onChange(date) {
     const { onChange } = this.props;
-    onChange(moment(date).startOf('day').toDate());
+    onChange(moment(date).startOf('day'));
   }
 
   format(value) {
@@ -57,7 +58,7 @@ class DatePicker extends Component {
 
   render() {
     const {
-      value, disabled, placement, dateFormat,
+      value, disabled, placement, dateFormat, minDate, maxDate,
     } = this.props;
     const { show } = this.state;
 
@@ -84,6 +85,8 @@ class DatePicker extends Component {
         >
           <Calendar
             date={date}
+            minDate={parseDate(minDate)}
+            maxDate={parseDate(maxDate)}
             dateDisplayFormat={dateFormat}
             onChange={this.onChange}
             scroll={{ enabled: true }}
@@ -108,6 +111,14 @@ DatePicker.propTypes = {
    */
   dateFormat: PropTypes.string,
   /**
+   * A minimum date. Anything prior to it will be disabled.
+   */
+  minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
+   * A maximum date. Anything after it will be disabled.
+   */
+  maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
    * Sets the direction of the calendar overlay.
    */
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
@@ -120,6 +131,8 @@ DatePicker.propTypes = {
 DatePicker.defaultProps = {
   value: null,
   disabled: false,
+  minDate: null,
+  maxDate: null,
   dateFormat: DEFAULT_DATE_FORMAT,
   placement: 'bottom',
   onChange: _.noop,

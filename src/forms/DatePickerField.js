@@ -47,6 +47,14 @@ DatePickerField.propTypes = {
    */
   dateFormat: PropTypes.string,
   /**
+   * A minimum date. Anything prior to it will be disabled.
+   */
+  minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
+   * A maximum date. Anything after it will be disabled.
+   */
+  maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
    * Sets the direction of the calendar overlay.
    */
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
@@ -71,6 +79,8 @@ DatePickerField.defaultProps = {
   label: null,
   disabled: false,
   dateFormat: DEFAULT_DATE_FORMAT,
+  minDate: null,
+  maxDate: null,
   placement: 'bottom',
   meta: { touched: false, error: [] },
   onChangeValue: _.noop,

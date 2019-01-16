@@ -147,29 +147,29 @@ const FormFields = () => (
           component={KeyValueFieldArray}
           name="keyvaluearray"
           label="Key value field array label"
-          keyField={
+          keyField={(
             <Field
               component={TextField}
               name="metric"
               placeholder="Metric..."
               validate={[Validators.required()]}
             />
-          }
-          valueField={
+          )}
+          valueField={(
             <Field
               component={TextField}
               name="description"
               placeholder="Description..."
               validate={[Validators.required()]}
             />
-          }
+          )}
           validate={[Validators.required()]}
           help="To add key-value items to your forms."
-          emptyMessage={
+          emptyMessage={(
             <i className="text-muted">
               At least one key-value item is required.
             </i>
-          }
+          )}
         />
       </Col>
     </Row>

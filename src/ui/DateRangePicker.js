@@ -109,7 +109,7 @@ function getInputRanges(inputRanges) {
   }));
 }
 
-function parseDate(date) {
+export function parseDate(date) {
   const transformedDate = moment(date);
   return (_.isNil(date) || !transformedDate.isValid()) ? undefined : transformedDate.toDate();
 }
