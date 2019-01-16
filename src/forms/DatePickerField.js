@@ -43,14 +43,6 @@ DatePickerField.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * A minimum date. Anything prior to it will be disabled.
-   */
-  minDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  /**
-   * A maximum date. Anything after it will be disabled.
-   */
-  maxDate: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  /**
    * A date format as a string. Check out date-fns's format option for syntax.
    */
   dateFormat: PropTypes.string,
@@ -78,8 +70,6 @@ DatePickerField.defaultProps = {
   help: null,
   label: null,
   disabled: false,
-  minDate: null,
-  maxDate: null,
   dateFormat: DEFAULT_DATE_FORMAT,
   placement: 'bottom',
   meta: { touched: false, error: [] },

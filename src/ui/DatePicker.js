@@ -119,8 +119,6 @@ DatePicker.propTypes = {
 
 DatePicker.defaultProps = {
   value: null,
-  minDate: null,
-  maxDate: null,
   disabled: false,
   dateFormat: DEFAULT_DATE_FORMAT,
   placement: 'bottom',
