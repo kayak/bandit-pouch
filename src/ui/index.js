@@ -5,6 +5,7 @@ export DynamicRow from './DynamicRow';
 export MagicRow from './MagicRow';
 export PageNotFound from './PageNotFound';
 export LoadingWrapper from './LoadingWrapper';
+export DatePicker from './DatePicker';
 export DateRangePicker from './DateRangePicker';
 export CenteredRow from './CenteredRow';
 export IconButton from './IconButton';

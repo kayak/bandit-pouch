@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { FormControl, Overlay } from 'react-bootstrap';
-import { DateRangePicker as ReactDateRangePicker } from 'react-date-range';
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { FormControl } from 'react-bootstrap';
+import { DateRangePicker as ReactDateRangePicker } from 'react-date-range';
+import DatePickerOverlay from './DatePickerOverlay';
 
 const TODAY = 'Today';
 const YESTERDAY = 'Yesterday';
@@ -64,27 +65,6 @@ export function getDatePickerInputRanges(date = moment()) {
   };
 }
 
-// eslint-disable-next-line react/prop-types
-function CustomPopover({ children }) {
-  return (
-    <div
-      style={{
-        zIndex: 10000,
-        position: 'absolute',
-        backgroundColor: 'white',
-        boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
-        border: '1px solid #CCC',
-        borderRadius: 3,
-        marginLeft: -5,
-        marginTop: 5,
-        padding: 10,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
 function getStaticRanges(ranges) {
   return _.keys(ranges).map(label => ({
     label,
@@ -129,7 +109,7 @@ function getInputRanges(inputRanges) {
   }));
 }
 
-function parseDate(date) {
+export function parseDate(date) {
   const transformedDate = moment(date);
   return (_.isNil(date) || !transformedDate.isValid()) ? undefined : transformedDate.toDate();
 }
@@ -226,29 +206,6 @@ class DateRangePicker extends Component {
     const { show } = this.state;
     const [startDate, endDate, inputValue] = this.initializeFilterValue(ranges);
 
-    const DateRangePopOver = (
-      <CustomPopover>
-        <ReactDateRangePicker
-          showSelectionPreview
-
-          months={numCalendarMonths}
-          direction={calendarDirection}
-          dateDisplayFormat={dateFormat}
-          scroll={{ enabled: true }}
-
-          minDate={parseDate(minDate)}
-          maxDate={parseDate(maxDate)}
-          disabledDates={disabledDates.map(parseDate).filter(date => date !== undefined)}
-
-          ranges={[{ key: 'selection', startDate, endDate }]}
-          staticRanges={!_.isNil(ranges) ? getStaticRanges(ranges) : undefined}
-          inputRanges={!_.isNil(inputRanges) ? getInputRanges(inputRanges) : undefined}
-
-          onChange={this.onChange}
-        />
-      </CustomPopover>
-    );
-
     return (
       <span>
         <FormControl
@@ -260,18 +217,33 @@ class DateRangePicker extends Component {
             this.target = input;
           }}
         />
-        <Overlay
+        <DatePickerOverlay
           container={this}
           show={show && !disabled}
-          rootClose
           onHide={this.onToggle}
-          trigger="click"
           placement={placement}
           // eslint-disable-next-line react/no-find-dom-node
           target={() => this.target}
         >
-          {DateRangePopOver}
-        </Overlay>
+          <ReactDateRangePicker
+            showSelectionPreview
+
+            months={numCalendarMonths}
+            direction={calendarDirection}
+            dateDisplayFormat={dateFormat}
+            scroll={{ enabled: true }}
+
+            minDate={parseDate(minDate)}
+            maxDate={parseDate(maxDate)}
+            disabledDates={disabledDates.map(parseDate).filter(date => date !== undefined)}
+
+            ranges={[{ key: 'selection', startDate, endDate }]}
+            staticRanges={!_.isNil(ranges) ? getStaticRanges(ranges) : undefined}
+            inputRanges={!_.isNil(inputRanges) ? getInputRanges(inputRanges) : undefined}
+
+            onChange={this.onChange}
+          />
+        </DatePickerOverlay>
       </span>
     );
   }

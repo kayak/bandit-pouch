@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+from __future__ import with_statement, print_function
+import re
+import subprocess
+import sys
+
+JAVASCRIPT_REGEX = re.compile(r'^[AM]+\s+(?P<name>.*\.jsx?$)', re.MULTILINE)
+
+
+def system(*args, **kwargs):
+    kwargs.setdefault('stdout', subprocess.PIPE)
+    proc = subprocess.Popen(args, **kwargs)
+    out, err = proc.communicate()
+    return out
+
+
+def main():
+    changed_files = system('git', 'status', '--porcelain').decode("utf-8")
+
+    eslint(changed_files)
+
+
+def eslint(changed_files):
+    files = JAVASCRIPT_REGEX.findall(changed_files)
+
+    if not files:
+        return
+
+    args = ['node_modules/.bin/eslint']
+    for name in files:
+        args.append(name)
+
+    args.append('--quiet')
+    output = system(*args)
+    if output:
+        print(u'ES Lint style violations have been detected.'
+              u'Please fix them or force the commit with "git commit --no-verify".\n')
+        print(output.decode("utf-8"), )
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()
