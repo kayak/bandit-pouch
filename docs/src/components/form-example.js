@@ -1,5 +1,6 @@
 import {
   CheckboxField,
+  DatePickerField,
   DateRangePickerField,
   KeyValueFieldArray,
   MonthPickerField,
@@ -105,7 +106,7 @@ const FormFields = () => (
       </Col>
     </Row>
     <Row>
-      <Col xs={6}>
+      <Col xs={4}>
         <Field
           component={MonthPickerField}
           name="month"
@@ -113,7 +114,15 @@ const FormFields = () => (
           help="Select the starting month of your journey"
         />
       </Col>
-      <Col xs={6}>
+      <Col xs={4}>
+        <Field
+          component={DatePickerField}
+          name="date"
+          label="Year date picker"
+          help="Select the starting date of your journey"
+        />
+      </Col>
+      <Col xs={4}>
         <Field
           component={DateRangePickerField}
           name="daterangepicker"
@@ -213,7 +222,7 @@ const FormFields = () => (
       </Col>
     </Row>
   </section>
-)
+);
 
 const ExampleForm = ({
   handleSubmit, pristine, submitting, error, reset,
