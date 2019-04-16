@@ -46,11 +46,11 @@ SpinnerField.propTypes = {
   /**
    * Input field label
    */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Help text used to describe the field's purpose
    */
-  help: PropTypes.string,
+  help: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Callback function that returns the value of the input when it's changed
    */

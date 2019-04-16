@@ -79,7 +79,7 @@ FormField.propTypes = {
   /**
    * Input help text
    */
-  help: PropTypes.string,
+  help: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Metadata object that is passed by the React Form
    */

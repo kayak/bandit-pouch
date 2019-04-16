@@ -89,14 +89,11 @@ KeyValueFieldArray.propTypes = {
   /**
    * Input field label
    */
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Help text used to describe the field's purpose
    */
-  help: PropTypes.string,
+  help: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Whether the field is disabled or not.
    */
@@ -114,7 +111,7 @@ KeyValueFieldArray.propTypes = {
   /**
    * The element/text that will be displayed when no element exist
    */
-  emptyMessage: PropTypes.element,
+  emptyMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * A custom element that will be rendered as the key part.
    */
