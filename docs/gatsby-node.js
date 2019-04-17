@@ -4,6 +4,7 @@ const componentsQuery = require('./queries/components');
 exports.onCreateWebpackConfig = ({
   actions,
   stage,
+  plugins,
 }) => {
   actions.setWebpackConfig({
     devtool: stage.includes('develop')
@@ -14,6 +15,11 @@ exports.onCreateWebpackConfig = ({
         'bandit-pouch$': path.resolve(__dirname, '../src/index'),
       },
     },
+    plugins: [
+      plugins.define({
+        __IS_DEV__: stage === 'develop' || stage === 'develop-html',
+      }),
+    ],
   });
 };
 

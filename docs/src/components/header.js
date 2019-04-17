@@ -1,3 +1,4 @@
+/* global __IS_DEV__ */
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -8,6 +9,8 @@ const NavigationLink = ({
   active,
   disabled,
   className,
+  to,
+  useATag=false,
   ...props
 }) => {
   // These are injected down by `<Nav>` for building `<SubNav>`s.
@@ -21,10 +24,16 @@ const NavigationLink = ({
       role="presentation"
       className={classNames(className, { active, disabled })}
     >
-      <Link
-        {...props}
-        disabled={disabled}
-      />
+      {useATag ? (
+        <a {...props} href={to} />
+
+      ) : (
+        <Link
+          {...props}
+          to={to}
+          disabled={disabled}
+        />
+      )}
     </li>
   );
 };
@@ -43,6 +52,9 @@ const Header = ({ siteTitle }) => (
         <NavigationLink to="/redux">Redux</NavigationLink>
         <NavigationLink to="/utils">Utilities</NavigationLink>
         <NavigationLink to="/api">API</NavigationLink>
+        <NavigationLink to={__IS_DEV__ ? 'http://localhost:6006/' : '/bandit-pouch/storybook'} useATag>
+          Storybook
+        </NavigationLink>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
