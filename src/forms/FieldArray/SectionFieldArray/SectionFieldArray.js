@@ -1,15 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import {
-  FormControl,
-} from 'react-bootstrap';
-import {
-  DropdownButton,
-  FormField,
-  Tooltip,
-} from '../../..';
+import { DropdownButton, FormField, Tooltip, } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
+import { fieldArrayMeta, fieldArrayButtonBsStyle } from '../meta';
 
 /**
  * Component that renders a section field array using the provided innerComponent prop as its elements.
@@ -187,6 +181,7 @@ class SectionFieldArray extends Component {
         emptyMessage,
       } = this.props;
 
+    const buttonBsStyle = fieldArrayButtonBsStyle(meta);
     const pushItem = (selected) => {
       const item = onAdd ? onAdd(selected) : initialFieldValue;
       fields.push(item);
@@ -202,7 +197,7 @@ class SectionFieldArray extends Component {
           </span>
         )}
         help={help}
-        meta={meta}
+        meta={fieldArrayMeta(meta)}
       >
         {fieldArray}
 
@@ -214,14 +209,13 @@ class SectionFieldArray extends Component {
             className="text-center"
             title={<FontAwesome name="plus" />}
             style={{ display: 'block' }}
-            bsStyle="primary"
+            bsStyle={buttonBsStyle}
             disabled={disabled || (addChoices && addChoices.length === 0)}
             onSelect={pushItem}
           >
             {addChoices}
           </DropdownButton>
         </Tooltip>
-        <FormControl.Feedback />
       </FormField>
     );
   }
