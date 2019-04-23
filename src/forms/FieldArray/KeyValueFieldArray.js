@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button, Col, InputGroup, } from 'react-bootstrap';
+import { Button, Col, InputGroup } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
-import { FormField, MagicRow, } from '../..';
 import FontAwesome from 'react-fontawesome';
+import { FormField, MagicRow } from '../..';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 
 /**
@@ -18,7 +18,7 @@ const KeyValueFieldArray = ({
     <FormField
       label={(
         <span>
-        {label}
+          {label}
 
           <Button
             bsSize="xs"
@@ -27,9 +27,9 @@ const KeyValueFieldArray = ({
             disabled={disabled}
             onClick={() => fields.push({})}
           >
-          <FontAwesome name="plus" />
-        </Button>
-      </span>
+            <FontAwesome name="plus" />
+          </Button>
+        </span>
       )}
       help={help}
       meta={fieldArrayMeta(meta)}
@@ -77,7 +77,7 @@ const KeyValueFieldArray = ({
       {emptyMessage && fields.length === 0 && emptyMessage}
     </FormField>
   );
-}
+};
 
 KeyValueFieldArray.propTypes = {
   /**
