@@ -2,7 +2,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { DropdownButton, FormField, Tooltip, } from '../../..';
+import { DropdownButton, FormField, Tooltip } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import SortableList from './SortableList';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from '../meta';

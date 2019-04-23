@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { DropdownButton, FormField, Tooltip, } from '../../..';
+import { DropdownButton, FormField, Tooltip } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import { fieldArrayMeta, fieldArrayButtonBsStyle } from '../meta';
 
