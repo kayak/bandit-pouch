@@ -1,85 +1,83 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  Button,
-  Col,
-  FormControl,
-  Glyphicon,
-  InputGroup,
-  Tooltip,
-} from 'react-bootstrap';
+import { Button, Col, InputGroup, } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
-import {
-  MagicRow,
-  FormField,
-} from '../..';
+import { FormField, MagicRow, } from '../..';
+import FontAwesome from 'react-fontawesome';
+import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 
 /**
  * Component that renders a key-value field array.
  */
 const KeyValueFieldArray = ({
   fields, meta, label, help, disabled, keyField, valueField, emptyMessage,
-}) => (
-  <FormField
-    label={(
-      <span>
+}) => {
+  const buttonBsStyle = fieldArrayButtonBsStyle(meta);
+
+  return (
+    <FormField
+      label={(
+        <span>
         {label}
 
-        <Button
-          bsSize="xs"
-          style={{ marginLeft: 6 }}
-          disabled={disabled}
-          onClick={() => fields.push({})}
-        >
-          <Glyphicon glyph="plus" />
+          <Button
+            bsSize="xs"
+            bsStyle={buttonBsStyle}
+            style={{ marginLeft: 6 }}
+            disabled={disabled}
+            onClick={() => fields.push({})}
+          >
+          <FontAwesome name="plus" />
         </Button>
       </span>
-    )}
-    help={help}
-    meta={meta}
-  >
-    <MagicRow colSizeKey="md">
-      {fields.map((field, idx) => (
-        <Col
-          key={field}
-          xs={12}
-          sm={6}
-          md={4}
-          style={{ marginBottom: 15 }}
-        >
-          <FormSection name={field}>
-            <InputGroup>
-              {keyField}
+      )}
+      help={help}
+      meta={fieldArrayMeta(meta)}
+    >
+      <MagicRow colSizeKey="md">
+        {fields.map((field, idx) => (
+          <Col
+            key={field}
+            xs={12}
+            sm={6}
+            md={4}
+            style={{ marginBottom: 15 }}
+          >
+            <FormSection name={field}>
+              <InputGroup>
+                {keyField}
 
-              <InputGroup.Addon style={{
-                borderLeft: 0,
-                borderRight: 0,
-                padding: '6px 3px',
-              }}
-              />
+                <InputGroup.Addon style={{
+                  borderLeft: 0,
+                  borderRight: 0,
+                  padding: '6px 3px',
+                }}
+                />
 
-              {valueField}
+                {valueField}
 
-              <InputGroup.Button>
-                <Tooltip text="Remove" placement="top">
+                <InputGroup.Button>
+                  {/* Do not use a Tooltip here for now. It's breaking the style since InputGroup.Button apply styles
+                  * to children directly. In Bootstrap 4 InputGroup.Button was also removed, so that is going to
+                  * change anyway. */}
                   <Button
+                    bsStyle={buttonBsStyle}
                     disabled={disabled}
                     onClick={() => fields.remove(idx)}
                   >
-                    <Glyphicon glyph="remove" />
+                    <FontAwesome name="remove" />
                   </Button>
-                </Tooltip>
-              </InputGroup.Button>
-            </InputGroup>
-          </FormSection>
-        </Col>
-      ))}
-    </MagicRow>
+                </InputGroup.Button>
+              </InputGroup>
+            </FormSection>
+          </Col>
+        ))}
+      </MagicRow>
 
-    {emptyMessage && fields.length === 0 && emptyMessage}
-    <FormControl.Feedback />
-  </FormField>
-);
+      {emptyMessage && fields.length === 0 && emptyMessage}
+    </FormField>
+  );
+}
 
 KeyValueFieldArray.propTypes = {
   /**
