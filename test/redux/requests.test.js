@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { expect } from 'chai';
 import thunk from 'redux-thunk';
 import MockAdapter from 'axios-mock-adapter';
 import configureMockStore from 'redux-mock-store';
@@ -40,7 +39,7 @@ describe('redux/requests', () => {
       client.onGet('/foo').reply(200, [1, 2, 3]);
 
       return store.dispatch(Requests.requestList('/foo', {}, Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.list',
           meta: { params: {} },
         }, {
@@ -55,7 +54,7 @@ describe('redux/requests', () => {
       client.onGet('/foo', { params: { id: 1 } }).reply(200, [1]);
 
       return store.dispatch(Requests.requestList('/foo', { id: 1 }, Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.list',
           meta: { params: { id: 1 } },
         }, {
@@ -71,12 +70,12 @@ describe('redux/requests', () => {
 
       return store.dispatch(Requests.requestList('/foo', {}, Actions)).then(() => {
         const actions = store.getActions();
-        expect(actions[0]).to.have.nested.property('type', 'request.list');
-        expect(actions[0]).to.have.deep.nested.property('meta.params', {});
-        expect(actions[1]).to.have.nested.property('error', true);
-        expect(actions[1]).to.have.nested.property('type', 'receive.list');
-        expect(actions[1]).to.have.deep.nested.property('meta.params', {});
-        expect(actions[1]).to.have.nested.property('payload.message', 'Request failed with status code 403');
+        expect(actions[0]).toHaveProperty('type', 'request.list');
+        expect(actions[0]).toHaveProperty('meta.params', {});
+        expect(actions[1]).toHaveProperty('error', true);
+        expect(actions[1]).toHaveProperty('type', 'receive.list');
+        expect(actions[1]).toHaveProperty('meta.params', {});
+        expect(actions[1]).toHaveProperty('payload.message', 'Request failed with status code 403');
       });
     });
   });
@@ -86,7 +85,7 @@ describe('redux/requests', () => {
       client.onGet('/foo').reply(200, { id: 1 });
 
       return store.dispatch(Requests.requestDetails('alias', '/foo', Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.details',
           meta: { alias: 'alias' },
         }, {
@@ -102,12 +101,12 @@ describe('redux/requests', () => {
 
       return store.dispatch(Requests.requestDetails('alias', '/foo', Actions)).then(() => {
         const actions = store.getActions();
-        expect(actions[0]).to.have.nested.property('type', 'request.details');
-        expect(actions[0]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('error', true);
-        expect(actions[1]).to.have.nested.property('type', 'receive.details');
-        expect(actions[1]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('payload.message', 'Request failed with status code 401');
+        expect(actions[0]).toHaveProperty('type', 'request.details');
+        expect(actions[0]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('error', true);
+        expect(actions[1]).toHaveProperty('type', 'receive.details');
+        expect(actions[1]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('payload.message', 'Request failed with status code 401');
       });
     });
   });
@@ -117,7 +116,7 @@ describe('redux/requests', () => {
       client.onPut('/foo', { id: 1 }).reply(200, { id: 1, updated: true });
 
       return store.dispatch(Requests.requestStore('alias', { id: 1 }, '/foo', Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.store',
           meta: { alias: 'alias' },
         }, {
@@ -132,7 +131,7 @@ describe('redux/requests', () => {
       client.onPost('/foo', { id: 1 }).reply(200, { id: 1, created: true });
 
       return store.dispatch(Requests.requestStore('alias', { id: 1 }, '/foo', Actions, true)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.store',
           meta: { alias: 'alias' },
         }, {
@@ -147,7 +146,7 @@ describe('redux/requests', () => {
       client.onPut('/foo', { id: 1 }).reply(200, { id: 1, updated: true });
 
       return store.dispatch(Requests.requestStore(null, { id: 1 }, '/foo', Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'receive.store',
           meta: { alias: null },
           payload: { id: 1, updated: true },
@@ -159,7 +158,7 @@ describe('redux/requests', () => {
       client.onPost('/foo', { id: 1 }).reply(200, { id: 1, created: true });
 
       return store.dispatch(Requests.requestStore(null, { id: 1 }, '/foo', Actions, true)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'receive.store',
           meta: { alias: null },
           payload: { id: 1, created: true },
@@ -171,16 +170,16 @@ describe('redux/requests', () => {
       client.onPut('/foo', { id: 1 }).reply(500);
 
       return store.dispatch(Requests.requestStore('alias', { id: 1 }, '/foo', Actions)).catch((e) => {
-        expect(e).to.have.nested.property('message', 'Request failed with status code 500');
-        expect(e).to.have.nested.property('response.status', 500);
+        expect(e).toHaveProperty('message', 'Request failed with status code 500');
+        expect(e).toHaveProperty('response.status', 500);
       }).then(() => {
         const actions = store.getActions();
-        expect(actions[0]).to.have.nested.property('type', 'request.store');
-        expect(actions[0]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('error', true);
-        expect(actions[1]).to.have.nested.property('type', 'receive.store');
-        expect(actions[1]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('payload.message', 'Request failed with status code 500');
+        expect(actions[0]).toHaveProperty('type', 'request.store');
+        expect(actions[0]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('error', true);
+        expect(actions[1]).toHaveProperty('type', 'receive.store');
+        expect(actions[1]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('payload.message', 'Request failed with status code 500');
       });
     });
   });
@@ -190,7 +189,7 @@ describe('redux/requests', () => {
       client.onPatch('/foo', { id: 1 }).reply(200, { id: 1, patched: true });
 
       return store.dispatch(Requests.requestPatch('alias', '/foo', { id: 1 }, Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.details',
           meta: { alias: 'alias' },
         }, {
@@ -206,12 +205,12 @@ describe('redux/requests', () => {
 
       return store.dispatch(Requests.requestPatch('alias', '/foo', { id: 1 }, Actions)).then(() => {
         const actions = store.getActions();
-        expect(actions[0]).to.have.nested.property('type', 'request.details');
-        expect(actions[0]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('error', true);
-        expect(actions[1]).to.have.nested.property('type', 'receive.details');
-        expect(actions[1]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('payload.message', 'Request failed with status code 500');
+        expect(actions[0]).toHaveProperty('type', 'request.details');
+        expect(actions[0]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('error', true);
+        expect(actions[1]).toHaveProperty('type', 'receive.details');
+        expect(actions[1]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('payload.message', 'Request failed with status code 500');
       });
     });
   });
@@ -221,7 +220,7 @@ describe('redux/requests', () => {
       client.onDelete('/foo').reply(204);
 
       return store.dispatch(Requests.requestDelete('alias', '/foo', Actions)).then(() => {
-        expect(store.getActions()).to.be.deep.equal([{
+        expect(store.getActions()).toEqual([{
           type: 'request.delete',
           meta: { alias: 'alias' },
         }, {
@@ -235,16 +234,16 @@ describe('redux/requests', () => {
       client.onDelete('/foo').reply(503);
 
       return store.dispatch(Requests.requestDelete('alias', '/foo', Actions)).catch((e) => {
-        expect(e).to.have.nested.property('message', 'Request failed with status code 503');
-        expect(e).to.have.nested.property('response.status', 503);
+        expect(e).toHaveProperty('message', 'Request failed with status code 503');
+        expect(e).toHaveProperty('response.status', 503);
       }).then(() => {
         const actions = store.getActions();
-        expect(actions[0]).to.have.nested.property('type', 'request.delete');
-        expect(actions[0]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('error', true);
-        expect(actions[1]).to.have.nested.property('type', 'receive.delete');
-        expect(actions[1]).to.have.deep.nested.property('meta.alias', 'alias');
-        expect(actions[1]).to.have.nested.property('payload.message', 'Request failed with status code 503');
+        expect(actions[0]).toHaveProperty('type', 'request.delete');
+        expect(actions[0]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('error', true);
+        expect(actions[1]).toHaveProperty('type', 'receive.delete');
+        expect(actions[1]).toHaveProperty('meta.alias', 'alias');
+        expect(actions[1]).toHaveProperty('payload.message', 'Request failed with status code 503');
       });
     });
   });

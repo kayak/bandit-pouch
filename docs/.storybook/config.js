@@ -1,4 +1,5 @@
 import React from 'react';
+import requireContext from 'require-context.macro';
 
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -20,7 +21,7 @@ addDecorator(storyFn => (
 ));
 
 // Automatically import all files ending in *.stories.js
-const req = require.context('../stories', true, /.stories.js$/);
+const req = requireContext('../stories', true, /.stories.js$/);
 
 function loadStories() {
   req.keys()

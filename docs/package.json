@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@storybook/addon-actions": "5.0.8",
-    "@storybook/addon-info": "5.0.8",
-    "@storybook/addon-knobs": "5.0.8",
-    "@storybook/addon-links": "5.0.8",
-    "@storybook/addon-storysource": "5.0.8",
-    "@storybook/addon-viewport": "5.0.8",
-    "@storybook/addons": "5.0.8",
-    "@storybook/react": "5.0.8",
+    "@storybook/addon-actions": "5.0.11",
+    "@storybook/addon-info": "5.0.11",
+    "@storybook/addon-knobs": "5.0.11",
+    "@storybook/addon-links": "5.0.11",
+    "@storybook/addon-storysource": "5.0.11",
+    "@storybook/addon-viewport": "5.0.11",
+    "@storybook/addons": "5.0.11",
+    "@storybook/react": "5.0.11",
     "bootstrap": "3.3.7",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
@@ -27,15 +27,14 @@
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
-    "react-beautiful-dnd": "9.0.2",
+    "react-beautiful-dnd": "^9.0.2",
     "react-bootstrap": "^0.32.4",
     "react-date-range": "1.0.0-beta",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
-    "react-sortable-hoc": "0.8.3",
     "redux": "^4.0.1",
-    "redux-form": "6.8.0"
+    "redux-form": "^6.8.0"
   },
   "keywords": [
     "gatsby"
@@ -49,14 +48,25 @@
     "gatsby": "gatsby develop",
     "storybook": "start-storybook -p 6006",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run build-all && gh-pages -d public --repo git@github.com:kayak/bandit-pouch.git"
+    "test": "jest",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage",
+    "deploy": "npm run build-all&& gh-pages -d public --"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.14.2",
+    "@babel/cli": "7.4.3",
+    "@babel/core": "7.4.3",
     "@babel/plugin-proposal-export-default-from": "7.0.0",
-    "@babel/plugin-proposal-export-namespace-from": "7.0.0"
+    "@babel/plugin-proposal-export-namespace-from": "7.0.0",
+    "@storybook/addon-storyshots": "5.0.10",
+    "babel-jest": "24.7.1",
+    "babel-plugin-macros": "2.5.1",
+    "gh-pages": "^2.0.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.7.1",
+    "prettier": "^1.14.2",
+    "react-test-renderer": "16.8.6",
+    "require-context.macro": "1.0.4"
   },
   "repository": {
     "type": "git",
