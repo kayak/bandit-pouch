@@ -13,27 +13,24 @@ const label = () => text('label', 'Rangefield');
 const help = () => text('help', 'Type your help text.');
 const placeholder = () => text('placeholder', 'Type your placeholder text.');
 const disabled = () => boolean('disabled', false);
-const step = () =>
-  number('step', 1, {
-    range: true,
-    min: 1,
-    max: 10,
-    step: 1,
-  });
-const min = () =>
-  number('min', 0, {
-    range: true,
-    min: 0,
-    max: 40,
-    step: 1,
-  });
-const max = () =>
-  number('max', 100, {
-    range: true,
-    min: 60,
-    max: 100,
-    step: 1,
-  });
+const step = () => number('step', 1, {
+  range: true,
+  min: 1,
+  max: 10,
+  step: 1,
+});
+const min = () => number('min', 0, {
+  range: true,
+  min: 0,
+  max: 40,
+  step: 1,
+});
+const max = () => number('max', 100, {
+  range: true,
+  min: 60,
+  max: 100,
+  step: 1,
+});
 
 // Actions
 const onChangeValue = () => action('onChangeValue');
@@ -51,7 +48,8 @@ const withField = propsFn => (
   />
 );
 
-storiesOf('Forms|RangeField', module)
+// JSDom can't be used to test RangeField, as it rely on refs.
+storiesOf('Forms|RangeField.DontTest', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
   .add('default', () => ({}))

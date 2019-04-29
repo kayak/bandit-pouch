@@ -6,13 +6,14 @@ import { Popover } from 'bandit-pouch';
 import { Button } from 'react-bootstrap';
 
 // Knobs
+const title = () => text('title', 'Title');
 const tooltipText = () => text('text', 'You are hovering me!');
 
 // Actions
 
 // Component
 const withComponent = propsFn => (
-  <Popover {...propsFn()} text={tooltipText()}>
+  <Popover {...propsFn()} title={title()} text={tooltipText()}>
     <Button>Hover me!</Button>
   </Popover>
 );

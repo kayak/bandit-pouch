@@ -12,7 +12,7 @@ import ReduxForm from '../ReduxForm';
 const label = () => text('label', 'Select');
 const help = () => text('help', 'Type your help text.');
 const placeholder = () => text('placeholder', 'Type your placeholder text.');
-const defaultValue = () => text('defaultValue', 1);
+const defaultValue = () => text('defaultValue', '1');
 const disabled = () => boolean('disabled', false);
 const isLoading = () => boolean('isLoading', false);
 const clearable = () => boolean('clearable', false);
@@ -79,34 +79,34 @@ storiesOf('Forms|SelectField', module)
   .add('with defaultValue', () => ({
     options: [{
       label: 'Option 1',
-      value: 1
+      value: '1'
     }],
-    defaultValue: 1,
+    defaultValue: '1',
   }))
   .add('with disabled options', () => ({
     options: [{
       label: 'Disabled Option 1',
-      value: 1,
+      value: '1',
       disabled: true
     }],
   }))
   .add('with options containing labels', () => ({
     options: [{
       label: 'Option 1',
-      value: 1
+      value: '1'
     }],
   }))
   .add('with options using different labelKey', () => ({
     options: [{
       text: 'Option 1',
-      value: 1
+      value: '1'
     }],
     labelKey: 'text',
   }))
   .add('with options using different valueKey', () => ({
     options: [{
       label: 'Option 1',
-      id: 1
+      id: '1'
     }],
     valueKey: 'id',
   }))
@@ -125,7 +125,7 @@ storiesOf('Forms|SelectField', module)
   .add('with onChangeWithValue', () => ({
     options: [{
       label: 'Option 1',
-      value: 1
+      value: '1'
     }],
     onChangeWithValue: true,
   }))

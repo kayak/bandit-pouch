@@ -18,7 +18,7 @@ const error = () => text('error', undefined);
 const reset = () => action('reset');
 
 // Component
-const withField = propsFn => <SubmitResetRow {...propsFn()} />;
+const withField = propsFn => <SubmitResetRow reset={reset()} {...propsFn()} />;
 
 storiesOf('Forms|SubmitResetRow', module)
   .addDecorator(withField)
@@ -45,5 +45,4 @@ storiesOf('Forms|SubmitResetRow', module)
     submitFailed: submitFailed(),
     error: error(),
     valid: valid(),
-    reset: reset(),
   }));

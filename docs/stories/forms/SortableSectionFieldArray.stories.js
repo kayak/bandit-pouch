@@ -46,7 +46,8 @@ const withField = propsFn => (
   />
 );
 
-storiesOf('Forms|SortableSectionFieldArray', module)
+// JSDom can't be used to test SortableSectionFieldArray, as it rely on refs.
+storiesOf('Forms|SortableSectionFieldArray.DontTest', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
   .add('default', () => ({}))

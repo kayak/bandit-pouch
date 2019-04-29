@@ -40,7 +40,7 @@ const pageLayoutHorizontalSplitStyle = () =>
 // Actions
 
 // Component
-const withPage = propsFn => <Page {...propsFn()} />;
+const withPage = propsFn => <Page {...propsFn()}>This is Page</Page>;
 const withPageHorizontalSplit = propsFn => (
   <Page {...propsFn()}>
     <Content style={pageLayoutContentStyle()}>

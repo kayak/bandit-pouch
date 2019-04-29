@@ -19,7 +19,7 @@ const WrapperForm = ({ children, formValues }) => (
   </div>
 );
 
-const ConnectedWrapperForm = reduxForm({
+export const ConnectedWrapperForm = reduxForm({
   form: 'form',
   anyTouched: false,
 })(
@@ -32,4 +32,4 @@ export default storyFn => (
   <Provider store={store}>
     <ConnectedWrapperForm>{storyFn()}</ConnectedWrapperForm>
   </Provider>
-)
+);
