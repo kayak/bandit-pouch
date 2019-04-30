@@ -6,7 +6,8 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import { Field, FieldArray } from 'redux-form'; // theme css file
 import { SectionFieldArray, TextField, Validators } from 'bandit-pouch';
-import ReduxForm from '../ReduxForm';
+import { Form, withStore } from '../ReduxForm';
+import moment from 'moment';
 
 // Knobs
 const label = () => text('label', 'SectionFieldArray');
@@ -24,36 +25,62 @@ const onAdd = () => action('onAdd');
 const onRemove = () => action('onRemove');
 
 // Component
-const withField = propsFn => (
-  <FieldArray
-    component={SectionFieldArray}
-    name="formField"
-    label={label()}
-    innerComponent={({ field }) => (
-      <Field
-        component={TextField}
-        name={`${field}.description`}
-        label="Description"
-        placeholder="Description..."
+const withField = propsFn => {
+  const { formField=[], ...fieldProps } = propsFn();
+
+  return (
+    <Form
+      initialValues={{
+        formField: [...formField],
+      }}
+    >
+      <FieldArray
+        component={SectionFieldArray}
+        name="formField"
+        label={label()}
+        innerComponent={({ field }) => (
+          <Field
+            component={TextField}
+            name={`${field}.description`}
+            label="Description"
+            placeholder="Description..."
+            validate={[Validators.required()]}
+          />
+        )}
         validate={[Validators.required()]}
+        help={help()}
+        emptyMessage={<i className="text-muted">{emptyMessage()}</i>}
+        onAdd={onAdd()}
+        onRemove={onRemove()}
+        {...fieldProps}
       />
-    )}
-    validate={[Validators.required()]}
-    help={help()}
-    emptyMessage={<i className="text-muted">{emptyMessage()}</i>}
-    onAdd={onAdd()}
-    onRemove={onRemove()}
-    {...propsFn()}
-  />
-);
+    </Form>
+  );
+};
 
 storiesOf('Forms|SectionFieldArray', module)
   .addDecorator(withField)
-  .addDecorator(ReduxForm)
+  .addDecorator(withStore)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
-  .add('with duplicable', () => ({ duplicable: true }))
-  .add('with minimizable', () => ({ minimizable: true }))
+  .add('with one field and disabled', () => ({ formField: [{}] }))
+  .add('with one field and duplicable', () => ({ formField: [{}], duplicable: true }))
+  .add('with one field and not minimizable', () => ({ formField: [{}], minimizable: false }))
+  .add('with one field and not initiallyMinimized', () => ({ formField: [{}], initiallyMinimized: false }))
+  .add('with one field and labelDefault', () => ({ formField: [{}], labelDefault: 'Novo' }))
+  .add('with one field and renderLabel', () => ({
+    formField: [{}],
+    renderLabel: (value, idx) => `Test ${idx + 1} Test`,
+  }))
+  .add('with one field and empty string renderLabel', () => ({
+    formField: [{}],
+    renderLabel: (value, idx) => '',
+  }))
+  .add('with one field and empty string renderLabel/not minimizable', () => ({
+    formField: [{}],
+    renderLabel: (value, idx) => '',
+    minimizable: false,
+  }))
   .add('Interactive Mode', () => ({
     disabled: disabled(),
     duplicable: duplicable(),
