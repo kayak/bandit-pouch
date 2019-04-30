@@ -6,7 +6,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import { Field } from 'redux-form'; // theme css file
 import { MonthPickerField } from 'bandit-pouch';
-import ReduxForm from '../ReduxForm';
+import { Form, withStore } from '../ReduxForm';
 
 // Knobs
 const label = () => text('label', 'Monthpickerfield');
@@ -17,20 +17,30 @@ const disabled = () => boolean('disabled', false);
 const onChange = () => action('onChange');
 
 // Component
-const withField = propsFn => (
-  <Field
-    component={MonthPickerField}
-    name="formField"
-    label={label()}
-    help={help()}
-    onChange={onChange()}
-    {...propsFn()}
-  />
-);
+const withField = propsFn => {
+  const { formField='1990-02', ...fieldProps } = propsFn();
+
+  return (
+    <Form
+      initialValues={{
+        formField,
+      }}
+    >
+      <Field
+        component={MonthPickerField}
+        name="formField"
+        label={label()}
+        help={help()}
+        onChange={onChange()}
+        {...fieldProps}
+      />
+    </Form>
+  );
+};
 
 storiesOf('Forms|MonthPickerField', module)
   .addDecorator(withField)
-  .addDecorator(ReduxForm)
+  .addDecorator(withStore)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
   .add('Interactive Mode', () => ({

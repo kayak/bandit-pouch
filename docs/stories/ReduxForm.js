@@ -2,12 +2,12 @@ import React from 'react';
 import { connect, Provider } from 'react-redux';
 
 import store from './store';
-import { Form, getFormValues, reduxForm } from 'redux-form'; // theme css file
+import { Form as ReduxForm, getFormValues, reduxForm } from 'redux-form'; // theme css file
 
 const WrapperForm = ({ children, formValues }) => (
   <div>
     <div>
-      <Form onSubmit={() => null}>{children}</Form>
+      <ReduxForm onSubmit={() => null}>{children}</ReduxForm>
     </div>
     <div>
       <strong>Redux-form state:</strong>
@@ -19,7 +19,7 @@ const WrapperForm = ({ children, formValues }) => (
   </div>
 );
 
-export const ConnectedWrapperForm = reduxForm({
+export const Form = reduxForm({
   form: 'form',
   anyTouched: false,
 })(
@@ -28,8 +28,14 @@ export const ConnectedWrapperForm = reduxForm({
   }))(WrapperForm)
 );
 
+export const withStore = storyFn => (
+  <Provider store={store}>
+    {storyFn()}
+  </Provider>
+);
+
 export default storyFn => (
   <Provider store={store}>
-    <ConnectedWrapperForm>{storyFn()}</ConnectedWrapperForm>
+    <Form>{storyFn()}</Form>
   </Provider>
 );
