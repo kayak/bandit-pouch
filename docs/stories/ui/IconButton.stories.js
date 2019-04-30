@@ -11,17 +11,15 @@ const label = () => text('label', 'Edit me');
 // Actions
 
 // Component
-const withComponent = propsFn => <IconButton {...propsFn()} />;
+const withComponent = propsFn => <IconButton icon={icon()} {...propsFn()} />;
 
 storiesOf('UI|IconButton', module)
   .addDecorator(withComponent)
   .add('default', () => ({}))
-  .add('with an icon', () => ({ icon: 'edit' }))
   .add('with an icon and label', () => ({
     icon: 'edit',
     label: 'Edit me'
   }))
   .add('Interactive Mode', () => ({
-    icon: icon(),
     label: label()
   }));

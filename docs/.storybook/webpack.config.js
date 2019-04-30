@@ -24,32 +24,7 @@ module.exports = ({ config, mode }) => {
               loader: 'babel-loader',
               options: {
                 cacheDirectory: true,
-                presets: [
-                  [
-                    '@babel/env',
-                    {
-                      modules: false,
-                      targets: {
-                        browsers: ['last 4 versions', 'not ie <= 8'],
-                      },
-                    },
-                  ],
-                  '@babel/react',
-                ],
-                plugins: [
-                  '@babel/plugin-proposal-export-namespace-from',
-                  '@babel/plugin-proposal-export-default-from',
-                  ['@babel/plugin-proposal-class-properties', { loose: true }],
-                  '@babel/plugin-syntax-dynamic-import',
-                  'babel-plugin-macros',
-                  [
-                    '@babel/plugin-transform-runtime',
-                    {
-                      helpers: true,
-                      regenerator: true
-                    },
-                  ],
-                ],
+                rootMode: "upward",
               },
             },
           ],

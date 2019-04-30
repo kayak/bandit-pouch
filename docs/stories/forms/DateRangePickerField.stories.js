@@ -88,10 +88,10 @@ storiesOf('Forms|DateRangePickerField', module)
       .add(4, 'days')],
   }))
   .add('with different ranges', () => ({ ranges: getFutureDatePickerRanges() }))
-  .add('without ranges', () => ({ ranges: [] }))
+  .add('without ranges', () => ({ ranges: {} }))
   .add('without input ranges', () => ({ inputRanges: {} }))
   .add('without both ranges and input ranges', () => ({
-    ranges: [],
+    ranges: {},
     inputRanges: {},
   }))
   .add('Interactive Mode', () => ({

@@ -21,8 +21,8 @@ export class NotificationItem extends Component {
   }
 
   dismiss() {
-    const { onClose } = this.props;
-    onClose();
+    const { id, onClose } = this.props;
+    onClose(id);
     this.clearTimeout();
   }
 
@@ -56,6 +56,10 @@ export class NotificationItem extends Component {
 }
 
 NotificationItem.propTypes = {
+  /**
+   * Alert id
+   */
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /**
    * Alert headline
    */
@@ -99,12 +103,13 @@ export const NotificationList = ({ alerts, timeout, clearAlert }) => (
     }) => (
       <NotificationItem
         key={id}
+        id={id}
         header={header}
         message={message}
         errors={errors}
         bsStyle={bsStyle}
         timeout={timeout}
-        onClose={() => clearAlert(id)}
+        onClose={clearAlert}
       />
     ))}
   </div>

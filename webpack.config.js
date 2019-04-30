@@ -6,8 +6,7 @@ const merge = require('webpack-merge');
 const externals = require('webpack-node-externals');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
-
-const { DefinePlugin } = webpack;
+const { DefinePlugin, IgnorePlugin } = webpack;
 
 function stringify(data) {
   return _.reduce(data, (config, value, key) => ({
@@ -23,8 +22,14 @@ const baseConfig = environment => ({
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
+      use: [{
+        loader: "babel-loader",
+        options: {
+          cacheDirectory: true,
+          rootMode: "upward",
+        },
+        exclude: /node_modules/,
+      }],
     }],
   },
   plugins: [
@@ -39,15 +44,11 @@ const testConfig = {
   target: 'node',
   devtool: 'inline-cheap-module-source-map',
   externals: [externals()],
-  module: {
-    rules: [{
-      enforce: 'pre',
-      test: /\.(js|ts)/,
-      include: path.resolve('src'),
-      loader: 'istanbul-instrumenter-loader',
-      query: { esModules: true },
-    }],
-  },
+  plugins: [
+    new IgnorePlugin(/react\/addons/),
+    new IgnorePlugin(/react\/lib\/ReactContext/),
+    new IgnorePlugin(/react\/lib\/ExecutionEnvironment/),
+  ],
 };
 
 const commonJSConfig = {
