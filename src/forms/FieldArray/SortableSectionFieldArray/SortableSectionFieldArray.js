@@ -138,7 +138,7 @@ class VerticalFieldArray extends Component {
         labelDefault,
         renderKey = (value, idx) => idx,
         renderLabel = (value, idx) => `${labelDefault} ${idx + 1}`,
-        bsStyle,
+        variant,
         minimizable,
         initiallyMinimized,
         duplicable,
@@ -170,7 +170,7 @@ class VerticalFieldArray extends Component {
       <FieldArrayElement
         key={key}
         label={label}
-        bsStyle={bsStyle}
+        variant={variant}
         initiallyMinimized={initiallyMinimized && firstRender}
         minimizable={minimizable}
         duplicable={duplicable}
@@ -242,8 +242,8 @@ class VerticalFieldArray extends Component {
           <DropdownButton
             className="text-center"
             title={<FontAwesome name="plus" />}
-            style={{ display: 'block' }}
-            bsStyle={buttonBsStyle}
+            style={{ display: 'block', marginTop: 10 }}
+            variant={buttonBsStyle}
             disabled={disabled || (addChoices && addChoices.length === 0)}
             onSelect={pushItem}
           >

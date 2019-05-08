@@ -3,9 +3,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ControlLabel,
-  FormGroup,
-  HelpBlock,
+  Form,
 } from 'react-bootstrap';
 
 import FieldError from './FieldError';
@@ -18,14 +16,14 @@ import { CHILDREN_PROP_TYPE } from '../utils';
  * @param touched Boolean of whether the field has been used (Redux-Form tracks this)
  * @param error Redux form error object
  * @returns {*} - Undefined if the field has not been touched,
- *              - 'error' if an error has been found
- *              - 'success' if there is no error and the field has been touched.
+ *              - 'invalid' if an error has been found
+ *              - 'valid' if there is no error and the field has been touched.
  */
 export function getValidationState(touched, error) {
   if (!touched) return undefined;
   // Ensure the error prop is showing a real error. Sometimes an empty array is passed which still
   // indicates there are no errors. If this happens we don't want to use an error class.
-  return !_.isEmpty(error) ? 'error' : 'success';
+  return !_.isEmpty(error) ? 'invalid' : 'valid';
 }
 
 /**
@@ -44,15 +42,15 @@ const FormField = ({
   const errors = error && _.isString(error) ? error.split('\n') : error;
 
   return (
-    <FormGroup controlId={id} className={className} validationState={validationState}>
-      {label && <ControlLabel>{label}</ControlLabel>}
+    <Form.Group controlId={id} className={className}>
+      {label && <Form.Label>{label}</Form.Label>}
 
       {children}
 
       {help && (
-        <HelpBlock>
-          <small>{help}</small>
-        </HelpBlock>
+        <Form.Control.Feedback type={validationState}>
+          {help && help}
+        </Form.Control.Feedback>
       )}
 
       { // Only show if field is touched and not empty. Sometimes, the error prop is an empty
@@ -63,7 +61,7 @@ const FormField = ({
           </FieldError>
         )
       }
-    </FormGroup>
+    </Form.Group>
   );
 };
 

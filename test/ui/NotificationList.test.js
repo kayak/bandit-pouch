@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, shallow, render } from 'enzyme';
 import { Alert } from 'react-bootstrap';
 import { NotificationItem, NotificationList } from '../../src/ui/NotificationList';
 
@@ -8,7 +8,7 @@ const alerts = [{
   message: 'first test message',
 }, {
   id: 'second',
-  bsStyle: 'success',
+  variant: 'success',
   header: 'second test header',
   message: 'second test message',
   errors: ['first error', 'second error'],
@@ -26,7 +26,7 @@ describe('NotificationItem', () => {
       header="test header"
       message="test message"
       errors={['first error', 'second error']}
-      bsStyle="danger"
+      variant="danger"
       onClose={onClose}
     />);
   });
@@ -45,17 +45,17 @@ describe('NotificationItem', () => {
   });
 
   it('renders an alert box with the bootstrap style \'danger\'', () => {
-    expect(wrapper.find(Alert).prop('bsStyle')).toEqual('danger');
+    expect(wrapper.find(Alert).prop('variant')).toEqual('danger');
   });
 
-  it('renders an alert box with the bootstrap style \'info\' if no bsStyle prop is passed', () => {
+  it('renders an alert box with the bootstrap style \'info\' if no variant prop is passed', () => {
     wrapper = shallow(<NotificationItem
       id="test id"
       header="test header"
       message="test message"
       onClose={f => f}
     />);
-    return expect(wrapper.find(Alert).prop('bsStyle')).toEqual('info');
+    return expect(wrapper.find(Alert).prop('variant')).toEqual('info');
   });
 
   it('assert onClose is called on timeout', (done) => {
@@ -110,7 +110,7 @@ describe('NotificationList', () => {
       .props())
       .toStrictEqual({
         id: alerts[0].id,
-        bsStyle: "info",
+        variant: "info",
         errors: [],
         header: null,
         message: alerts[0].message,
@@ -122,7 +122,7 @@ describe('NotificationList', () => {
   it('to pass expected props to the second NotificationItem element', () => {
     expect(wrapper.find(NotificationItem).at(1).props()).toStrictEqual({
        id: alerts[1].id,
-       bsStyle: alerts[1].bsStyle,
+       variant: alerts[1].variant,
        errors: alerts[1].errors,
        header: alerts[1].header,
        message: alerts[1].message,

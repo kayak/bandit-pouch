@@ -20,16 +20,16 @@ const SubmitResetRow = ({
     <Col xs={12}>
       <ButtonToolbar className="pull-right">
         <Button
-          bsStyle="warning"
-          bsSize="large"
+          variant="warning"
+          size="lg"
           disabled={pristine || submitting}
           onClick={reset}
         >
           Reset
         </Button>
         <Button
-          bsStyle="primary"
-          bsSize="large"
+          variant="primary"
+          size="lg"
           type="submit"
           disabled={enabled === false || submitting}
         >

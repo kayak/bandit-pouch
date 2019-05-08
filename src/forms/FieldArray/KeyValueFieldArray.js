@@ -3,8 +3,10 @@ import React from 'react';
 import { Button, Col, InputGroup } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
 import FontAwesome from 'react-fontawesome';
-import { FormField, MagicRow } from '../..';
+import { FormField, MagicRow, Tooltip } from '../..';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
+
+import './KeyValueFieldArray.css';
 
 /**
  * Component that renders a key-value field array.
@@ -21,8 +23,8 @@ const KeyValueFieldArray = ({
           {label}
 
           <Button
-            bsSize="xs"
-            bsStyle={buttonBsStyle}
+            size="sm"
+            variant={buttonBsStyle}
             style={{ marginLeft: 6 }}
             disabled={disabled}
             onClick={() => fields.push({})}
@@ -46,28 +48,20 @@ const KeyValueFieldArray = ({
             <FormSection name={field}>
               <InputGroup>
                 {keyField}
-
-                <InputGroup.Addon style={{
-                  borderLeft: 0,
-                  borderRight: 0,
-                  padding: '6px 3px',
-                }}
-                />
-
                 {valueField}
 
-                <InputGroup.Button>
-                  {/* Do not use a Tooltip here for now. It's breaking the style since InputGroup.Button apply styles
-                  * to children directly. In Bootstrap 4 InputGroup.Button was also removed, so that is going to
-                  * change anyway. */}
-                  <Button
-                    bsStyle={buttonBsStyle}
-                    disabled={disabled}
-                    onClick={() => fields.remove(idx)}
-                  >
-                    <FontAwesome name="remove" />
-                  </Button>
-                </InputGroup.Button>
+                <InputGroup.Append>
+                  <Tooltip text="Remove">
+                    <Button
+                      style={{ height: 38 }}
+                      variant={buttonBsStyle}
+                      disabled={disabled}
+                      onClick={() => fields.remove(idx)}
+                    >
+                      <FontAwesome name="remove" />
+                    </Button>
+                  </Tooltip>
+                </InputGroup.Append>
               </InputGroup>
             </FormSection>
           </Col>

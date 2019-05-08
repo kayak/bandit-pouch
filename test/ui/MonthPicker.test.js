@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { mount } from 'enzyme';
-import { Dropdown } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 import MonthPicker, { formatDisplay, formatValue, toState } from '../../src/ui/MonthPicker';
 
 describe('MonthPicker', () => {
@@ -48,39 +48,42 @@ describe('MonthPicker', () => {
     ).toEqual('December, 2018'));
 
     it('should render months', () => {
+      wrapper.find('.form-control').simulate('click');
       expect(wrapper.find('a.month-picker-month').length).toEqual(12);
       expect(wrapper.find('a.month-picker-month.active').text()).toEqual('Dec');
     });
 
-    it('should render year', () => expect(
-      wrapper.find('.month-picker-year').text(),
-    ).toEqual('2018'));
+    it('should render year', () => {
+      wrapper.find('.form-control').simulate('click');
+      expect(wrapper.find('.month-picker-year').text()).toEqual('2018');
+    });
 
     it('should update view when value changes', () => {
+      wrapper.find('.form-control').simulate('click');
       wrapper.setProps({ value: '2019-03' });
       expect(wrapper.find('input').props().value).toEqual('March, 2019');
       expect(wrapper.find('.month-picker-year').text()).toEqual('2019');
       expect(wrapper.find('a.month-picker-month.active').text()).toEqual('Mar');
     });
 
-    it('should open and close dropdown', () => {
-      wrapper.find('a.dropdown-toggle').simulate('click');
-      expect(wrapper.state('opened')).toEqual(true);
-      wrapper.find('a.dropdown-toggle').simulate('click');
-      expect(wrapper.state('opened')).toEqual(false);
+    it('should open and close overlay', () => {
+      wrapper.find('.form-control').simulate('click');
+      expect(wrapper.state('show')).toEqual(true);
+      wrapper.find('.form-control').simulate('click');
+      expect(wrapper.state('show')).toEqual(false);
     });
 
     it('should trigger onClose', () => {
-      wrapper.find('a.dropdown-toggle').simulate('click');
-      expect(wrapper.state('opened')).toEqual(true);
-      const toggle = wrapper.find(Dropdown).prop('onToggle');
-      expect(typeof toggle).toEqual('function');
-      toggle(false, null, { source: 'rootClose' });
+      wrapper.find('.form-control').simulate('click');
+      expect(wrapper.state('show')).toEqual(true);
+      expect(onClose).not.toBeCalled();
+      wrapper.find('.form-control').simulate('click');
       expect(onClose).toBeCalled();
       expect(onClose).toBeCalledWith('2018-12', 2018, 11);
     });
 
     it('should select month', () => {
+      wrapper.find('.form-control').simulate('click');
       wrapper.find('.month-picker-months li').at(5).find('a').simulate('click');
       expect(wrapper.state('year')).toEqual(2018);
       expect(wrapper.state('month')).toEqual(5);
@@ -90,6 +93,7 @@ describe('MonthPicker', () => {
     });
 
     it('should select year', () => {
+      wrapper.find('.form-control').simulate('click');
       wrapper.find('.month-picker-header a').at(0).simulate('click');
       expect(wrapper.state('year')).toEqual(2017);
       expect(wrapper.state('month')).toEqual(11);
@@ -98,6 +102,7 @@ describe('MonthPicker', () => {
     });
 
     it('should select year and month', () => {
+      wrapper.find('.form-control').simulate('click');
       wrapper.find('.month-picker-header a').at(1).simulate('click');
       wrapper.find('.month-picker-months li').at(7).find('a').simulate('click');
       expect(wrapper.state('year')).toEqual(2019);

@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import {
   debug,
@@ -44,16 +44,16 @@ describe('utils', () => {
   });
 
   describe('popover', () => {
-    const wrapper = shallow(popover('Title', 'Contents'));
-    it('should contain title', () => expect(wrapper.find('.popover-title').text()).toEqual('Title'));
-    it('should contain text', () => expect(wrapper.find('.popover-content').text()).toEqual('Contents'));
+    const wrapper = mount(popover('Title', 'Contents'));
+    it('should contain title', () => expect(wrapper.find('.popover-header').text()).toEqual('Title'));
+    it('should contain text', () => expect(wrapper.find('.popover-body').text()).toEqual('Contents'));
   });
 
   describe('tooltip', () => {
-    const wrapper = shallow(tooltip('Tooltip'));
+    const wrapper = mount(tooltip('Tooltip'));
     it('should contain text', () => expect(wrapper.find('.tooltip-inner').text()).toEqual('Tooltip'));
     it('should accept a react element', () => {
-      expect(shallow(tooltip(tooltip('Tooltip'))).find('.tooltip-inner').text()).toEqual('Tooltip');
+      expect(mount(tooltip(tooltip('Tooltip'))).find('.tooltip-inner').text()).toEqual('Tooltip');
     });
   });
 });

@@ -21,10 +21,10 @@ describe('<FormField/>', () => {
 
     it('has form-group element', () => expect(field.find('.form-group').exists()).toEqual(true));
     it('has mock field', () => expect(field.find('.form-group p').text()).toEqual('This is an mock field'));
-    it('has label element', () => expect(field.find('.control-label').exists()).toEqual(true));
-    it('has label text', () => expect(field.find('.control-label').text()).toEqual('label'));
-    it('has help element', () => expect(field.find('.help-block').exists()).toEqual(true));
-    it('has help text', () => expect(field.find('.help-block').text()).toEqual('help'));
+    it('has label element', () => expect(field.find('.form-label').exists()).toEqual(true));
+    it('has label text', () => expect(field.find('.form-label').text()).toEqual('label'));
+    it('has help element', () => expect(field.find('.valid-feedback').exists()).toEqual(true));
+    it('has help text', () => expect(field.find('.valid-feedback').text()).toEqual('help'));
     it('has no error element', () => expect(field.find('.validation-error').exists()).toEqual(false));
   });
 
@@ -41,8 +41,8 @@ describe('<FormField/>', () => {
 
     it('has form-group element', () => expect(field.find('.form-group').exists()).toEqual(true));
     it('has mock field', () => expect(field.find('.form-group p').text()).toEqual('This is an mock field'));
-    it('has label element', () => expect(field.find('.control-label').exists()).toEqual(false));
-    it('has help element', () => expect(field.find('.help-block').exists()).toEqual(false));
+    it('has label element', () => expect(field.find('.form-label').exists()).toEqual(false));
+    it('has help element', () => expect(field.find('.valid-feedback').exists()).toEqual(false));
     it('has no error element', () => expect(field.find('.validation-error').exists()).toEqual(false));
   });
 
