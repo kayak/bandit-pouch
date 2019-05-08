@@ -7,7 +7,6 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import Header from './header';
 import Footer from './footer';
 
-import 'react-select/dist/react-select.css';
 import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/github.css';
 import 'bootstrap/dist/css/bootstrap.min.css';

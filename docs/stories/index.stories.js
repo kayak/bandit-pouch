@@ -1,4 +1,3 @@
-import 'react-select/dist/react-select.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'highlight.js/styles/github.css';
 import 'bootstrap/dist/css/bootstrap.min.css';

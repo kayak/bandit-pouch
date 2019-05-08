@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Panel,
+  Card,
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { IconButton, Tooltip } from '../..';
@@ -33,7 +33,7 @@ class FieldArrayElement extends Component {
   render() {
     const {
       label,
-      bsStyle,
+      variant,
       dragHandleProps,
       minimizable,
       duplicable,
@@ -59,15 +59,15 @@ class FieldArrayElement extends Component {
     const headerLabel = (
       <h4
         style={{ display: 'inline' }}
-        className={bsStyle ? `text-${bsStyle}` : undefined}
+        className={variant ? `text-${variant}` : undefined}
       >
         {minimizable ? (label || <i>Unnamed</i>) : label}
       </h4>
     );
 
     return (
-      <Panel bsStyle={bsStyle}>
-        <Panel.Body>
+      <Card variant={variant}>
+        <Card.Body>
           <div>
             {dragHandleProps && (
               <FontAwesome
@@ -96,8 +96,8 @@ class FieldArrayElement extends Component {
               <Tooltip text="Remove" placement="top">
                 <IconButton
                   icon="times"
-                  bsSize="xs"
-                  bsStyle="link"
+                  size="sm"
+                  variant="link"
                   onClick={onRemove}
                   className="pull-right close"
                   style={TOOLBAR_BUTTON_STYLE}
@@ -108,8 +108,8 @@ class FieldArrayElement extends Component {
             {minimizable && (
               <Tooltip text={minimized ? 'Maximize' : 'Minimize'} placement="top">
                 <IconButton
-                  bsSize="xs"
-                  bsStyle="link"
+                  size="sm"
+                  variant="link"
                   style={TOOLBAR_BUTTON_STYLE}
                   className="pull-right close"
                   icon={minimized ? 'plus' : 'minus'}
@@ -122,8 +122,8 @@ class FieldArrayElement extends Component {
               <Tooltip text="Duplicate" placement="top">
                 <IconButton
                   icon="copy"
-                  bsSize="xs"
-                  bsStyle="link"
+                  size="sm"
+                  variant="link"
                   onClick={onDuplicate}
                   className="pull-right close"
                   style={TOOLBAR_BUTTON_STYLE}
@@ -137,8 +137,8 @@ class FieldArrayElement extends Component {
               {children}
             </div>
           </div>
-        </Panel.Body>
-      </Panel>
+        </Card.Body>
+      </Card>
     );
   }
 }

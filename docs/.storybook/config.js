@@ -15,7 +15,12 @@ addParameters({
 
 // Global decorators
 addDecorator(withKnobs);
-addDecorator(withInfo);
+addDecorator(withInfo({
+  // Disabling propTables for now (https://github.com/storybooks/storybook/issues/3389),
+  // since it make snapshot tests fail in Travis. We should revisit this once we update
+  // react-boostrap again, given it's going to use hooks for versions after 1.0.0-beta.5.
+  propTables: false,
+}));
 addDecorator(storyFn => (
   <div style={{ margin: '20px 50px' }} children={storyFn()}/>
 ));

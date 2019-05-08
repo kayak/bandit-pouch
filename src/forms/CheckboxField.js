@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 import FormField from './FormField';
 
@@ -8,16 +8,17 @@ import FormField from './FormField';
  * Component that renders an HTML Checkbox field
  */
 const CheckboxField = ({
-  input, label, help, meta, disabled,
+  input, label, help, meta, disabled, ...props
 }) => (
   <FormField id={input.id} help={help} meta={meta}>
-    <Checkbox
+    <Form.Check
+      type="checkbox"
       checked={!!input.value}
       disabled={disabled}
       onChange={evt => input.onChange(evt.target.checked)}
-    >
-      {label}
-    </Checkbox>
+      label={label}
+      {...props}
+    />
   </FormField>
 );
 

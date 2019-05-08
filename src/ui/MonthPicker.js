@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import {
-  Dropdown,
-  SafeAnchor,
-  FormControl,
-} from 'react-bootstrap';
+import { FormControl, SafeAnchor } from 'react-bootstrap';
+import DatePickerOverlay from './DatePickerOverlay';
 
 const DISPLAY_FORMAT = 'MMMM, YYYY';
 const VALUE_FORMAT = 'YYYY-MM';
@@ -63,7 +60,7 @@ class MonthPicker extends Component {
     this.onToggle = this.onToggle.bind(this);
 
     this.state = {
-      opened: false,
+      show: false,
       months: moment.monthsShort(),
       ...toState(props.value),
     };
@@ -103,12 +100,10 @@ class MonthPicker extends Component {
     }));
   }
 
-  onToggle(opened, event, { source }) {
-    if (source === 'click') {
-      this.setState({ opened }); // when toggle button is clicked
-    } else if (source === 'rootClose') {
-      this.setState({ opened: false }, this.onClose); // when body is clicked close the dialog
-    }
+  onToggle() {
+    const { show } = this.state;
+    this.setState({ show: !show });
+    if (show) this.onClose();
   }
 
   execute(callback) {
@@ -120,30 +115,31 @@ class MonthPicker extends Component {
 
   render() {
     const {
-      disabled,
+      disabled, placement,
     } = this.props;
     const {
-      opened, year, month, months, display,
+      show, year, month, months, display,
     } = this.state;
 
     return (
-      <Dropdown
-        id="month-dropdown"
-        className="month-picker"
-        open={opened}
-        disabled={disabled}
-        onToggle={this.onToggle}
-      >
-        <Dropdown.Toggle useAnchor noCaret disabled={disabled}>
-          <FormControl
-            componentClass="input"
-            value={display}
-            disabled={disabled}
-            onChange={_.identity}
-          />
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu className="month-picker-body">
+      <span>
+        <FormControl
+          value={display}
+          disabled={disabled}
+          onClick={this.onToggle}
+          onChange={_.identity}
+          ref={(input) => {
+            this.target = input;
+          }}
+        />
+        <DatePickerOverlay
+          container={this}
+          show={show && !disabled}
+          onHide={this.onToggle}
+          placement={placement}
+          // eslint-disable-next-line react/no-find-dom-node
+          target={() => this.target}
+        >
           <div className="month-picker-header">
             <SafeAnchor onClick={() => this.onYearChange(-1)}>
               <FontAwesome name="chevron-left" />
@@ -165,8 +161,8 @@ class MonthPicker extends Component {
               </li>
             ))}
           </ul>
-        </Dropdown.Menu>
-      </Dropdown>
+        </DatePickerOverlay>
+      </span>
     );
   }
 }
@@ -181,7 +177,11 @@ MonthPicker.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * Callback invoked when the dropdown menu closes. This function is invoked with
+   * Sets the direction of the calendar overlay.
+   */
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  /**
+   * Callback invoked when the overlay menu closes. This function is invoked with
    * formatted string value, year and month arguments.
    */
   onClose: PropTypes.func,
@@ -195,6 +195,7 @@ MonthPicker.propTypes = {
 MonthPicker.defaultProps = {
   value: null,
   disabled: false,
+  placement: 'bottom',
   onClose: _.noop,
   onChange: _.noop,
 };

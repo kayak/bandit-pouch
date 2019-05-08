@@ -11,7 +11,7 @@ const SpinnerField = ({
   input, label, placeholder, min, max, step, disabled, help, meta, onChangeValue,
 }) => (
   <InputField
-    componentClass="input"
+    as="input"
     type="number"
     placeholder={placeholder}
     input={input}

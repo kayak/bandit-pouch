@@ -12,7 +12,7 @@ export class NotificationItem extends Component {
   componentWillMount() {
     const { timeout } = this.props;
     if (timeout && setTimeout) {
-      this.timeout = setTimeout(() => this.dismiss(), timeout * SECONDS);
+      this.timeout = setTimeout(() => this.close(), timeout * SECONDS);
     }
   }
 
@@ -20,7 +20,7 @@ export class NotificationItem extends Component {
     this.clearTimeout();
   }
 
-  dismiss() {
+  close() {
     const { id, onClose } = this.props;
     onClose(id);
     this.clearTimeout();
@@ -37,13 +37,14 @@ export class NotificationItem extends Component {
       header,
       errors,
       message,
-      bsStyle,
+      variant,
     } = this.props;
 
     return (
       <Alert
-        bsStyle={bsStyle}
-        onDismiss={() => this.dismiss()}
+        dismissible
+        variant={variant}
+        onClose={() => this.close()}
       >
         {header && <h4>{header}</h4>}
         <p>{message}</p>
@@ -75,7 +76,16 @@ NotificationItem.propTypes = {
   /**
    * Bootstrap Alert type, e.g. info/success
    */
-  bsStyle: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
+  variant: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark',
+  ]),
   /**
    * Sets the time in seconds how long should an alert be visible
    */
@@ -90,7 +100,7 @@ NotificationItem.defaultProps = {
   header: null,
   errors: [],
   timeout: 30,
-  bsStyle: 'info',
+  variant: 'info',
 };
 
 /**
@@ -99,7 +109,7 @@ NotificationItem.defaultProps = {
 export const NotificationList = ({ alerts, timeout, clearAlert }) => (
   <div id="notification-container">
     {_.map(alerts, ({
-      id, header, message, errors, bsStyle,
+      id, header, message, errors, variant,
     }) => (
       <NotificationItem
         key={id}
@@ -107,7 +117,7 @@ export const NotificationList = ({ alerts, timeout, clearAlert }) => (
         header={header}
         message={message}
         errors={errors}
-        bsStyle={bsStyle}
+        variant={variant}
         timeout={timeout}
         onClose={clearAlert}
       />
@@ -128,7 +138,16 @@ NotificationList.propTypes = {
     header: PropTypes.string,
     message: PropTypes.string.isRequired,
     errors: PropTypes.arrayOf(PropTypes.string),
-    bsStyle: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
+    variant: PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'success',
+      'danger',
+      'warning',
+      'info',
+      'light',
+      'dark',
+    ]),
   })),
   /**
    * Callback invoked when an alert has been dismissed

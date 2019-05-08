@@ -19,24 +19,6 @@ const clearable = () => boolean('clearable', false);
 const creatable = () => boolean('creatable', false);
 const multi = () => boolean('multi', false);
 const onChangeWithValue = () => boolean('onChangeWithValue', false);
-const placement = () =>
-  select(
-    'placement',
-    {
-      bottom: 'bottom',
-      left: 'left',
-      right: 'right',
-      top: 'top',
-    },
-    'bottom'
-  );
-const numCalendarMonths = () =>
-  number('numCalendarMonths', 1, {
-    range: true,
-    min: 1,
-    max: 3,
-    step: 1,
-  });
 
 // Actions
 const onChangeValue = () => action('onChangeValue');
@@ -49,14 +31,10 @@ function fetchGithubUsers(input) {
 
   return fetch(`https://api.github.com/search/users?q=${input}`)
     .then(response => response.json())
-    .then(json => {
-      return {
-        options: json.items.map(item => ({
-          label: item.login,
-          value: item.id,
-        })),
-      };
-    });
+    .then(json => json.items.map(item => ({
+      label: item.login,
+      value: item.id,
+    })));
 }
 
 // Component
@@ -72,43 +50,33 @@ const withField = propsFn => (
   />
 );
 
+const options = [{
+  label: 'Option 1',
+  value: '1',
+}, {
+  label: 'Option 2',
+  value: '2',
+}];
+
 storiesOf('Forms|SelectField', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
   .add('default', () => ({}))
   .add('with defaultValue', () => ({
-    options: [{
-      label: 'Option 1',
-      value: '1'
-    }],
+    options,
     defaultValue: '1',
   }))
   .add('with disabled options', () => ({
     options: [{
       label: 'Disabled Option 1',
       value: '1',
-      disabled: true
+      disabled: true,
     }],
   }))
-  .add('with options containing labels', () => ({
+  .add('with no label options', () => ({
     options: [{
-      label: 'Option 1',
-      value: '1'
+      value: '1',
     }],
-  }))
-  .add('with options using different labelKey', () => ({
-    options: [{
-      text: 'Option 1',
-      value: '1'
-    }],
-    labelKey: 'text',
-  }))
-  .add('with options using different valueKey', () => ({
-    options: [{
-      label: 'Option 1',
-      id: '1'
-    }],
-    valueKey: 'id',
   }))
   .add('with async', () => ({
     loadOptions: fetchGithubUsers,
@@ -119,14 +87,18 @@ storiesOf('Forms|SelectField', module)
   }))
   .add('with disabled', () => ({ disabled: true }))
   .add('with isLoading', () => ({ isLoading: true }))
-  .add('with clearable', () => ({ clearable: true }))
+  .add('with clearable', () => ({
+    options,
+    defaultValue: '1',
+    clearable: true,
+  }))
   .add('with creatable', () => ({ creatable: true }))
-  .add('with multi', () => ({ multi: true }))
+  .add('with multi', () => ({
+    options,
+    multi: true,
+  }))
   .add('with onChangeWithValue', () => ({
-    options: [{
-      label: 'Option 1',
-      value: '1'
-    }],
+    options,
     onChangeWithValue: true,
   }))
   .add('Interactive Mode', () => ({

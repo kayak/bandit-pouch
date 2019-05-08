@@ -20,7 +20,7 @@ const TextAreaField = ({
     disabled={disabled}
     placeholder={placeholder}
     onChange={onChangeValue}
-    componentClass="textarea"
+    as="textarea"
   />
 );
 

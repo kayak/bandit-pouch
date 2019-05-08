@@ -8,7 +8,7 @@ import FormField from './FormField';
 /**
  * Generalized Form Control component.
  *
- * Different component types are usable via the componentClass parameter.  When component is undefined, it'll
+ * Different component types are usable via the as parameter.  When component is undefined, it'll
  * default as a text field.  Other options:
  *  - textarea
  *  - select (but use the SelectField component instead)
@@ -62,9 +62,11 @@ class InputField extends Component {
 
   render() {
     const {
-      input, label, help, meta, componentClass, onChangeValue, ...props
+      input, label, help, meta, as, onChangeValue, ...props
     } = this.props;
     const { value } = this.state;
+
+    const hasErrors = !_.isEmpty(meta.error);
 
     return (
       <FormField id={input.id} label={label} help={help} meta={meta}>
@@ -72,9 +74,11 @@ class InputField extends Component {
           {...input}
           {...props}
           value={value}
-          componentClass={componentClass}
+          as={as}
           onChange={this.onChange}
           onBlur={this.onBlur}
+          isValid={meta.touched && !hasErrors}
+          isInvalid={meta.touched && hasErrors}
         />
         <FormControl.Feedback />
       </FormField>
@@ -112,7 +116,7 @@ InputField.propTypes = {
   /**
    * Custom element type for this field
    */
-  componentClass: FormControl.propTypes.componentClass,
+  as: PropTypes.string,
   /**
    * Callback function that returns the value of the input when it's changed
    */
@@ -125,7 +129,7 @@ InputField.defaultProps = {
   disabled: false,
   meta: { touched: false, error: [] },
   onChangeValue: _.noop,
-  componentClass: 'input',
+  as: 'input',
 };
 
 export default InputField;

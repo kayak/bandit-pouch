@@ -14,29 +14,31 @@ const SelectField = ({
   defaultValue,
   help,
   meta,
-  valueKey,
   multi,
+  async,
+  creatable,
   onChangeValue,
-  innerRef,
   onChangeWithValue = true,
   ...props
 }) => (
   <FormField id={input.id} label={label} help={help} meta={meta}>
     <Select
       {...props}
-      value={input.value || defaultValue}
+      value={input.value}
+      defaultValue={defaultValue}
+      async={async}
       multi={multi}
-      valueKey={valueKey}
+      creatable={creatable}
       onChange={(selection) => {
         let value = selection;
 
         // Passing the onChangeWithValue prop means the React-Select 'value' key will be used
         // onChangeValue.  If this is false, the entire option object is stored, meaning additional data
         // can be stored onChangeValue if needed.
-        if (onChangeWithValue) {
+        if (onChangeWithValue && !async && !creatable) {
           value = multi
-            ? selection && _.map(selection, valueKey)
-            : selection && selection[valueKey];
+            ? selection && _.map(selection, 'value')
+            : selection && selection.value;
         }
 
         input.onChange(value);
@@ -44,7 +46,6 @@ const SelectField = ({
       }}
       onBlur={() => input.onBlur()}
       onFocus={() => input.onFocus()}
-      ref={innerRef}
     />
   </FormField>
 );
@@ -77,24 +78,21 @@ SelectField.propTypes = {
     ]),
   }),
   /**
-   * Key used to extract the value from the options object.
+   * The default value in case value is not set on first render.
    */
-  valueKey: PropTypes.string,
-  /**
-   * Key used to extract the label from the options object.
-   */
-  labelKey: PropTypes.string,
-  /**
-   * The default value for the select field.
-   */
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
   /**
    * An array of option objects available for selection. If the label is not present, then the
-   * value will be displayed. How the value/label will be extracted from the option objects depends on
-   * the valueKey and labelKey props respectively. This prop is required, unless async and loadOptions
+   * value will be displayed. This prop is required, unless async and loadOptions
    * props are set.
    */
-  options: PropTypes.arrayOf(PropTypes.any),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      disabled: PropTypes.bool,
+    }),
+  ),
   /**
    * Callback used to load options asynchronously. It can also be a Promise. This must be set when in
    * async mode.
@@ -141,8 +139,6 @@ SelectField.defaultProps = {
   disabled: false,
   meta: { touched: false, error: [] },
   defaultValue: null,
-  valueKey: 'value',
-  labelKey: 'label',
   options: [],
   loadOptions: null,
   isLoading: false,
