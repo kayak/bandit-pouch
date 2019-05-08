@@ -18,6 +18,6 @@ const withComponent = propsFn => (
   </Popover>
 );
 
-storiesOf('UI|Popover', module)
+storiesOf('UI|Popover.DontTest', module)
   .addDecorator(withComponent)
   .add('default', () => ({}));

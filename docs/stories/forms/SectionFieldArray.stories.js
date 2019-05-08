@@ -58,7 +58,7 @@ const withField = propsFn => {
   );
 };
 
-storiesOf('Forms|SectionFieldArray', module)
+storiesOf('Forms|SectionFieldArray.DontTest', module)
   .addDecorator(withField)
   .addDecorator(withStore)
   .add('default', () => ({}))

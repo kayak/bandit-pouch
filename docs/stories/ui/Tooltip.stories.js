@@ -17,6 +17,6 @@ const withComponent = propsFn => (
   </Tooltip>
 );
 
-storiesOf('UI|Tooltip', module)
+storiesOf('UI|Tooltip.DontTest', module)
   .addDecorator(withComponent)
   .add('default', () => ({}));
