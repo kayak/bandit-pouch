@@ -22,13 +22,13 @@ const baseConfig = environment => ({
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
       use: [{
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
           cacheDirectory: true,
-          rootMode: "upward",
+          rootMode: 'upward',
         },
-        exclude: /node_modules/,
       }],
     }],
   },

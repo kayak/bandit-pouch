@@ -6,8 +6,6 @@ import FontAwesome from 'react-fontawesome';
 import { FormField, MagicRow, Tooltip } from '../..';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 
-import './KeyValueFieldArray.css';
-
 /**
  * Component that renders a key-value field array.
  */
