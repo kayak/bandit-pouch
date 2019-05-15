@@ -2,7 +2,9 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FontAwesome from 'react-fontawesome';
+import {
+  FontAwesomeIcon,
+} from '@fortawesome/react-fontawesome';
 import {
   Button,
 } from 'react-bootstrap';
@@ -19,7 +21,7 @@ const IconButton = ({
   ...props
 }) => (
   <Button className={classNames('btn-icon', className)} {...props}>
-    <FontAwesome name={icon} />
+    <FontAwesomeIcon icon={icon} />
     {_.isEmpty(label) ? null : (
       <span className="btn-icon-label">{label}</span>
     )}

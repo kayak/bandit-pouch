@@ -3,8 +3,8 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
 import { FormControl, SafeAnchor } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DatePickerOverlay from './DatePickerOverlay';
 
 const DISPLAY_FORMAT = 'MMMM, YYYY';
@@ -142,11 +142,11 @@ class MonthPicker extends Component {
         >
           <div className="month-picker-header">
             <SafeAnchor onClick={() => this.onYearChange(-1)}>
-              <FontAwesome name="chevron-left" />
+              <FontAwesomeIcon icon="chevron-left" />
             </SafeAnchor>
             <span className="month-picker-year">{year}</span>
             <SafeAnchor onClick={() => this.onYearChange(1)}>
-              <FontAwesome name="chevron-right" />
+              <FontAwesomeIcon icon="chevron-right" />
             </SafeAnchor>
           </div>
           <ul className="month-picker-months">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ErrorPage from '../../src/ui/ErrorPage';
 import PageNotFound from '../../src/ui/PageNotFound';
 import { CenteredLoader } from '../../src/ui/Loaders';
@@ -31,7 +31,7 @@ describe('LoadingWrapper', () => {
     wrapper.setProps({ error: 'Error occurred' });
     expect(wrapper.children()).toHaveLength(1);
     expect(wrapper.find(ErrorPage).exists()).toEqual(true);
-    expect(wrapper.find(FontAwesome).exists()).toEqual(false);
+    expect(wrapper.find(FontAwesomeIcon).exists()).toEqual(false);
     expect(wrapper.find('.error-page-status').exists()).toEqual(false);
     expect(wrapper.find('.error-page-message').text()).toEqual('Error occurred');
   });
@@ -42,7 +42,7 @@ describe('LoadingWrapper', () => {
     });
     expect(wrapper.children()).toHaveLength(1);
     expect(wrapper.find(ErrorPage).exists()).toEqual(true);
-    expect(wrapper.find(FontAwesome).prop('name')).toEqual('ban');
+    expect(wrapper.find(FontAwesomeIcon).prop('icon')).toEqual('ban');
     expect(wrapper.find('.error-page-status').text()).toEqual('403');
     expect(wrapper.find('.error-page-message').text()).toEqual('Error');
   });
@@ -60,7 +60,7 @@ describe('LoadingWrapper', () => {
     wrapper.setProps({ found: false });
     expect(wrapper.children()).toHaveLength(1);
     expect(wrapper.find(PageNotFound).exists()).toEqual(true);
-    expect(wrapper.find(FontAwesome).prop('name')).toEqual('frown-o');
+    expect(wrapper.find(FontAwesomeIcon).prop('icon')).toEqual(['far', 'frown']);
     expect(wrapper.find('.error-page-status').text()).toEqual('404');
     expect(wrapper.find('.error-page-message').text()).toEqual('The page you requested was not found.');
   });

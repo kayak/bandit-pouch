@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Button, Col, InputGroup } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormField, MagicRow, Tooltip } from '../..';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 
@@ -27,7 +27,7 @@ const KeyValueFieldArray = ({
             disabled={disabled}
             onClick={() => fields.push({})}
           >
-            <FontAwesome name="plus" />
+            <FontAwesomeIcon icon="plus" />
           </Button>
         </span>
       )}
@@ -56,7 +56,7 @@ const KeyValueFieldArray = ({
                       disabled={disabled}
                       onClick={() => fields.remove(idx)}
                     >
-                      <FontAwesome name="remove" />
+                      <FontAwesomeIcon icon="remove" />
                     </Button>
                   </Tooltip>
                 </InputGroup.Append>

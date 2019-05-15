@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import FormField from './FormField';
-import { DatePicker } from '../ui';
+import DatePicker from '../ui/DatePicker';
 import {
   DEFAULT_DATE_FORMAT,
 } from '../ui/DateRangePicker';

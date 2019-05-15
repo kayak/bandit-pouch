@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ErrorPage from '../../src/ui/ErrorPage';
 import PageNotFound from '../../src/ui/PageNotFound';
@@ -21,10 +21,10 @@ describe('<ErrorPage />', () => {
     wrapper.find('.error-page-message').text(),
   ).toEqual('Error message'));
   it('should contain icon element', () => expect(
-    wrapper.find(FontAwesome).exists(),
+    wrapper.find(FontAwesomeIcon).exists(),
   ).toEqual(true));
   it('should contain exclamation icon', () => expect(
-    wrapper.find(FontAwesome).prop('name'),
+    wrapper.find(FontAwesomeIcon).prop('icon'),
   ).toEqual('exclamation'));
   it('should have extra class name', () => expect(
     wrapper.hasClass('text-danger'),
@@ -61,14 +61,14 @@ describe('<PageNotFound />', () => {
       wrapper.find('.error-page-status').text(),
     ).toEqual('404'));
     it('should contain frown icon', () => expect(
-      wrapper.find(FontAwesome).prop('name'),
-    ).toEqual('frown-o'));
+      wrapper.find(FontAwesomeIcon).prop('icon'),
+    ).toEqual(['far', 'frown']));
   });
 
   describe('with default props', () => {
     beforeAll(() => {
       wrapper = mount(
-        <PageNotFound status={500} icon="warning" message="Not Found" className="not-found" />,
+        <PageNotFound status={500} icon="exclamation-circle" message="Not Found" className="not-found" />,
       );
     });
 
@@ -82,7 +82,7 @@ describe('<PageNotFound />', () => {
       wrapper.hasClass('not-found'),
     ).toEqual(true));
     it('should contain frown icon', () => expect(
-      wrapper.find(FontAwesome).prop('name'),
-    ).toEqual('warning'));
+      wrapper.find(FontAwesomeIcon).prop('icon'),
+    ).toEqual('exclamation-circle'));
   });
 });

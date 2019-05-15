@@ -11,10 +11,13 @@ describe('<FieldError/>', () => {
       fieldError = shallow(<FieldError>{text}</FieldError>);
     });
 
-    it('has class name "text-danger"', () => expect(fieldError.find('strong').hasClass('text-danger')).toEqual(true));
-    it('dispalys the correct error text', () => expect(fieldError.find('span').text()).toEqual(text));
+    it('renders feedback element', () => expect(fieldError.exists('Feedback')).toEqual(true));
+    it('renders error text', () => expect(fieldError.find('small').text()).toEqual(text));
+    it('renders feedback element with invalid state', () => expect(
+      fieldError.find('Feedback').prop('type'),
+    ).toEqual('invalid'));
     it('uses a font awesome icon with a warning sign', () => expect(
-      fieldError.find('FontAwesome').props().name,
-    ).toEqual('warning'));
+      fieldError.find('FontAwesomeIcon').prop('icon'),
+    ).toEqual('exclamation-circle'));
   });
 });

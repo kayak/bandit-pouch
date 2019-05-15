@@ -13,7 +13,10 @@ PageNotFound.propTypes = {
   /**
    * Font awesome icon
    */
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   /**
    * Error message to be shown in the page. It can be a String,
    * React Component or an node
@@ -26,7 +29,7 @@ PageNotFound.propTypes = {
 };
 
 PageNotFound.defaultProps = {
-  icon: 'frown-o',
+  icon: ['far', 'frown'],
   message: 'The page you requested was not found.',
 };
 

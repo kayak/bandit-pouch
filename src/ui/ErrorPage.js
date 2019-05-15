@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Renders an error page with an error message and a Font Awesome icon
@@ -18,7 +18,11 @@ const ErrorPage = ({
     )}
 
     <div className="error-page-message-wrapper">
-      {icon && <FontAwesome name={icon} size="3x" className="error-page-icon" />}
+      {icon && (
+        <span className="error-page-icon">
+          <FontAwesomeIcon icon={icon} size="3x" />
+        </span>
+      )}
       <h1 className="error-page-message">{message}</h1>
     </div>
   </div>
@@ -28,7 +32,10 @@ ErrorPage.propTypes = {
   /**
    * Font awesome icon
    */
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   /**
    * Additional class names
    */

@@ -10,7 +10,7 @@ const NavigationLink = ({
   disabled,
   className,
   to,
-  useATag=false,
+  useATag = false,
   ...props
 }) => {
   // These are injected down by `<Nav>` for building `<SubNav>`s.
@@ -26,7 +26,6 @@ const NavigationLink = ({
     >
       {useATag ? (
         <a {...props} href={to} />
-
       ) : (
         <Link
           {...props}
@@ -40,11 +39,9 @@ const NavigationLink = ({
 
 const Header = ({ siteTitle }) => (
   <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <Link to="/">{siteTitle}</Link>
-      </Navbar.Brand>
-    </Navbar.Header>
+    <Navbar.Brand>
+      <Link to="/">{siteTitle}</Link>
+    </Navbar.Brand>
     <Navbar.Collapse>
       <Nav>
         <NavigationLink to="/ui">UI components</NavigationLink>
