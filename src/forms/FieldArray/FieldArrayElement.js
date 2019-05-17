@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Card,
 } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconButton, Tooltip } from '../..';
 
 const TOOLBAR_BUTTON_STYLE = { marginRight: 10, fontSize: 15 };
@@ -70,8 +70,8 @@ class FieldArrayElement extends Component {
         <Card.Body>
           <div>
             {dragHandleProps && (
-              <FontAwesome
-                name="arrows"
+              <FontAwesomeIcon
+                icon="arrows"
                 style={{
                   fontSize: 16,
                   marginRight: 6,

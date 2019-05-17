@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Form } from 'react-bootstrap';
 import { CHILDREN_PROP_TYPE } from '../utils';
 
 /**
  * Component meant for displaying errors below fields in a form
  */
 const FieldError = ({ style = {}, children = [] }) => (
-  <strong className="text-danger" style={style}>
-    <FontAwesome name="warning" />
+  <Form.Control.Feedback type="invalid" style={style}>
+    <FontAwesomeIcon icon="exclamation-circle" />
     &nbsp;
-    <span className="validation-error">{children}</span>
-  </strong>
+    <small className="validation-error">{children}</small>
+  </Form.Control.Feedback>
 );
 
 FieldError.propTypes = {

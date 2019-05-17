@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DropdownButton, FormField, Tooltip } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import { fieldArrayMeta, fieldArrayButtonBsStyle } from '../meta';
@@ -207,7 +207,7 @@ class SectionFieldArray extends Component {
         <Tooltip text={addTooltip} placement="top">
           <DropdownButton
             className="text-center"
-            title={<FontAwesome name="plus" />}
+            title={<FontAwesomeIcon icon="plus" />}
             style={{ display: 'block', marginTop: 10 }}
             variant={buttonBsStyle}
             disabled={disabled || (addChoices && addChoices.length === 0)}

@@ -98,16 +98,17 @@ const LayoutExample = () => (
         <Headline title="Page headline" subtitle="Subtitle">
           <ButtonGroup>
             <Tooltip text="Copy text" placement="top">
-              <IconButton icon="copy" bsSize="sm" />
+              <IconButton icon="copy" size="sm" />
             </Tooltip>
             <Tooltip text="Share" placement="top">
-              <IconButton icon="share" bsSize="sm" />
+              <IconButton icon="share" size="sm" />
             </Tooltip>
           </ButtonGroup>
         </Headline>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Sed risus ultricies tristique nulla aliquet enim. Ante metus dictum at tempor commodo ullamcorper.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Sed risus ultricies tristique nulla aliquet enim. Ante metus
+          dictum at tempor commodo ullamcorper.
         </p>
         <SectionHeadline title="Section headline" subtitle="Subtitle" />
         <p>
@@ -254,13 +255,13 @@ class NotificationsExample extends React.Component {
       <div>
         <p>Click the buttons bellow to create alerts</p>
         <ButtonGroup>
-          <Button bsStyle="info" onClick={() => this.onAddAlert('info', 'Info message')}>
+          <Button variant="info" onClick={() => this.onAddAlert('info', 'Info message')}>
             Show info alert
           </Button>
-          <Button bsStyle="warning" onClick={() => this.onAddAlert('warning', 'Warning message')}>
+          <Button variant="warning" onClick={() => this.onAddAlert('warning', 'Warning message')}>
             Show warning alert
           </Button>
-          <Button bsStyle="danger" onClick={() => this.onAddAlert('danger', 'Danger message')}>
+          <Button variant="danger" onClick={() => this.onAddAlert('danger', 'Danger message')}>
             Show danger alert
           </Button>
         </ButtonGroup>

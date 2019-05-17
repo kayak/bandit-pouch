@@ -34859,21 +34859,17 @@ exports[`MyStoryshots Forms|SubmitResetRow with error 1`] = `
                     Submit
                   </button>
                 </div>
-                <strong
-                  className="text-danger"
+                <div
+                  className="invalid-feedback"
                   style={null}
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-warning"
-                  />
                    
-                  <span
+                  <small
                     className="validation-error"
                   >
                     The error X ocurred.
-                  </span>
-                </strong>
+                  </small>
+                </div>
               </div>
             </div>
           </form>
@@ -35965,21 +35961,17 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitFailed and error 1`] = `
                     Submit
                   </button>
                 </div>
-                <strong
-                  className="text-danger"
+                <div
+                  className="invalid-feedback"
                   style={null}
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-warning"
-                  />
                    
-                  <span
+                  <small
                     className="validation-error"
                   >
                     The error X ocurred.
-                  </span>
-                </strong>
+                  </small>
+                </div>
               </div>
             </div>
           </form>
@@ -37588,21 +37580,17 @@ exports[`MyStoryshots Forms|SubmitResetRow with valid as false and error 1`] = `
                     Submit
                   </button>
                 </div>
-                <strong
-                  className="text-danger"
+                <div
+                  className="invalid-feedback"
                   style={null}
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-warning"
-                  />
                    
-                  <span
+                  <small
                     className="validation-error"
                   >
                     The error X ocurred.
-                  </span>
-                </strong>
+                  </small>
+                </div>
               </div>
             </div>
           </form>
@@ -46566,8 +46554,7 @@ exports[`MyStoryshots Pages|ErrorPage Interactive Mode 1`] = `
           className="error-page-message-wrapper"
         >
           <span
-            aria-hidden={true}
-            className="fa fa-edit fa-3x error-page-icon"
+            className="error-page-icon"
           />
           <h1
             className="error-page-message"
@@ -47153,8 +47140,7 @@ exports[`MyStoryshots Pages|ErrorPage with other icon 1`] = `
           className="error-page-message-wrapper"
         >
           <span
-            aria-hidden={true}
-            className="fa fa-edit fa-3x error-page-icon"
+            className="error-page-icon"
           />
           <h1
             className="error-page-message"
@@ -47750,8 +47736,7 @@ exports[`MyStoryshots Pages|PageNotFound Interactive Mode 1`] = `
           className="error-page-message-wrapper"
         >
           <span
-            aria-hidden={true}
-            className="fa fa-edit fa-3x error-page-icon"
+            className="error-page-icon"
           />
           <h1
             className="error-page-message"
@@ -48051,8 +48036,7 @@ exports[`MyStoryshots Pages|PageNotFound default 1`] = `
           className="error-page-message-wrapper"
         >
           <span
-            aria-hidden={true}
-            className="fa fa-frown-o fa-3x error-page-icon"
+            className="error-page-icon"
           />
           <h1
             className="error-page-message"
@@ -48296,8 +48280,7 @@ exports[`MyStoryshots Pages|PageNotFound with other icon 1`] = `
           className="error-page-message-wrapper"
         >
           <span
-            aria-hidden={true}
-            className="fa fa-fedit fa-3x error-page-icon"
+            className="error-page-icon"
           />
           <h1
             className="error-page-message"
@@ -50022,10 +50005,6 @@ exports[`MyStoryshots UI|IconButton Interactive Mode 1`] = `
         type="button"
       >
         <span
-          aria-hidden={true}
-          className="fa fa-edit"
-        />
-        <span
           className="btn-icon-label"
         >
           Edit me
@@ -50314,12 +50293,7 @@ exports[`MyStoryshots UI|IconButton default 1`] = `
         className="btn-icon btn btn-primary"
         disabled={false}
         type="button"
-      >
-        <span
-          aria-hidden={true}
-          className="fa fa-edit"
-        />
-      </button>
+      />
     </div>
     <button
       className="info__show-button"
@@ -50577,10 +50551,6 @@ exports[`MyStoryshots UI|IconButton with an icon and label 1`] = `
         disabled={false}
         type="button"
       >
-        <span
-          aria-hidden={true}
-          className="fa fa-edit"
-        />
         <span
           className="btn-icon-label"
         >

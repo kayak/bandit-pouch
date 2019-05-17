@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import moment from 'moment';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const GithubButton = ({ repo, type }) => (
   <span className="github-button-wrapper">
@@ -24,7 +24,7 @@ export default ({ name, version }) => (
       borderTop: '1px solid #e7e7e7',
     }}
   >
-    <Grid>
+    <Container>
       <Row className="text-center">
         <Col xs={6} xsOffset={3}>
           <GithubButton
@@ -59,6 +59,6 @@ export default ({ name, version }) => (
           </p>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </footer>
 );

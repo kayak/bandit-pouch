@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Header from './header';
 import Footer from './footer';
@@ -12,6 +12,7 @@ import 'highlight.js/styles/github.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import '../icons';
 import '../../../dist/bandit-pouch.css';
 import './layout.css';
 
@@ -37,13 +38,13 @@ const LayoutBody = ({ children, data }) => {
       </Helmet>
       <Header siteTitle={siteMetadata.title} />
 
-      <Grid style={{ paddingBottom: '20px' }}>
+      <Container style={{ paddingBottom: '20px' }}>
         <Row>
           <Col xs={12}>
             {children}
           </Col>
         </Row>
-      </Grid>
+      </Container>
 
       <Footer {...siteMetadata.library} />
     </>

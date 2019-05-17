@@ -21,7 +21,7 @@ module.exports = {
   // collectCoverageFrom: null,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage/",
+  coverageDirectory: 'coverage/',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -59,8 +59,8 @@ module.exports = {
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
-    "node_modules",
-    "src",
+    'node_modules',
+    'src',
   ],
 
   // An array of file extensions your modules use
@@ -75,10 +75,11 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(s?css|less)$": "identity-obj-proxy",
+    '\\.(s?css|less)$': 'identity-obj-proxy',
   },
 
-  // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
+  // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the
+  // module loader
   // modulePathIgnorePatterns: [],
 
   // Activates notifications for test results
@@ -121,7 +122,7 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [
-    "./test/setup.js"
+    './test/setup.js',
   ],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
@@ -129,11 +130,11 @@ module.exports = {
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   snapshotSerializers: [
-    "enzyme-to-json/serializer"
+    'enzyme-to-json/serializer',
   ],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -149,9 +150,9 @@ module.exports = {
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
-    "/node_modules/",
-    "/.cache/",
-    "/docs/",
+    '/node_modules/',
+    '/.cache/',
+    '/docs/',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -171,16 +172,18 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.jsx$": "./test/babel-jest-wrapper.js",
-    "^.+\\.js$": "./test/babel-jest-wrapper.js",
+    '^.+\\.jsx$': './test/babel-jest-wrapper.js',
+    '^.+\\.js$': './test/babel-jest-wrapper.js',
   },
 
-  // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
+  // An array of regexp pattern strings that are matched against all source file paths, matched files will
+  // skip transformation
   // transformIgnorePatterns: [
   //   "/node_modules/"
   // ],
 
-  // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
+  // An array of regexp pattern strings that are matched against all modules before the module loader will
+  // automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run

@@ -7,7 +7,6 @@ import {
   Row,
   Nav,
   Tab,
-  NavItem,
 } from 'react-bootstrap';
 
 const MarkdownTabs = ({
@@ -16,9 +15,9 @@ const MarkdownTabs = ({
   <Tab.Container id={id} defaultActiveKey={defaultActiveKey}>
     <Row>
       <Col sm={4} md={3} lg={2}>
-        <Nav bsStyle="pills" stacked>
+        <Nav variant="pills" stacked>
           {pages.map(page => (
-            <NavItem key={page.id} eventKey={page.id}>{page.title}</NavItem>
+            <Nav.Link key={page.id} eventKey={page.id}>{page.title}</Nav.Link>
           ))}
         </Nav>
       </Col>
