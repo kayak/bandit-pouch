@@ -5,8 +5,12 @@ import ErrorPage from './ErrorPage';
 /**
  * Renders a `Not found` Error Page with a message and 404 status code
  */
-const PageNotFound = ({ icon, message, ...props }) => (
-  <ErrorPage {...props} status={404} icon={icon} message={message} />
+const PageNotFound = ({
+  icon, message, children, ...props
+}) => (
+  <ErrorPage {...props} status={404} icon={icon} message={message}>
+    {children}
+  </ErrorPage>
 );
 
 PageNotFound.propTypes = {
@@ -26,11 +30,18 @@ PageNotFound.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]),
+
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 };
 
 PageNotFound.defaultProps = {
   icon: ['far', 'frown'],
   message: 'The page you requested was not found.',
+  children: null,
 };
 
 export default PageNotFound;

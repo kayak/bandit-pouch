@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  * Renders an error page with an error message and a Font Awesome icon
  */
 const ErrorPage = ({
-  icon, status, className, message,
+  icon, status, className, message, children,
 }) => (
   <div className={classnames('error-page', 'bandit-error-page', className)}>
 
@@ -25,6 +25,12 @@ const ErrorPage = ({
       )}
       <h1 className="error-page-message">{message}</h1>
     </div>
+
+    {children && (
+      <div className="error-page-body-wrapper">
+        {children}
+      </div>
+    )}
   </div>
 );
 
@@ -58,11 +64,18 @@ ErrorPage.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]).isRequired,
+
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 };
 
 ErrorPage.defaultProps = {
   icon: null,
   status: null,
+  children: null,
   className: null,
 };
 

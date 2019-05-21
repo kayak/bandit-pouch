@@ -14,18 +14,20 @@ import { CenteredLoader } from './Loaders';
  */
 const LoadingWrapper = ({
   component: Child,
-  loader: Loader,
+  loader: LoaderComponent,
+  errorPage: ErrorPageComponent,
+  notFoundPage: NotFoundPageComponent,
   loading,
   error,
   found,
   ...props
 }) => {
   if (loading) {
-    return <Loader />;
+    return <LoaderComponent />;
   }
 
   if (!found) {
-    return <PageNotFound />;
+    return <NotFoundPageComponent />;
   }
 
   if (error) {
@@ -34,9 +36,9 @@ const LoadingWrapper = ({
       return <Error />;
     }
     if (_.isPlainObject(error)) {
-      return <ErrorPage {...error} />;
+      return <ErrorPageComponent {...error} />;
     }
-    return <ErrorPage message={error} />;
+    return <ErrorPageComponent message={error} />;
   }
 
   return <Child {...props} />;
@@ -55,6 +57,20 @@ LoadingWrapper.propTypes = {
    * React component that should be shown when `loading` is set to `true`
    */
   loader: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func,
+  ]),
+  /**
+   * React component that should render the `error` parameter
+   */
+  errorPage: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func,
+  ]),
+  /**
+   * React component that should render the `NotFoundPage`
+   */
+  notFoundPage: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.func,
   ]),
@@ -79,6 +95,8 @@ LoadingWrapper.propTypes = {
 
 LoadingWrapper.defaultProps = {
   loader: CenteredLoader,
+  errorPage: ErrorPage,
+  notFoundPage: PageNotFound,
   loading: false,
   error: null,
   found: true,

@@ -22,7 +22,11 @@ const Popover = ({
 );
 
 Popover.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.func,
+  ]).isRequired,
   title: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 };

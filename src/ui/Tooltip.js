@@ -17,7 +17,11 @@ const Tooltip = ({ text, children, ...props }) => (
 );
 
 Tooltip.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.func,
+  ]).isRequired,
   children: PropTypes.element.isRequired,
 };
 
