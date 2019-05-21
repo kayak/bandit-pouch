@@ -16,12 +16,12 @@ function toValue(input, checked) {
  * Component that renders an HTML Checkbox field
  */
 const CheckboxField = ({
-  input, label, help, meta, checkedByDefault, disabled, ...props
+  input, label, help, meta, defaultValue, disabled, ...props
 }) => (
   <FormField id={input.id} help={help} meta={meta}>
     <Form.Check
       type="checkbox"
-      checked={toValue(input.value, checkedByDefault)}
+      checked={toValue(input.value, defaultValue)}
       disabled={disabled}
       onChange={evt => input.onChange(evt.target.checked)}
       label={label}
@@ -46,7 +46,7 @@ CheckboxField.propTypes = {
   /**
    * Sets the initial/default value for this checkbox input field
    */
-  checkedByDefault: PropTypes.bool,
+  defaultValue: PropTypes.bool,
   /**
    * Whether the field is disabled or not.
    */
@@ -67,7 +67,7 @@ CheckboxField.defaultProps = {
   help: null,
   label: null,
   disabled: false,
-  checkedByDefault: false,
+  defaultValue: false,
   meta: { touched: false, error: [] },
 };
 
