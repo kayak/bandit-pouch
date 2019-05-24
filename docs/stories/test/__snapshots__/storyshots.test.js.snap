@@ -33,6 +33,7 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
                   className="form-check-input"
                   disabled={false}
                   id={null}
+                  name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />
@@ -704,6 +705,7 @@ exports[`MyStoryshots Forms|CheckboxField default 1`] = `
                   className="form-check-input"
                   disabled={false}
                   id={null}
+                  name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />
@@ -1346,6 +1348,7 @@ exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
                   className="form-check-input"
                   disabled={true}
                   id={null}
+                  name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />

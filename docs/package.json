@@ -12,8 +12,9 @@
     "storybook": "start-storybook -p 6006",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
-    "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage",
+    "test:watch": "npm run test --watchAll --verbose",
+    "test:coverage": "npm run test --verbose --coverage",
+    "test:update": "npm run test -- -u",
     "deploy": "npm run build-all&& gh-pages -d public --repo git@github.com:kayak/bandit-pouch.git --"
   },
   "keywords": [
