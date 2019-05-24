@@ -11,6 +11,7 @@
     "test:coverage": "jest --verbose --coverage",
     "test:snapshots": "npm --prefix docs/ test",
     "test:snapshots:coverage": "npm --prefix docs/ run test:coverage",
+    "test:snapshots:update": "npm --prefix docs/ run test:update",
     "coveralls": "coveralls",
     "css": "postcss --e production -o dist/bandit-pouch.css css/bandit-pouch.css",
     "cjs": "webpack --env cjs",
