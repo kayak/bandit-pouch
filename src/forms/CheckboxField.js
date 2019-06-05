@@ -20,6 +20,7 @@ const CheckboxField = ({
 }) => (
   <FormField id={input.id} help={help} meta={meta}>
     <Form.Check
+      name={input.name}
       type="checkbox"
       checked={toValue(input.value, defaultValue)}
       disabled={disabled}
