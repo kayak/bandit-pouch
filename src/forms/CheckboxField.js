@@ -5,31 +5,37 @@ import { Form } from 'react-bootstrap';
 
 import FormField from './FormField';
 
-function toValue(input, checked) {
-  if (checked) {
-    return _.isBoolean(input.value) ? input.value : true;
+function toValue(checked, defaultValue) {
+  if (_.isNil(checked)) {
+    return defaultValue;
   }
-  return !!input.value;
+
+  return !!checked;
 }
 
 /**
  * Component that renders an HTML Checkbox field
  */
 const CheckboxField = ({
-  input, label, help, meta, defaultValue, disabled, ...props
-}) => (
-  <FormField id={input.id} help={help} meta={meta}>
-    <Form.Check
-      name={input.name}
-      type="checkbox"
-      checked={toValue(input.value, defaultValue)}
-      disabled={disabled}
-      onChange={evt => input.onChange(evt.target.checked)}
-      label={label}
-      {...props}
-    />
-  </FormField>
-);
+  input, label, help, meta, defaultValue, disabled,
+}) => {
+  const hasErrors = !_.isEmpty(meta.error);
+
+  return (
+    <FormField id={input.id} help={help} meta={meta}>
+      <Form.Check
+        type="checkbox"
+        name={input.name}
+        label={label}
+        checked={toValue(input.value, defaultValue)}
+        disabled={disabled}
+        onChange={evt => input.onBlur(evt.target.checked)}
+        isValid={meta.touched && !hasErrors}
+        isInvalid={meta.touched && hasErrors}
+      />
+    </FormField>
+  );
+};
 
 CheckboxField.propTypes = {
   /**

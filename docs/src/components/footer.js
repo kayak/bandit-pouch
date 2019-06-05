@@ -25,8 +25,8 @@ export default ({ name, version }) => (
     }}
   >
     <Container>
-      <Row className="text-center">
-        <Col xs={6} xsOffset={3}>
+      <Row>
+        <Col className="text-center">
           <GithubButton
             repo={name}
             type="star"
@@ -37,7 +37,7 @@ export default ({ name, version }) => (
           />
         </Col>
       </Row>
-      <Row style={{ marginTop: '20px' }}>
+      <Row>
         <Col xs={12} className="text-center">
           <p>
             Copyright

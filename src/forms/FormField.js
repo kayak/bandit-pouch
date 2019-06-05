@@ -9,6 +9,8 @@ import {
 import FieldError from './FieldError';
 import { CHILDREN_PROP_TYPE } from '../utils';
 
+const VALIDATION_CLASS_NAME = { valid: 'text-success', invalid: 'text-danger' };
+
 /**
  * Function to define the current validationState of the FormGroup. This is a prop that
  * the FormGroup component in React-Bootstrap expects
@@ -48,9 +50,9 @@ const FormField = ({
       {children}
 
       {help && (
-        <Form.Control.Feedback type={validationState}>
+        <Form.Text className={VALIDATION_CLASS_NAME[validationState] || 'text-muted'}>
           {help && help}
-        </Form.Control.Feedback>
+        </Form.Text>
       )}
 
       { // Only show if field is touched and not empty. Sometimes, the error prop is an empty

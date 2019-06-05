@@ -18,7 +18,7 @@ const SubmitResetRow = ({
 }) => (
   <Row>
     <Col xs={12}>
-      <ButtonToolbar className="pull-right">
+      <ButtonToolbar className="float-right">
         <Button
           variant="warning"
           size="lg"
