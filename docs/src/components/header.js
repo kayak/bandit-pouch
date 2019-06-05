@@ -25,10 +25,11 @@ const NavigationLink = ({
       className={classNames(className, { active, disabled })}
     >
       {useATag ? (
-        <a {...props} href={to} />
+        <Nav.Link {...props} href={to} />
       ) : (
         <Link
           {...props}
+          className="nav-link"
           to={to}
           disabled={disabled}
         />
@@ -38,22 +39,20 @@ const NavigationLink = ({
 };
 
 const Header = ({ siteTitle }) => (
-  <Navbar>
+  <Navbar bg="dark" variant="dark">
     <Navbar.Brand>
       <Link to="/">{siteTitle}</Link>
     </Navbar.Brand>
-    <Navbar.Collapse>
-      <Nav>
-        <NavigationLink to="/ui">UI components</NavigationLink>
-        <NavigationLink to="/forms">Form</NavigationLink>
-        <NavigationLink to="/redux">Redux</NavigationLink>
-        <NavigationLink to="/utils">Utilities</NavigationLink>
-        <NavigationLink to="/api">API</NavigationLink>
-        <NavigationLink to={__IS_DEV__ ? 'http://localhost:6006/' : '/bandit-pouch/storybook'} useATag>
-          Storybook
-        </NavigationLink>
-      </Nav>
-    </Navbar.Collapse>
+    <Nav>
+      <NavigationLink to="/ui">UI components</NavigationLink>
+      <NavigationLink to="/forms">Form</NavigationLink>
+      <NavigationLink to="/redux">Redux</NavigationLink>
+      <NavigationLink to="/utils">Utilities</NavigationLink>
+      <NavigationLink to="/api">API</NavigationLink>
+      <NavigationLink to={__IS_DEV__ ? 'http://localhost:6006/' : '/bandit-pouch/storybook'} useATag>
+        Storybook
+      </NavigationLink>
+    </Nav>
   </Navbar>
 );
 

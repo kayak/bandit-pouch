@@ -7,14 +7,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from './header';
 import Footer from './footer';
 
-import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/github.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import '../icons';
+import 'loaders.css/loaders.min.css';
 import '../../../dist/bandit-pouch.css';
+import '../../icons';
 import './layout.css';
+
 
 const LayoutBody = ({ children, data }) => {
   const { site = {} } = data;
@@ -38,7 +39,7 @@ const LayoutBody = ({ children, data }) => {
       </Helmet>
       <Header siteTitle={siteMetadata.title} />
 
-      <Container style={{ paddingBottom: '20px' }}>
+      <Container className="my-5">
         <Row>
           <Col xs={12}>
             {children}
