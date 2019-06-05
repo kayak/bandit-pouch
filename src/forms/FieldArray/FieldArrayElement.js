@@ -99,7 +99,7 @@ class FieldArrayElement extends Component {
                   size="sm"
                   variant="link"
                   onClick={onRemove}
-                  className="pull-right close"
+                  className="float-right close"
                   style={TOOLBAR_BUTTON_STYLE}
                 />
               </Tooltip>
@@ -111,7 +111,7 @@ class FieldArrayElement extends Component {
                   size="sm"
                   variant="link"
                   style={TOOLBAR_BUTTON_STYLE}
-                  className="pull-right close"
+                  className="float-right close"
                   icon={minimized ? 'plus' : 'minus'}
                   onClick={this.switchMinimizationState}
                 />
@@ -125,7 +125,7 @@ class FieldArrayElement extends Component {
                   size="sm"
                   variant="link"
                   onClick={onDuplicate}
-                  className="pull-right close"
+                  className="float-right close"
                   style={TOOLBAR_BUTTON_STYLE}
                 />
               </Tooltip>

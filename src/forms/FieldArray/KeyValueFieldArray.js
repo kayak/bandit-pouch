@@ -45,10 +45,9 @@ const KeyValueFieldArray = ({
           >
             <FormSection name={field}>
               <InputGroup>
-                {keyField}
-                {valueField}
-
                 <InputGroup.Append>
+                  {keyField}
+                  {valueField}
                   <Tooltip text="Remove">
                     <Button
                       style={{ height: 38 }}
@@ -56,7 +55,7 @@ const KeyValueFieldArray = ({
                       disabled={disabled}
                       onClick={() => fields.remove(idx)}
                     >
-                      <FontAwesomeIcon icon="remove" />
+                      <FontAwesomeIcon icon="times" />
                     </Button>
                   </Tooltip>
                 </InputGroup.Append>
