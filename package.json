@@ -17,9 +17,9 @@
     "esm": "cross-env NODE_ENV=production babel src -d dist/esm --copy-files",
     "build": "npm run lint && npm run css && npm run cjs && npm run esm",
     "release": "np",
-    "releaseDocs": "npm --prefix docs/ run deploy",
+    "release:docs": "npm --prefix docs/ run deploy",
     "prepublishOnly": "npm run build",
-    "postpublish": "npm run releaseDocs"
+    "postpublish": "npm run release:docs"
   },
   "author": "Vladimir Spasic",
   "repository": {
@@ -41,7 +41,7 @@
     }
   },
   "peerDependencies": {
-    "axios": ">=0.15.0",
+    "axios": ">=0.18.1",
     "axios-request-manager": ">=1.0.1",
     "bootstrap": "4.3.1",
     "classnames": ">=2.2.6",
@@ -73,7 +73,7 @@
     "@fortawesome/free-regular-svg-icons": "5.7.2",
     "@fortawesome/free-solid-svg-icons": "5.7.2",
     "@fortawesome/react-fontawesome": "0.1.4",
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "axios-mock-adapter": "1.15.0",
     "axios-request-manager": "1.0.1",
     "babel-eslint": "10.0.1",
@@ -104,7 +104,6 @@
     "mocha-webpack": "2.0.0-beta.0",
     "moment": "2.22.2",
     "np": "3.0.4",
-    "parcel-bundler": "1.10.1",
     "peer-deps-externals-webpack-plugin": "1.0.4",
     "postcss": "7.0.5",
     "postcss-cli": "6.0.1",

@@ -24,6 +24,7 @@ const SelectField = ({
   <FormField id={input.id} label={label} help={help} meta={meta}>
     <Select
       {...props}
+      name={input.name}
       value={input.value}
       defaultValue={defaultValue}
       async={async}
@@ -49,6 +50,10 @@ const SelectField = ({
     />
   </FormField>
 );
+
+SelectField.OptionComponent = Select.OptionComponent;
+SelectField.MultiValueLabel = Select.MultiValueLabel;
+SelectField.SingleValue = Select.SingleValue;
 
 SelectField.propTypes = {
   /**
