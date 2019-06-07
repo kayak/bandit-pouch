@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Col,
-  Row,
-  Button,
-  ButtonToolbar,
+  Button, ButtonGroup, ButtonToolbar, Col, Row,
 } from 'react-bootstrap';
 import FieldError from './FieldError';
 
@@ -19,22 +16,24 @@ const SubmitResetRow = ({
   <Row>
     <Col xs={12}>
       <ButtonToolbar className="float-right">
-        <Button
-          variant="warning"
-          size="lg"
-          disabled={pristine || submitting}
-          onClick={reset}
-        >
-          Reset
-        </Button>
-        <Button
-          variant="primary"
-          size="lg"
-          type="submit"
-          disabled={enabled === false || submitting}
-        >
-          Submit
-        </Button>
+        <ButtonGroup>
+          <Button
+            variant="warning"
+            size="lg"
+            disabled={pristine || submitting}
+            onClick={reset}
+          >
+            Reset
+          </Button>
+          <Button
+            variant="primary"
+            size="lg"
+            type="submit"
+            disabled={enabled === false || submitting}
+          >
+            Submit
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
 
       {error
