@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import SelectComponent from 'react-select';
+import SelectComponent, { components } from 'react-select';
 import AsyncSelect from 'react-select/lib/Async';
 import CreatableSelect from 'react-select/lib/Creatable';
 import AsyncCreatableSelect from 'react-select/lib/AsyncCreatable';
@@ -11,6 +11,34 @@ function resolveSelectComponent(async, creatable) {
     return creatable ? AsyncCreatableSelect : AsyncSelect;
   }
   return creatable ? CreatableSelect : SelectComponent;
+}
+
+function transformOptions(options) {
+  return options.map((option) => {
+    // eslint-disable-next-line no-param-reassign
+    if (_.isNil(option.label)) option.label = String(option.value);
+
+    return _.mapKeys(option, (optionValue, optionKey) => ({
+      disabled: 'isDisabled',
+    }[optionKey] || optionKey));
+  });
+}
+
+function transformValue(value, multi, options) {
+  let transformedValue;
+  const hasOptions = !_.isEmpty(options);
+
+  if (!_.isNil(value) && !_.isEmpty(value) && hasOptions) {
+    if (multi) {
+      transformedValue = _.isPlainObject(value[0]) ? value : options.filter(
+        option => !_.isNil(value) && value.includes(option.value),
+      );
+    } else {
+      transformedValue = _.isPlainObject(value) ? value : _.find(options, { value });
+    }
+  }
+
+  return transformedValue;
 }
 
 /**
@@ -34,33 +62,10 @@ const Select = ({
 
   // All those manipulations below try to make the most common use cases compatible
   // with react-select v1 api. The renderers are not taken into account, so those
-  // should be adpated to use the components prop.
-  const transformedOptions = options.map((option) => {
-    // eslint-disable-next-line no-param-reassign
-    if (_.isNil(option.label)) option.label = String(option.value);
-
-    return _.mapKeys(option, (optionValue, optionKey) => ({
-      disabled: 'isDisabled',
-    }[optionKey] || optionKey));
-  });
-
-  let transformedValue = value;
-  let transformedDefaultValue = defaultValue;
-  const hasOptions = !_.isEmpty(transformedOptions);
-
-  if (!_.isNil(value) && hasOptions) {
-    if (multi) {
-      transformedValue = transformedOptions.filter(
-        option => !_.isNil(value) && value.includes(option.value),
-      );
-      transformedDefaultValue = transformedOptions.filter(
-        option => !_.isNil(defaultValue) && defaultValue.includes(option.value),
-      );
-    } else {
-      transformedValue = _.find(transformedOptions, { value });
-      transformedDefaultValue = _.find(transformedOptions, { value: defaultValue });
-    }
-  }
+  // should be adapted to use the components prop.
+  const transformedOptions = transformOptions(options);
+  const transformedValue = transformValue(value, multi, transformedOptions);
+  const transformedDefaultValue = transformValue(defaultValue, multi, transformedOptions);
 
   return (
     <ResolvedSelectComponent
@@ -76,6 +81,42 @@ const Select = ({
   );
 };
 
+/**
+ * React-Select allows you to augment layout and functionality by replacing the default components with your own,
+ * using the components property.
+ *
+ * Please checkout `react-select` documentation for component props usage.
+ */
+Select.OptionComponent = ChildComponent => ({ data, ...innerProps }) => (
+  <components.Option {...innerProps}>
+    <ChildComponent {...data} />
+  </components.Option>
+);
+
+/**
+ * React-Select allows you to augment layout and functionality by replacing the default components with your own,
+ * using the components property.
+ *
+ * Please checkout `react-select` documentation for component props usage.
+ */
+Select.MultiValueLabel = ChildComponent => ({ data, ...innerProps }) => (
+  <components.MultiValueLabel {...innerProps}>
+    <ChildComponent {...data} />
+  </components.MultiValueLabel>
+);
+
+/**
+ * React-Select allows you to augment layout and functionality by replacing the default components with your own,
+ * using the components property.
+ *
+ * Please checkout `react-select` documentation for component props usage.
+ */
+Select.SingleValue = ChildComponent => ({ data, ...innerProps }) => (
+  <components.SingleValue {...innerProps}>
+    <ChildComponent {...data} />
+  </components.SingleValue>
+);
+
 Select.propTypes = {
   /**
    * Currently selected value. Provide an array of values when multi prop is set.
@@ -85,6 +126,10 @@ Select.propTypes = {
    * The default value in case value is not set on first render.
    */
   defaultValue: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
+  /**
+   * Whether the menu should be open by default.
+   */
+  defaultMenuIsOpen: PropTypes.bool,
   /**
    * Whether the component is disabled or not.
    */
@@ -132,6 +177,7 @@ Select.propTypes = {
 Select.defaultProps = {
   value: null,
   defaultValue: null,
+  defaultMenuIsOpen: false,
   disabled: false,
   options: [],
   loadOptions: null,

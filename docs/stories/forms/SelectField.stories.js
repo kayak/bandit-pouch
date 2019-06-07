@@ -37,6 +37,16 @@ function fetchGithubUsers(input) {
     })));
 }
 
+function CustomRenderer({value, label}) {
+  return (
+    <span>
+      [Custom Rendered] {label}
+      <br />
+      Value = "{value}"
+    </span>
+  );
+}
+
 // Component
 const withField = propsFn => (
   <Field
@@ -62,9 +72,17 @@ storiesOf('Forms|SelectField', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
   .add('default', () => ({}))
-  .add('with defaultValue', () => ({
+  .add('with value based defaultValue', () => ({
     options,
     defaultValue: '1',
+  }))
+  .add('with object based defaultValue', () => ({
+    options,
+    defaultValue: {value: '1', label: 'Object based element #1'},
+  }))
+  .add('with menu open by default', () => ({
+    options,
+    defaultMenuIsOpen: true,
   }))
   .add('with disabled options', () => ({
     options: [{
@@ -97,9 +115,32 @@ storiesOf('Forms|SelectField', module)
     options,
     multi: true,
   }))
-  .add('with onChangeWithValue', () => ({
+  .add('with defaultValue and custom single value renderer', () => ({
     options,
-    onChangeWithValue: true,
+    components: {
+      SingleValue: SelectField.SingleValue(CustomRenderer),
+    },
+    defaultValue: '1',
+  }))
+  .add('with defaultValue and custom multi value label renderer', () => ({
+    options,
+    multi: true,
+    components: {
+      MultiValueLabel: SelectField.MultiValueLabel(CustomRenderer),
+    },
+    defaultValue: ['1'],
+  }))
+  .add('with defaultValue, menu open by default and custom option renderer', () => ({
+    options,
+    defaultMenuIsOpen: true,
+    components: {
+      Option: SelectField.OptionComponent(CustomRenderer),
+    },
+    defaultValue: '1',
+  }))
+  .add('without onChangeWithValue', () => ({
+    options,
+    onChangeWithValue: false,
   }))
   .add('Interactive Mode', () => ({
     defaultValue: defaultValue(),
