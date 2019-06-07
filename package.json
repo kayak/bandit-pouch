@@ -17,9 +17,9 @@
     "esm": "cross-env NODE_ENV=production babel src -d dist/esm --copy-files",
     "build": "npm run lint && npm run css && npm run cjs && npm run esm",
     "release": "np",
-    "releaseDocs": "npm --prefix docs/ run deploy",
+    "release:docs": "npm --prefix docs/ run deploy",
     "prepublishOnly": "npm run build",
-    "postpublish": "npm run releaseDocs"
+    "postpublish": "npm run release:docs"
   },
   "author": "Vladimir Spasic",
   "repository": {
