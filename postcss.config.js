@@ -9,7 +9,7 @@ module.exports = () => ({
   plugins: [
     postCssImport(),
     autoprefixer({
-      browserslist: ['last 4 versions', 'not ie <= 8'],
+      overrideBrowserslist: ['last 4 versions', 'not ie <= 8'],
     }),
     cssnano(),
     reporter(),
