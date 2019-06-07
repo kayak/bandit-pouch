@@ -73,6 +73,7 @@
     "@fortawesome/free-regular-svg-icons": "5.7.2",
     "@fortawesome/free-solid-svg-icons": "5.7.2",
     "@fortawesome/react-fontawesome": "0.1.4",
+    "autoprefixer": "9.6.0",
     "axios": "0.18.1",
     "axios-mock-adapter": "1.15.0",
     "axios-request-manager": "1.0.1",
