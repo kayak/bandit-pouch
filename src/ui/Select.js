@@ -28,7 +28,7 @@ function transformValue(value, multi, options) {
   let transformedValue;
   const hasOptions = !_.isEmpty(options);
 
-  if (!_.isNil(value) && !_.isEmpty(value) && hasOptions) {
+  if (!_.isNil(value) && value !== '' && hasOptions) {
     if (multi) {
       transformedValue = _.isPlainObject(value[0]) ? value : options.filter(
         option => !_.isNil(value) && value.includes(option.value),
