@@ -40,9 +40,7 @@ const NavigationLink = ({
 
 const Header = ({ siteTitle }) => (
   <Navbar bg="dark" variant="dark">
-    <Navbar.Brand>
-      <Link to="/">{siteTitle}</Link>
-    </Navbar.Brand>
+    <Link className="navbar-brand" to="/">{siteTitle}</Link>
     <Nav>
       <NavigationLink to="/ui">UI components</NavigationLink>
       <NavigationLink to="/forms">Form</NavigationLink>
