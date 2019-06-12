@@ -13,7 +13,9 @@ function resolveSelectComponent(async, creatable) {
   return creatable ? CreatableSelect : SelectComponent;
 }
 
-function transformOptions(options) {
+export function transformOptions(options) {
+  if (_.isNil(options)) return undefined;
+
   return options.map((option) => {
     // eslint-disable-next-line no-param-reassign
     if (_.isNil(option.label)) option.label = String(option.value);
@@ -24,17 +26,35 @@ function transformOptions(options) {
   });
 }
 
-function transformValue(value, multi, options) {
+export function transformValue(value, multi, options) {
   let transformedValue;
-  const hasOptions = !_.isEmpty(options);
+  const hasOptions = !_.isNil(options) && !_.isEmpty(options);
 
-  if (!_.isNil(value) && value !== '' && hasOptions) {
-    if (multi) {
-      transformedValue = _.isPlainObject(value[0]) ? value : options.filter(
+  if (multi) {
+    const hasValue = !_.isNil(value) && _.isArray(value) && !_.isEmpty(value);
+
+    if (!hasValue) return transformedValue;
+
+    const valueIsObject = _.isPlainObject(value[0]);
+
+    if (valueIsObject) {
+      transformedValue = value;
+    } else if (hasOptions) {
+      transformedValue = options.filter(
         option => !_.isNil(value) && value.includes(option.value),
       );
-    } else {
-      transformedValue = _.isPlainObject(value) ? value : _.find(options, { value });
+    }
+  } else {
+    const hasValue = !_.isNil(value) && value !== '';
+
+    if (!hasValue) return transformedValue;
+
+    const valueIsObject = _.isPlainObject(value);
+
+    if (valueIsObject) {
+      transformedValue = value;
+    } else if (hasOptions) {
+      transformedValue = _.find(options, { value });
     }
   }
 
