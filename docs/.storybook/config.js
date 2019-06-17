@@ -1,6 +1,5 @@
 import React from 'react';
 import requireContext from 'require-context.macro';
-
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';

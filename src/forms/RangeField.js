@@ -105,11 +105,11 @@ RangeField.propTypes = {
   /**
    * Minimum value
    */
-  min: PropTypes.number.isRequired,
+  min: PropTypes.number,
   /**
    * Maximum value
    */
-  max: PropTypes.number.isRequired,
+  max: PropTypes.number,
   /**
    * Counter step
    */
@@ -147,6 +147,8 @@ RangeField.defaultProps = {
   className: undefined,
   style: {},
   step: 1,
+  min: undefined,
+  max: undefined,
   help: null,
   label: null,
   disabled: false,

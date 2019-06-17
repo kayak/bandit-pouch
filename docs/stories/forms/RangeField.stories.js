@@ -50,7 +50,7 @@ const withField = propsFn => (
 
 // JSDom can't be used to test this, as it rely on refs. Try again once we update react-bootstrap
 // (currently on 1.0.0-beta.5).
-storiesOf('Forms|RangeField.DontTest', module)
+storiesOf('Forms|RangeField', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
   .add('default', () => ({}))
