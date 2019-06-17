@@ -18700,11 +18700,11 @@ exports[`MyStoryshots Forms|RangeField Interactive Mode 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
@@ -19521,11 +19521,11 @@ exports[`MyStoryshots Forms|RangeField default 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
@@ -20226,11 +20226,11 @@ exports[`MyStoryshots Forms|RangeField with a max of 10 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
@@ -20960,11 +20960,11 @@ exports[`MyStoryshots Forms|RangeField with a min of 4 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
@@ -21694,11 +21694,11 @@ exports[`MyStoryshots Forms|RangeField with a step of 2 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
@@ -22428,11 +22428,11 @@ exports[`MyStoryshots Forms|RangeField with disabled 1`] = `
                   className="rc-slider-mark"
                 />
               </div>
-              <div
-                className="valid-feedback"
+              <small
+                className="text-muted form-text"
               >
                 Type your help text.
-              </div>
+              </small>
             </div>
           </form>
         </div>
