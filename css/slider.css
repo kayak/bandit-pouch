@@ -1,0 +1,19 @@
+.rc-slider-rail {
+    background-color: var(--light);
+}
+
+.rc-slider-track {
+    background-color: var(--secondary);
+}
+
+.rc-slider-handle,
+.rc-slider-handle:hover,
+.rc-slider-handle:focus,
+.rc-slider-handle:active {
+    border-color: var(--secondary);
+}
+
+.rc-slider-handle:active {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 15, 0.25);
+}

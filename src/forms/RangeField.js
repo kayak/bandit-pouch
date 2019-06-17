@@ -1,17 +1,34 @@
-import _ from 'lodash';
+import Slider from 'rc-slider';
+import Tooltip from 'rc-tooltip';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputRange from 'react-input-range';
+import _ from 'lodash';
 import FormField from './FormField';
 
-const parse = value => (
-  _.isArray(value) ? { min: _.toNumber(value[0]), max: _.toNumber(value[1]) } : _.toNumber(value)
-);
-const format = value => (
-  _.isObject(value) ? [value.min, value.max] : value
-);
 
-class RangeField extends Component {
+const handle = (props) => {
+  const {
+    value,
+    dragging,
+    index,
+    ...restProps
+  } = props;
+
+  return (
+    <Tooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={value}
+      visible={dragging}
+      placement="top"
+      key={index}
+    >
+      <Slider.Handle value={value} {...restProps} />
+    </Tooltip>
+  );
+};
+
+
+export default class RangeField extends Component {
   state = {
     value: _.get(this.props, 'input.value'),
   };
@@ -24,38 +41,44 @@ class RangeField extends Component {
     }
   }
 
+  onChange(value) {
+    const {
+      input, onChangeValue,
+    } = this.props;
+
+    input.onChange(value);
+    if (onChangeValue) onChangeValue(value);
+  }
+
+  onBlur(newValue) {
+    const { input } = this.props;
+    input.onBlur(newValue);
+  }
+
   render() {
     const {
-      input, label, formatLabel, disabled, help, min, max, step, meta, onChangeValue,
+      id, className, style, label, help, min, max, step, disabled, meta,
     } = this.props;
     const { value } = this.state;
 
     return (
-      <FormField id={input.id} label={label} help={help} meta={meta}>
-        <InputRange
-          draggableTrack
-          value={parse(value)}
-          defaultValue={0}
-          style={{
-            display: 'block',
-            width: '100%',
-          }}
-          minValue={min}
-          maxValue={max}
+      <FormField
+        id={id}
+        className={className}
+        style={style}
+        label={label}
+        help={help}
+        meta={meta}
+      >
+        <Slider
+          defaultValue={value}
+          min={min}
+          max={max}
           step={step}
           disabled={disabled}
-          formatLabel={formatLabel}
-          onChange={(newValue) => {
-            const formattedValue = format(newValue);
-            this.setState({
-              value: formattedValue,
-            });
-          }}
-          onChangeComplete={(newValue) => {
-            const formattedValue = format(newValue);
-            input.onBlur(formattedValue);
-            onChangeValue(formattedValue);
-          }}
+          handle={handle}
+          onChange={this.onChange}
+          onAfterChange={this.onBlur}
         />
       </FormField>
     );
@@ -63,6 +86,18 @@ class RangeField extends Component {
 }
 
 RangeField.propTypes = {
+  /**
+   * HTML id attribute
+   */
+  id: PropTypes.string,
+  /**
+   * HTML class attribute
+   */
+  className: PropTypes.string,
+  /**
+   * HTML style attribute
+   */
+  style: PropTypes.object,
   /**
    * Original input field passed by the React Form
    */
@@ -83,10 +118,6 @@ RangeField.propTypes = {
    * Input field label
    */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  /**
-   * Function used to format the range input label
-   */
-  formatLabel: PropTypes.func,
   /**
    * Help text used to describe the field's purpose
    */
@@ -112,13 +143,13 @@ RangeField.propTypes = {
 };
 
 RangeField.defaultProps = {
+  id: undefined,
+  className: undefined,
+  style: {},
   step: 1,
   help: null,
   label: null,
   disabled: false,
   onChangeValue: _.noop,
-  formatLabel: _.identity,
   meta: { touched: false, error: [] },
 };
-
-export default RangeField;
