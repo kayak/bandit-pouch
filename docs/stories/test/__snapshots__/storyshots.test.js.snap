@@ -551,7 +551,7 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -1223,7 +1223,7 @@ exports[`MyStoryshots Forms|CheckboxField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -1866,7 +1866,7 @@ exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -2806,7 +2806,7 @@ exports[`MyStoryshots Forms|DateRangePickerField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -3823,7 +3823,7 @@ exports[`MyStoryshots Forms|DateRangePickerField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -4752,7 +4752,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with 3 days from tomorrow disab
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -5912,7 +5912,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with different ranges 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -8176,7 +8176,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -9116,7 +9116,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with max date as tomorrow 1`] =
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -10264,7 +10264,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with min date as yesterday 1`] 
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -11436,7 +11436,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with window instead of range 1`
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -12365,7 +12365,7 @@ exports[`MyStoryshots Forms|DateRangePickerField without both ranges and input r
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -13354,7 +13354,7 @@ exports[`MyStoryshots Forms|DateRangePickerField without input ranges 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -14313,7 +14313,7 @@ exports[`MyStoryshots Forms|DateRangePickerField without ranges 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -15037,7 +15037,7 @@ exports[`MyStoryshots Forms|MonthPickerField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -15760,7 +15760,7 @@ exports[`MyStoryshots Forms|MonthPickerField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -16454,7 +16454,7 @@ exports[`MyStoryshots Forms|MonthPickerField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -17140,7 +17140,7 @@ exports[`MyStoryshots Forms|PasswordField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -17844,7 +17844,7 @@ exports[`MyStoryshots Forms|PasswordField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -18519,7 +18519,7 @@ exports[`MyStoryshots Forms|PasswordField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -19235,7 +19235,7 @@ exports[`MyStoryshots Forms|RangeField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -20056,7 +20056,7 @@ exports[`MyStoryshots Forms|RangeField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -20761,7 +20761,7 @@ exports[`MyStoryshots Forms|RangeField with a max of 10 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -21495,7 +21495,7 @@ exports[`MyStoryshots Forms|RangeField with a min of 4 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -22229,7 +22229,7 @@ exports[`MyStoryshots Forms|RangeField with a step of 2 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -22963,7 +22963,7 @@ exports[`MyStoryshots Forms|RangeField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -23740,7 +23740,7 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -24710,7 +24710,7 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -25476,7 +25476,7 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -26301,7 +26301,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -27253,7 +27253,7 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -28062,7 +28062,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -29084,7 +29084,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -30120,7 +30120,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -31118,7 +31118,7 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -31895,7 +31895,7 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -32784,7 +32784,7 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -33591,7 +33591,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -34514,7 +34514,7 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -35436,7 +35436,7 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -36289,7 +36289,7 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -37275,7 +37275,7 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -38216,7 +38216,7 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -39068,7 +39068,7 @@ exports[`MyStoryshots Forms|SpinnerField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -39862,7 +39862,7 @@ exports[`MyStoryshots Forms|SpinnerField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -40540,7 +40540,7 @@ exports[`MyStoryshots Forms|SpinnerField with a max of 10 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -41247,7 +41247,7 @@ exports[`MyStoryshots Forms|SpinnerField with a min of 4 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -41954,7 +41954,7 @@ exports[`MyStoryshots Forms|SpinnerField with a step of 2 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -42661,7 +42661,7 @@ exports[`MyStoryshots Forms|SpinnerField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -43196,7 +43196,7 @@ exports[`MyStoryshots Forms|SubmitResetRow Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -43736,7 +43736,7 @@ exports[`MyStoryshots Forms|SubmitResetRow default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -44260,7 +44260,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with enabled as false 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -44838,7 +44838,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with error 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -45389,7 +45389,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with pristine as false 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -45967,7 +45967,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitFailed and error 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -46526,7 +46526,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitFailed and no error 1`] = 
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -47058,7 +47058,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitting 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -47618,7 +47618,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with valid as false and error 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -48195,7 +48195,7 @@ exports[`MyStoryshots Forms|SubmitResetRow with valid as false and no error 1`] 
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -48897,7 +48897,7 @@ exports[`MyStoryshots Forms|TextAreaField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -49631,7 +49631,7 @@ exports[`MyStoryshots Forms|TextAreaField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -50307,7 +50307,7 @@ exports[`MyStoryshots Forms|TextAreaField with 10 rows 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -51012,7 +51012,7 @@ exports[`MyStoryshots Forms|TextAreaField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -51698,7 +51698,7 @@ exports[`MyStoryshots Forms|TextField Interactive Mode 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -52402,7 +52402,7 @@ exports[`MyStoryshots Forms|TextField default 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -53077,7 +53077,7 @@ exports[`MyStoryshots Forms|TextField with disabled 1`] = `
                                   }
                                 }
                               >
-                                action
+                                actionHandler
                               </span>
                               }
                             </span>
@@ -62232,7 +62232,7 @@ exports[`MyStoryshots UI|NotificationList Interactive Mode 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -62647,7 +62647,7 @@ exports[`MyStoryshots UI|NotificationList with alert and timeout 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -63071,7 +63071,7 @@ exports[`MyStoryshots UI|NotificationList with error alert 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -63495,7 +63495,7 @@ exports[`MyStoryshots UI|NotificationList with error and sub-errors alert 1`] = 
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -63884,7 +63884,7 @@ exports[`MyStoryshots UI|NotificationList with header and message 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -64301,7 +64301,7 @@ exports[`MyStoryshots UI|NotificationList with info alert 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -64664,7 +64664,7 @@ exports[`MyStoryshots UI|NotificationList with only header 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -65027,7 +65027,7 @@ exports[`MyStoryshots UI|NotificationList with only message 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -65444,7 +65444,7 @@ exports[`MyStoryshots UI|NotificationList with success alert 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -65861,7 +65861,7 @@ exports[`MyStoryshots UI|NotificationList with warning alert 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>

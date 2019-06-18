@@ -25,7 +25,7 @@ export const Form = reduxForm({
 })(
   connect(state => ({
     formValues: getFormValues('form')(state),
-  }))(WrapperForm)
+  }))(WrapperForm),
 );
 
 export const withStore = storyFn => (
