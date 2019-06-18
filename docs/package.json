@@ -62,7 +62,9 @@
     "react-redux": "5.0.7",
     "react-select": "2.4.3",
     "redux": "4.0.1",
-    "redux-form": "6.8.0"
+    "redux-form": "6.8.0",
+    "rc-slider": ">=8.6.3",
+    "rc-tooltip": ">=3.7.3"
   },
   "devDependencies": {
     "@babel/cli": "7.4.3",
