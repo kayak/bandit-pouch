@@ -18,7 +18,7 @@ const withComponent = propsFn => (
 );
 
 // JSDom can't be used to test this, as it rely on refs. Try again once we update react-bootstrap
-// (currently on 1.0.0-beta.5).
+// (currently on 1.0.0-beta.9).
 storiesOf('UI|Tooltip.DontTest', module)
   .addDecorator(withComponent)
   .add('default', () => ({}));
