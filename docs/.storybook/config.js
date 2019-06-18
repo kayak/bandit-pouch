@@ -17,7 +17,7 @@ addDecorator(withKnobs);
 addDecorator(withInfo({
   // Disabling propTables for now (https://github.com/storybooks/storybook/issues/3389),
   // since it make snapshot tests fail in Travis. We should revisit this once we update
-  // react-boostrap again, given it's going to use hooks for versions after 1.0.0-beta.9.
+  // react-boostrap again, given it's going to use hooks for versions after 1.0.0-beta.5.
   propTables: false,
 }));
 
