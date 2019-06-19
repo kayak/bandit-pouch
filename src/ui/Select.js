@@ -2,9 +2,10 @@ import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import SelectComponent, { components } from 'react-select';
-import AsyncSelect from 'react-select/lib/Async';
-import CreatableSelect from 'react-select/lib/Creatable';
-import AsyncCreatableSelect from 'react-select/lib/AsyncCreatable';
+import AsyncSelect from 'react-select/async';
+import CreatableSelect from 'react-select/creatable';
+import AsyncCreatableSelect from 'react-select/async-creatable';
+
 
 function resolveSelectComponent(async, creatable) {
   if (async) {
@@ -97,6 +98,7 @@ const Select = ({
       isDisabled={disabled}
       isClearable={clearable}
       isCreatable={creatable}
+      classNamePrefix="react-select"
     />
   );
 };
