@@ -23098,19 +23098,19 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -23118,7 +23118,7 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -23173,14 +23173,14 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -24068,19 +24068,19 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -24088,7 +24088,7 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -24143,14 +24143,14 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -24834,19 +24834,19 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                 Github user select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type a github user login
                     </div>
@@ -24854,7 +24854,7 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -24909,14 +24909,14 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -25640,19 +25640,19 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-dvua67-singleValue"
+                      className="react-select__single-value css-1uccc91-singleValue"
                     >
                       Option 1
                     </div>
@@ -25660,7 +25660,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -25715,11 +25715,11 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__clear-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -25737,11 +25737,11 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                       </svg>
                     </div>
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -26611,19 +26611,19 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -26631,7 +26631,7 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -26686,14 +26686,14 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -27388,22 +27388,22 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--is-multi react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-es53b3-multiValue"
+                      className="css-1rhbuit-multiValue react-select__multi-value"
                     >
                       <div
-                        className="css-12jo7m5"
+                        className="css-12jo7m5 react-select__multi-value__label"
                       >
                         <span>
                           [Custom Rendered] 
@@ -27415,7 +27415,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                         </span>
                       </div>
                       <div
-                        className="css-1alnv5e"
+                        className="css-1alnv5e react-select__multi-value__remove"
                         onClick={[Function]}
                         onMouseDown={[Function]}
                         onTouchEnd={[Function]}
@@ -27438,7 +27438,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -27493,14 +27493,14 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -28435,19 +28435,19 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-dvua67-singleValue"
+                      className="react-select__single-value css-1uccc91-singleValue"
                     >
                       <span>
                         [Custom Rendered] 
@@ -28462,7 +28462,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -28517,14 +28517,14 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -29434,19 +29434,19 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control react-select__control--menu-is-open css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-dvua67-singleValue"
+                      className="react-select__single-value css-1uccc91-singleValue"
                     >
                       Option 1
                     </div>
@@ -29454,7 +29454,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -29509,14 +29509,14 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -29536,15 +29536,15 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                   </div>
                 </div>
                 <div
-                  className="css-kj6f9i-menu"
+                  className="react-select__menu css-26l3qy-menu"
                   onMouseDown={[Function]}
                   onMouseMove={[Function]}
                 >
                   <div
-                    className="css-11unzgr"
+                    className="react-select__menu-list css-11unzgr"
                   >
                     <div
-                      className="css-xo7z33-option"
+                      className="react-select__option react-select__option--is-selected css-9gakcf-option"
                       id="react-select-16-option-0"
                       onClick={[Function]}
                       onMouseMove={[Function]}
@@ -29561,7 +29561,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                       </span>
                     </div>
                     <div
-                      className="css-fk865s-option"
+                      className="react-select__option css-yt9ioa-option"
                       id="react-select-16-option-1"
                       onClick={[Function]}
                       onMouseMove={[Function]}
@@ -30481,19 +30481,19 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                 Select
               </label>
               <div
-                className="css-ssi0ig-container"
+                className="react-select--is-disabled css-14jk2my-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-14ojxsb-control"
+                  className="react-select__control react-select__control--is-disabled css-1fhf3k1-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -30501,7 +30501,7 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -30556,14 +30556,14 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-622gbt-indicatorSeparator"
+                      className="react-select__indicator-separator css-109onse-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -31253,19 +31253,19 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -31273,7 +31273,7 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -31328,14 +31328,14 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -32128,19 +32128,19 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -32148,7 +32148,7 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -32203,28 +32203,28 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <div
                       aria-hidden="true"
-                      className="css-bial7t-loadingIndicator"
+                      className="react-select__indicator react-select__loading-indicator css-at12u2-loadingIndicator"
                     >
                       <span
-                        className="css-pujnn1"
+                        className="css-d0ptw1"
                       />
                       <span
-                        className="css-gji98i"
+                        className="css-3utax6"
                       />
                       <span
-                        className="css-1frpy8x"
+                        className="css-1qyc6ze"
                       />
                     </div>
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -32919,19 +32919,19 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control react-select__control--menu-is-open css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -32939,7 +32939,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -32994,14 +32994,14 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -33021,15 +33021,15 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="css-kj6f9i-menu"
+                  className="react-select__menu css-26l3qy-menu"
                   onMouseDown={[Function]}
                   onMouseMove={[Function]}
                 >
                   <div
-                    className="css-11unzgr"
+                    className="react-select__menu-list css-11unzgr"
                   >
                     <div
-                      className="css-fk865s-option"
+                      className="react-select__option css-yt9ioa-option"
                       id="react-select-5-option-0"
                       onClick={[Function]}
                       onMouseMove={[Function]}
@@ -33039,7 +33039,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                       Option 1
                     </div>
                     <div
-                      className="css-fk865s-option"
+                      className="react-select__option css-yt9ioa-option"
                       id="react-select-5-option-1"
                       onClick={[Function]}
                       onMouseMove={[Function]}
@@ -33871,19 +33871,19 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--is-multi css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -33891,7 +33891,7 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -33946,14 +33946,14 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -34794,19 +34794,19 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -34814,7 +34814,7 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -34869,14 +34869,14 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -35647,19 +35647,19 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-dvua67-singleValue"
+                      className="react-select__single-value css-1uccc91-singleValue"
                     >
                       Object based element #1
                     </div>
@@ -35667,7 +35667,7 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -35722,14 +35722,14 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -36633,19 +36633,19 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container react-select__value-container--has-value css-1hwfws3"
                   >
                     <div
-                      className="css-dvua67-singleValue"
+                      className="react-select__single-value css-1uccc91-singleValue"
                     >
                       Option 1
                     </div>
@@ -36653,7 +36653,7 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -36708,14 +36708,14 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
@@ -37574,19 +37574,19 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                 Select
               </label>
               <div
-                className="css-1pcexqc-container"
+                className=" css-2b097c-container"
                 onKeyDown={[Function]}
               >
                 <div
-                  className="css-bg1rzq-control"
+                  className="react-select__control css-yk16xz-control"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
                   <div
-                    className="css-1hwfws3"
+                    className="react-select__value-container css-1hwfws3"
                   >
                     <div
-                      className="css-151xaom-placeholder"
+                      className="react-select__placeholder css-1wa3eu0-placeholder"
                     >
                       Type your placeholder text.
                     </div>
@@ -37594,7 +37594,7 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                       className="css-1g6gooi"
                     >
                       <div
-                        className=""
+                        className="react-select__input"
                         style={
                           Object {
                             "display": "inline-block",
@@ -37649,14 +37649,14 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="css-1wy0on6"
+                    className="react-select__indicators css-1wy0on6"
                   >
                     <span
-                      className="css-bgvzuu-indicatorSeparator"
+                      className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
-                      className="css-16pqwjk-indicatorContainer"
+                      className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer"
                       onMouseDown={[Function]}
                       onTouchEnd={[Function]}
                     >
