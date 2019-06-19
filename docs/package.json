@@ -1,30 +1,27 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "bandit-pouch-documentation",
+  "description": "Bandit Pouchs's Documentation",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lucas Lira Gomes <llira@kayak.com>",
   "scripts": {
-    "build-gatsby": "gatsby build --prefix-paths",
-    "build-storybook": "build-storybook -o public/storybook",
-    "build-all": "npm run build-gatsby && npm run build-storybook",
-    "serve": "gatsby serve",
-    "gatsby": "gatsby develop",
-    "storybook": "start-storybook -p 6006",
+    "build": "build-storybook -o public",
+    "start": "start-storybook -p 6006",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "test:watch": "npm run test --watchAll --verbose",
     "test:coverage": "npm run test --verbose --coverage",
     "test:update": "npm run test -- -u",
-    "deploy": "npm run build-all && gh-pages -d public --repo git@github.com:kayak/bandit-pouch.git --"
+    "deploy": "npm run build && gh-pages -d public --repo git@github.com:kayak/bandit-pouch.git --"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "git+https://github.com/kayak/bandit-pouch.git"
   },
+  "bugs": {
+    "url": "https://github.com/kayak/bandit-pouch/issues"
+  },
+  "homepage": "https://kayak.github.io/bandit-pouch",
+  "license": "Apache-2.0",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.15",
     "@fortawesome/free-regular-svg-icons": "5.7.2",
@@ -43,15 +40,8 @@
     "bootstrap": "4.3.1",
     "classnames": "2.2.6",
     "font-awesome": "4.7.0",
-    "gatsby": "2.8.4",
-    "gatsby-plugin-manifest": "2.0.5",
-    "gatsby-plugin-offline": "2.0.5",
-    "gatsby-plugin-react-helmet": "3.0.0",
-    "gatsby-source-filesystem": "2.0.38",
-    "gatsby-transformer-react-docgen": "2.1.1",
-    "gatsby-transformer-remark": "2.1.7",
-    "highlight.js": "9.13.1",
     "lodash": "4.17.11",
+    "highlight.js": "9.13.1",
     "moment": "2.22.2",
     "prop-types": "15.6.2",
     "rc-slider": ">=8.6.3",
