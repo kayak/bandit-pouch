@@ -33,6 +33,13 @@ export default class RangeField extends Component {
     value: _.get(this.props, 'input.value'),
   };
 
+  constructor(...args) {
+    super(...args);
+
+    this.onChange = this.onChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (_.get(this.props, 'input.value') !== _.get(nextProps, 'input.value')) {
       this.setState({
