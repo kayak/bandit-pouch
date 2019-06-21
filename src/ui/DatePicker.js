@@ -15,8 +15,8 @@ class DatePicker extends Component {
     show: false,
   };
 
-  constructor(...arrgs) {
-    super(...arrgs);
+  constructor(...args) {
+    super(...args);
 
     this.onToggle = this.onToggle.bind(this);
     this.onChange = this.onChange.bind(this);
