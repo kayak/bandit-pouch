@@ -48,8 +48,6 @@ const withField = propsFn => (
   />
 );
 
-// JSDom can't be used to test this, as it rely on refs. Try again once we update react-bootstrap
-// (currently on 1.0.0-beta.5).
 storiesOf('Forms|RangeField', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
@@ -58,6 +56,9 @@ storiesOf('Forms|RangeField', module)
   .add('with a step of 2', () => ({ step: 2 }))
   .add('with a min of 4', () => ({ min: 4 }))
   .add('with a max of 10', () => ({ max: 10 }))
+  .add('with a defaultValue of 50', () => ({ defaultValue: 50 }))
+  .add('with a defaultValue of [30, 70]', () => ({ defaultValue: [30, 70] }))
+  .add('with marks', () => ({ marks: {0: 'Min', 20: 20, 40: 40, 60: 60, 80: 80, 100: 'Max'} }))
   .add('Interactive Mode', () => ({
     disabled: disabled(),
     step: step(),

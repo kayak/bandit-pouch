@@ -1,10 +1,11 @@
-import Slider from 'rc-slider';
+import Slider, { Range } from 'rc-slider';
 import Tooltip from 'rc-tooltip';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import FormField from './FormField';
 
+const SliderComponentGivenValue = value => (_.isArray(value) ? Range : Slider);
 
 const handle = (props) => {
   const {
@@ -14,6 +15,8 @@ const handle = (props) => {
     ...restProps
   } = props;
 
+  const SliderComponent = SliderComponentGivenValue(value);
+
   return (
     <Tooltip
       prefixCls="rc-slider-tooltip"
@@ -22,7 +25,7 @@ const handle = (props) => {
       placement="top"
       key={index}
     >
-      <Slider.Handle value={value} {...restProps} />
+      <SliderComponent.Handle value={value} {...restProps} />
     </Tooltip>
   );
 };
@@ -30,7 +33,7 @@ const handle = (props) => {
 
 export default class RangeField extends Component {
   state = {
-    value: _.get(this.props, 'input.value'),
+    value: _.get(this.props, 'input.value') || _.get(this.props, 'defaultValue'),
   };
 
   constructor(...args) {
@@ -64,9 +67,11 @@ export default class RangeField extends Component {
 
   render() {
     const {
-      id, className, style, label, help, min, max, step, disabled, meta,
+      id, className, style, label, help, min, max, step, marks, disabled, meta,
     } = this.props;
     const { value } = this.state;
+
+    const SliderComponent = SliderComponentGivenValue(value);
 
     return (
       <FormField
@@ -77,12 +82,17 @@ export default class RangeField extends Component {
         help={help}
         meta={meta}
       >
-        <Slider
+        <SliderComponent
+          style={!_.isNil(marks) ? {
+            marginBottom: 18,
+          } : {}}
+          value={value}
           defaultValue={value}
           min={min}
           max={max}
           step={step}
           disabled={disabled}
+          marks={marks}
           handle={handle}
           onChange={this.onChange}
           onAfterChange={this.onBlur}
@@ -109,6 +119,15 @@ RangeField.propTypes = {
    * Original input field passed by the React Form
    */
   input: PropTypes.any.isRequired,
+  /**
+   * The default value in case value is not set on first render.
+   */
+  // eslint-disable-next-line react/no-unused-prop-types
+  defaultValue: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
+  /**
+   * The marks on the slider. The key determines the position, and the value determines what will be displayed.
+   */
+  marks: PropTypes.object,
   /**
    * Minimum value
    */
@@ -153,6 +172,8 @@ RangeField.defaultProps = {
   id: undefined,
   className: undefined,
   style: {},
+  defaultValue: null,
+  marks: undefined,
   step: 1,
   min: undefined,
   max: undefined,
