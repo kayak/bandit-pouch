@@ -14435,6 +14435,5058 @@ exports[`MyStoryshots Forms|DateRangePickerField without ranges 1`] = `
 </div>
 `;
 
+exports[`MyStoryshots Forms|FormField default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              default
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with a list error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-danger form-text"
+        >
+          Type your help text.
+        </small>
+        <div
+          className="d-block invalid-feedback"
+          style={null}
+        >
+          <div
+            className="d-flex flex-row"
+          >
+            <div
+              style={
+                Object {
+                  "width": 18,
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                data-icon="exclamation-circle"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+            <div
+              className="w-100"
+            >
+              <small
+                className="validation-error"
+              >
+                This is wrong
+                <div>
+                  That is wrong too
+                </div>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with a list error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'This is wrong'
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'That is wrong too'
+                                  </span>
+                                </span>
+                                ]
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with a list of null/undefined/empty string error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-success form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with a list of null/undefined/empty string error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#444",
+                                      }
+                                    }
+                                  >
+                                    null
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#444",
+                                      }
+                                    }
+                                  >
+                                    null
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    ''
+                                  </span>
+                                </span>
+                                ]
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with a multi line string error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-danger form-text"
+        >
+          Type your help text.
+        </small>
+        <div
+          className="d-block invalid-feedback"
+          style={null}
+        >
+          <div
+            className="d-flex flex-row"
+          >
+            <div
+              style={
+                Object {
+                  "width": 18,
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                data-icon="exclamation-circle"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+            <div
+              className="w-100"
+            >
+              <small
+                className="validation-error"
+              >
+                That's a
+                <div>
+                  very complex
+                </div>
+                <div>
+                  error
+                </div>
+                <div>
+                  for a single line
+                </div>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with a multi line string error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                'That's a
+very complex
+error
+for a single line'
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with a null error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-success form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with a null error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with a string error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-danger form-text"
+        >
+          Type your help text.
+        </small>
+        <div
+          className="d-block invalid-feedback"
+          style={null}
+        >
+          <div
+            className="d-flex flex-row"
+          >
+            <div
+              style={
+                Object {
+                  "width": 18,
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                data-icon="exclamation-circle"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+            <div
+              className="w-100"
+            >
+              <small
+                className="validation-error"
+              >
+                This has erroed
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with a string error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                'This has erroed'
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with an empty list error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-success form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with an empty list error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                ]
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with an empty string error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-success form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with an empty string error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                ''
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with an error but not touched 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with an error but not touched
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                'You won't see this'
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyStoryshots Forms|FormField with an undefined error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor={null}
+        >
+          Formfield
+        </label>
+        <input
+          className="form-control"
+        />
+        <small
+          className="text-success form-text"
+        >
+          Type your help text.
+        </small>
+      </div>
+    </div>
+    <button
+      className="info__show-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      className="info__overlay"
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        className="info__close-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Forms|FormField
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with an undefined error
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fafafa",
+                  "display": "flex",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "fontSize": ".88em",
+                  "justifyContent": "space-between",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <div>
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;
+                      FormField
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Formfield
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            "
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              Type your help text.
+                            </span>
+                            "
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          meta
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  touched
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                true
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  error
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        ForwardRef
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;
+                          Unknown
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#444",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Unknown
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ForwardRef
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      &lt;/
+                      FormField
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "borderColor": "rgb(238, 238, 238)",
+                    "borderImage": "initial",
+                    "borderRadius": "3px",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "cursor": "pointer",
+                    "flexShrink": "0",
+                    "fontSize": "13px",
+                    "overflow": "hidden",
+                    "padding": "3px 10px",
+                  }
+                }
+                type="button"
+              >
+                Copy
+              </button>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`MyStoryshots Forms|MonthPickerField Interactive Mode 1`] = `
 <div
   style={
@@ -14476,9 +19528,6 @@ exports[`MyStoryshots Forms|MonthPickerField Interactive Mode 1`] = `
                   value="February, 1990"
                 />
               </span>
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -15199,9 +20248,6 @@ exports[`MyStoryshots Forms|MonthPickerField default 1`] = `
                   value="February, 1990"
                 />
               </span>
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -15893,9 +20939,6 @@ exports[`MyStoryshots Forms|MonthPickerField with disabled 1`] = `
                   value="February, 1990"
                 />
               </span>
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -16602,9 +21645,6 @@ exports[`MyStoryshots Forms|PasswordField Interactive Mode 1`] = `
                 type="password"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -17306,9 +22346,6 @@ exports[`MyStoryshots Forms|PasswordField default 1`] = `
                 type="password"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -17980,9 +23017,6 @@ exports[`MyStoryshots Forms|PasswordField with disabled 1`] = `
                 placeholder="Type your placeholder text."
                 type="password"
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"
@@ -41016,9 +46050,6 @@ exports[`MyStoryshots Forms|SpinnerField Interactive Mode 1`] = `
                 type="number"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -41810,9 +46841,6 @@ exports[`MyStoryshots Forms|SpinnerField default 1`] = `
                 type="number"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -42487,9 +47515,6 @@ exports[`MyStoryshots Forms|SpinnerField with a max of 10 1`] = `
                 step={1}
                 type="number"
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"
@@ -43195,9 +48220,6 @@ exports[`MyStoryshots Forms|SpinnerField with a min of 4 1`] = `
                 type="number"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -43902,9 +48924,6 @@ exports[`MyStoryshots Forms|SpinnerField with a step of 2 1`] = `
                 type="number"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -44608,9 +49627,6 @@ exports[`MyStoryshots Forms|SpinnerField with disabled 1`] = `
                 step={1}
                 type="number"
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"
@@ -46918,32 +51934,47 @@ exports[`MyStoryshots Forms|SubmitResetRow with error 1`] = `
                   </div>
                 </div>
                 <div
-                  className="invalid-feedback"
+                  className="d-block invalid-feedback"
                   style={null}
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-exclamation-circle fa-w-16 "
-                    data-icon="exclamation-circle"
-                    data-prefix="fas"
-                    focusable="false"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="d-flex flex-row"
                   >
-                    <path
-                      d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                   
-                  <small
-                    className="validation-error"
-                  >
-                    The error X ocurred.
-                  </small>
+                    <div
+                      style={
+                        Object {
+                          "width": 18,
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                        data-icon="exclamation-circle"
+                        data-prefix="fas"
+                        focusable="false"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="w-100"
+                    >
+                      <small
+                        className="validation-error"
+                      >
+                        The error X ocurred.
+                      </small>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -48047,32 +53078,47 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitFailed and error 1`] = `
                   </div>
                 </div>
                 <div
-                  className="invalid-feedback"
+                  className="d-block invalid-feedback"
                   style={null}
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-exclamation-circle fa-w-16 "
-                    data-icon="exclamation-circle"
-                    data-prefix="fas"
-                    focusable="false"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="d-flex flex-row"
                   >
-                    <path
-                      d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                   
-                  <small
-                    className="validation-error"
-                  >
-                    The error X ocurred.
-                  </small>
+                    <div
+                      style={
+                        Object {
+                          "width": 18,
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                        data-icon="exclamation-circle"
+                        data-prefix="fas"
+                        focusable="false"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="w-100"
+                    >
+                      <small
+                        className="validation-error"
+                      >
+                        The error X ocurred.
+                      </small>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -49698,32 +54744,47 @@ exports[`MyStoryshots Forms|SubmitResetRow with valid as false and error 1`] = `
                   </div>
                 </div>
                 <div
-                  className="invalid-feedback"
+                  className="d-block invalid-feedback"
                   style={null}
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-exclamation-circle fa-w-16 "
-                    data-icon="exclamation-circle"
-                    data-prefix="fas"
-                    focusable="false"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="d-flex flex-row"
                   >
-                    <path
-                      d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                   
-                  <small
-                    className="validation-error"
-                  >
-                    The error X ocurred.
-                  </small>
+                    <div
+                      style={
+                        Object {
+                          "width": 18,
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-exclamation-circle fa-w-16 "
+                        data-icon="exclamation-circle"
+                        data-prefix="fas"
+                        focusable="false"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="w-100"
+                    >
+                      <small
+                        className="validation-error"
+                      >
+                        The error X ocurred.
+                      </small>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -50845,9 +55906,6 @@ exports[`MyStoryshots Forms|TextAreaField Interactive Mode 1`] = `
                 rows={1}
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -51579,9 +56637,6 @@ exports[`MyStoryshots Forms|TextAreaField default 1`] = `
                 rows={4}
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -52254,9 +57309,6 @@ exports[`MyStoryshots Forms|TextAreaField with 10 rows 1`] = `
                 placeholder="Type your placeholder text."
                 rows={10}
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"
@@ -52960,9 +58012,6 @@ exports[`MyStoryshots Forms|TextAreaField with disabled 1`] = `
                 rows={4}
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -53645,9 +58694,6 @@ exports[`MyStoryshots Forms|TextField Interactive Mode 1`] = `
                 placeholder="Type your placeholder text."
                 type="text"
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"
@@ -54350,9 +59396,6 @@ exports[`MyStoryshots Forms|TextField default 1`] = `
                 type="text"
                 value=""
               />
-              <div
-                className="valid-feedback"
-              />
               <small
                 className="text-muted form-text"
               >
@@ -55024,9 +60067,6 @@ exports[`MyStoryshots Forms|TextField with disabled 1`] = `
                 placeholder="Type your placeholder text."
                 type="text"
                 value=""
-              />
-              <div
-                className="valid-feedback"
               />
               <small
                 className="text-muted form-text"

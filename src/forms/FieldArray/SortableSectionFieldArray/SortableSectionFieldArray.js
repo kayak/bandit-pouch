@@ -113,6 +113,8 @@ class VerticalFieldArray extends Component {
 
   state = {
     firstRender: true,
+    // eslint-disable-next-line react/destructuring-assignment
+    touched: this.props.meta.touched || false,
   };
 
   componentDidMount() {
@@ -203,11 +205,13 @@ class VerticalFieldArray extends Component {
         onAdd,
         emptyMessage,
       } = this.props;
+    const { touched } = this.state;
 
     const buttonBsStyle = fieldArrayButtonBsStyle(meta);
     const pushItem = (selected) => {
       const item = onAdd ? onAdd(selected) : initialFieldValue;
       fields.push(item);
+      this.setState({ touched: true });
     };
 
     const fieldArray = fields.map((field, index) => this.renderField(field, index));
@@ -220,7 +224,10 @@ class VerticalFieldArray extends Component {
           </span>
         )}
         help={help}
-        meta={fieldArrayMeta(meta)}
+        meta={fieldArrayMeta({
+          ...meta,
+          touched,
+        })}
       >
         <SortableList
           dragHandle

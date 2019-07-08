@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 
-import FormField from './FormField';
+import FormField, { formControlValidationStates } from './FormField';
 
 function toValue(checked, defaultValue) {
   if (_.isNil(checked)) {
@@ -18,24 +18,19 @@ function toValue(checked, defaultValue) {
  */
 const CheckboxField = ({
   input, label, help, meta, defaultValue, disabled,
-}) => {
-  const hasErrors = !_.isEmpty(meta.error);
-
-  return (
-    <FormField id={input.id} help={help} meta={meta}>
-      <Form.Check
-        type="checkbox"
-        name={input.name}
-        label={label}
-        checked={toValue(input.value, defaultValue)}
-        disabled={disabled}
-        onChange={evt => input.onBlur(evt.target.checked)}
-        isValid={meta.touched && !hasErrors}
-        isInvalid={meta.touched && hasErrors}
-      />
-    </FormField>
-  );
-};
+}) => (
+  <FormField id={input.id} help={help} meta={meta}>
+    <Form.Check
+      type="checkbox"
+      name={input.name}
+      label={label}
+      checked={toValue(input.value, defaultValue)}
+      disabled={disabled}
+      onChange={evt => input.onBlur(evt.target.checked)}
+      {...formControlValidationStates(meta)}
+    />
+  </FormField>
+);
 
 CheckboxField.propTypes = {
   /**

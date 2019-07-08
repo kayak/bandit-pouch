@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Col, InputGroup } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,66 +9,84 @@ import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 /**
  * Component that renders a key-value field array.
  */
-const KeyValueFieldArray = ({
-  fields, meta, label, help, disabled, keyField, valueField, emptyMessage,
-}) => {
-  const buttonBsStyle = fieldArrayButtonBsStyle(meta);
+class KeyValueFieldArray extends Component {
+  state = {
+    // eslint-disable-next-line react/destructuring-assignment
+    touched: this.props.meta.touched || false,
+  };
 
-  return (
-    <FormField
-      label={(
-        <span>
-          {label}
+  render() {
+    const {
+      fields, meta, label, help, disabled, keyField, valueField, emptyMessage,
+    } = this.props;
+    const { touched } = this.state;
+    const buttonBsStyle = fieldArrayButtonBsStyle(meta);
 
-          <Button
-            size="sm"
-            variant={buttonBsStyle}
-            style={{ marginLeft: 6 }}
-            disabled={disabled}
-            onClick={() => fields.push({})}
-          >
-            <FontAwesomeIcon icon="plus" />
-          </Button>
-        </span>
-      )}
-      help={help}
-      meta={fieldArrayMeta(meta)}
-    >
-      <MagicRow colSizeKey="md">
-        {fields.map((field, idx) => (
-          <Col
-            key={field}
-            xs={12}
-            sm={6}
-            md={4}
-            style={{ marginBottom: 15 }}
-          >
-            <FormSection name={field}>
-              <InputGroup>
-                <InputGroup.Append>
-                  {keyField}
-                  {valueField}
-                  <Tooltip text="Remove">
-                    <Button
-                      style={{ height: 38 }}
-                      variant={buttonBsStyle}
-                      disabled={disabled}
-                      onClick={() => fields.remove(idx)}
-                    >
-                      <FontAwesomeIcon icon="times" />
-                    </Button>
-                  </Tooltip>
-                </InputGroup.Append>
-              </InputGroup>
-            </FormSection>
-          </Col>
-        ))}
-      </MagicRow>
+    return (
+      <FormField
+        label={(
+          <span>
+            {label}
 
-      {emptyMessage && fields.length === 0 && emptyMessage}
-    </FormField>
-  );
-};
+            <Button
+              size="sm"
+              variant={buttonBsStyle}
+              style={{ marginLeft: 6 }}
+              disabled={disabled}
+              onClick={() => {
+                fields.push({});
+                this.setState({ touched: true });
+              }}
+            >
+              <FontAwesomeIcon icon="plus" />
+            </Button>
+          </span>
+        )}
+        help={help}
+        meta={fieldArrayMeta({
+          ...meta,
+          touched,
+        })}
+      >
+        <MagicRow colSizeKey="md">
+          {fields.map((field, idx) => (
+            <Col
+              key={field}
+              xs={12}
+              sm={6}
+              md={4}
+              style={{ marginBottom: 15 }}
+            >
+              <FormSection name={field}>
+                <InputGroup>
+                  <InputGroup.Append>
+                    {keyField}
+                    {valueField}
+                    <Tooltip text="Remove">
+                      <Button
+                        style={{ height: 38 }}
+                        variant={buttonBsStyle}
+                        disabled={disabled}
+                        onClick={() => {
+                          fields.remove(idx);
+                          this.setState({ touched: true });
+                        }}
+                      >
+                        <FontAwesomeIcon icon="times" />
+                      </Button>
+                    </Tooltip>
+                  </InputGroup.Append>
+                </InputGroup>
+              </FormSection>
+            </Col>
+          ))}
+        </MagicRow>
+
+        {emptyMessage && fields.length === 0 && emptyMessage}
+      </FormField>
+    );
+  }
+}
 
 KeyValueFieldArray.propTypes = {
   /**
