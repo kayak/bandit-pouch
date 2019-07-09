@@ -84,3 +84,12 @@ export const deprecate = (message, func) => function (...args) { // eslint-disab
   printDeprecationWarning(message);
   return func.apply(this, args);
 };
+
+/**
+ * Returns true when provided value is different from empty string, null and undefined.
+ *
+ * @method isValidValue
+ * @param {String|undefined|null} value A value.
+ * @return {Boolean}
+ */
+export const isValidValue = value => value !== '' && !_.isNil(value);

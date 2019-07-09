@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 function hasFieldArrayError(meta) {
-  return (meta.dirty === true || meta.submitFailed === true) && !_.isEmpty(meta.error);
+  return (meta.touched === true || meta.submitFailed === true) && !_.isEmpty(meta.error);
 }
 
 export function fieldArrayButtonBsStyle(meta) {

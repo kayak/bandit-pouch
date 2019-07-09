@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormControl } from 'react-bootstrap';
 
-import FormField from './FormField';
+import FormField, { formControlValidationStates } from './FormField';
 
 /**
  * Generalized Form Control component.
@@ -56,6 +56,10 @@ class InputField extends Component {
   onBlur() {
     const { input, onChangeValue } = this.props;
     const { value } = this.state;
+
+    // React-final-form requires onChange to be called in order to set the value. Before, when using redux-forms,
+    // onBlur would implicitly do that.
+    input.onChange(value);
     input.onBlur(value);
     if (onChangeValue) onChangeValue(value);
   }
@@ -66,8 +70,6 @@ class InputField extends Component {
     } = this.props;
     const { value } = this.state;
 
-    const hasErrors = !_.isEmpty(meta.error);
-
     return (
       <FormField id={input.id} label={label} help={help} meta={meta}>
         <FormControl
@@ -77,10 +79,8 @@ class InputField extends Component {
           as={as}
           onChange={this.onChange}
           onBlur={this.onBlur}
-          isValid={meta.touched && !hasErrors}
-          isInvalid={meta.touched && hasErrors}
+          {...formControlValidationStates(meta)}
         />
-        <FormControl.Feedback />
       </FormField>
     );
   }

@@ -8,10 +8,15 @@ import { CHILDREN_PROP_TYPE } from '../utils';
  * Component meant for displaying errors below fields in a form
  */
 const FieldError = ({ style = {}, children = [] }) => (
-  <Form.Control.Feedback type="invalid" style={style}>
-    <FontAwesomeIcon icon="exclamation-circle" />
-    &nbsp;
-    <small className="validation-error">{children}</small>
+  <Form.Control.Feedback className="d-block" type="invalid" style={style}>
+    <div className="d-flex flex-row">
+      <div style={{ width: 18 }}>
+        <FontAwesomeIcon icon="exclamation-circle" />
+      </div>
+      <div className="w-100">
+        <small className="validation-error">{children}</small>
+      </div>
+    </div>
   </Form.Control.Feedback>
 );
 

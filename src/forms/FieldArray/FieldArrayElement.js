@@ -70,14 +70,15 @@ class FieldArrayElement extends Component {
         <Card.Body>
           <div>
             {dragHandleProps && (
-              <FontAwesomeIcon
-                icon="arrows"
-                style={{
-                  fontSize: 16,
-                  marginRight: 6,
-                }}
-                {...dragHandleProps}
-              />
+              <span {...dragHandleProps}>
+                <FontAwesomeIcon
+                  icon="arrows"
+                  style={{
+                    fontSize: 16,
+                    marginRight: 6,
+                  }}
+                />
+              </span>
             )}
 
             {minimizable ? (

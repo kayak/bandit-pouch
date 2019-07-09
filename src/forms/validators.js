@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import _ from 'lodash';
-import { assert } from '../utils';
+import { assert, isValidValue } from '../utils';
 
 const TEMPLATE_REGEX = /{(\d+)}/g;
 const ALPHANUMERIC_REGEX = /^[a-zA-Z\s+\-_]*$/;
@@ -258,3 +258,19 @@ export const between = (min, max, errorTemplate) => {
     v => formatTemplate(errorTemplate || betweenErrorTemplates[typeof v], [min, max]),
   );
 };
+
+/**
+ * Combine multiple validation functions into a single function.
+ *
+ * @param {Array} validators         Array of validator functions.
+ * @return {Array|undefined}
+ */
+// eslint-disable-next-line no-shadow
+export const combine = validators => (
+  (value) => {
+    const errors = validators.map(validator => validator(value)).filter(isValidValue);
+
+    if (_.isEmpty(errors)) return undefined;
+
+    return errors;
+  });

@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControl } from 'react-bootstrap';
 
 import MonthPicker from '../ui/MonthPicker';
 import FormField from './FormField';
@@ -23,7 +22,6 @@ const MonthPickerField = ({
         onChangeValue(selected);
       }}
     />
-    <FormControl.Feedback />
   </FormField>
 );
 

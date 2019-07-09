@@ -7,26 +7,30 @@ import {
 } from 'react-bootstrap';
 
 import FieldError from './FieldError';
-import { CHILDREN_PROP_TYPE } from '../utils';
+import { CHILDREN_PROP_TYPE, isValidValue } from '../utils';
 
 const VALIDATION_CLASS_NAME = { valid: 'text-success', invalid: 'text-danger' };
 
-/**
- * Function to define the current validationState of the FormGroup. This is a prop that
- * the FormGroup component in React-Bootstrap expects
- *
- * @param touched Boolean of whether the field has been used (Redux-Form tracks this)
- * @param error Redux form error object
- * @returns {*} - Undefined if the field has not been touched,
- *              - 'invalid' if an error has been found
- *              - 'valid' if there is no error and the field has been touched.
- */
-export function getValidationState(touched, error) {
-  if (!touched) return undefined;
-  // Ensure the error prop is showing a real error. Sometimes an empty array is passed which still
-  // indicates there are no errors. If this happens we don't want to use an error class.
-  return !_.isEmpty(error) ? 'invalid' : 'valid';
-}
+const formatErrors = ({ error = [] }) => {
+  if (!isValidValue(error)) return [];
+
+  // Split the error by new line if it is not an array (a string will come back from the grammar validation,
+  // whereas an array is returned by the Django API). We split the grammar validation into multiple lines so
+  // it will display properly under the field.
+  return ((error && _.isString(error)) ? error.split('\n') : error).filter(isValidValue);
+};
+
+const hasErrors = formatedErrors => !_.isEmpty(formatedErrors);
+
+export const formControlValidationStates = ({ error = [], touched = false }) => {
+  const formatedErrors = formatErrors({ error });
+  const isInvalid = hasErrors(formatedErrors);
+
+  return {
+    isValid: touched && !isInvalid ? true : undefined,
+    isInvalid: touched && isInvalid ? true : undefined,
+  };
+};
 
 /**
  * Component that wraps Bootstrap's FormGroup, ControlLabel and HelpBlock elements
@@ -35,13 +39,12 @@ export function getValidationState(touched, error) {
  * Form field also renders a list of errors using the FieldErrors component.
  */
 const FormField = ({
-  id, label, help, children, className, meta: { touched, error },
+  id, label, help, children, className, meta,
 }) => {
-  const validationState = getValidationState(touched, error);
-  // split the error by new line if it is not an array (a string will come back from the grammar validation,
-  // whereas an array is returned by the Django API). We split the grammar validation into multiple lines so
-  // it will display properly under the field
-  const errors = error && _.isString(error) ? error.split('\n') : error;
+  const formatedErrors = formatErrors(meta);
+  const isInvalid = hasErrors(formatedErrors);
+  const willDisplayErrors = meta.touched && isInvalid;
+  const validationState = isInvalid ? 'invalid' : 'valid';
 
   return (
     <Form.Group controlId={id} className={className}>
@@ -50,19 +53,16 @@ const FormField = ({
       {children}
 
       {help && (
-        <Form.Text className={VALIDATION_CLASS_NAME[validationState] || 'text-muted'}>
+        <Form.Text className={meta.touched ? VALIDATION_CLASS_NAME[validationState] : 'text-muted'}>
           {help && help}
         </Form.Text>
       )}
 
-      { // Only show if field is touched and not empty. Sometimes, the error prop is an empty
-        // array so we do not want to show an error for this.
-        touched && !_.isEmpty(error) && (
-          <FieldError>
-            {errors.map((e, i) => i ? <div key={`error-${i}`}>{e}</div> : e)}
-          </FieldError>
-        )
-      }
+      {willDisplayErrors && (
+        <FieldError>
+          {formatedErrors.map((e, i) => i ? <div key={`error-${i}`}>{e}</div> : e)}
+        </FieldError>
+      )}
     </Form.Group>
   );
 };
