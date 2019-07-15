@@ -61022,7 +61022,7 @@ exports[`MyStoryshots Layout|Page Interactive Mode 1`] = `
       }
     >
       <div
-        className={null}
+        className="page-layout-page"
         style={null}
       >
         This is Page
@@ -61320,7 +61320,7 @@ exports[`MyStoryshots Layout|Page default 1`] = `
       }
     >
       <div
-        className={null}
+        className="page-layout-page"
         style={null}
       >
         This is Page
@@ -61589,7 +61589,7 @@ exports[`MyStoryshots Layout|Page with HorizontalSplit default 1`] = `
       }
     >
       <div
-        className={null}
+        className="page-layout-page"
         style={null}
       >
         <div
@@ -62524,7 +62524,7 @@ exports[`MyStoryshots Layout|Page with TopPanel and Content default 1`] = `
       }
     >
       <div
-        className={null}
+        className="page-layout-page"
         style={null}
       >
         <div
@@ -63130,7 +63130,7 @@ exports[`MyStoryshots Layout|Page with title 1`] = `
       }
     >
       <div
-        className={null}
+        className="page-layout-page"
         style={null}
       >
         This is Page

@@ -38,7 +38,7 @@ export class Page extends Component {
     } = this.props;
 
     return (
-      <div className={className} style={style}>
+      <div className={classnames('page-layout-page', className)} style={style}>
         {children}
       </div>
     );
