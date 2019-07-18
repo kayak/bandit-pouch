@@ -3,8 +3,10 @@ import React from 'react';
 import { Button, Col, InputGroup } from 'react-bootstrap';
 import { FormSection } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FormField, MagicRow, Tooltip } from '../..';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
+import MagicRow from '../../ui/MagicRow';
+import Tooltip from '../../ui/Tooltip';
+import FormField from '../FormField';
 
 /**
  * Component that renders a key-value field array.

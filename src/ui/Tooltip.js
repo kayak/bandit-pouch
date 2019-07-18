@@ -11,7 +11,17 @@ import {
  * Component that wraps the React element with a Bootstrap Tooltip
  */
 const Tooltip = ({ text, children, ...props }) => (
-  <OverlayTrigger {...props} overlay={tooltip(text)}>
+  <OverlayTrigger
+    overlay={tooltip(text)}
+    popperConfig={{
+      modifiers: {
+        preventOverflow: {
+          enabled: false,
+        },
+      },
+    }}
+    {...props}
+  >
     {children}
   </OverlayTrigger>
 );

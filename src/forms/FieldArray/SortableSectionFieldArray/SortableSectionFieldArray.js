@@ -2,10 +2,12 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DropdownButton, FormField, Tooltip } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import SortableList from './SortableList';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from '../meta';
+import FormField from '../../FormField';
+import Tooltip from '../../../ui/Tooltip';
+import DropdownButton from '../../../ui/DropdownButton';
 
 
 /**
