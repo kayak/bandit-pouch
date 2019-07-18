@@ -3,7 +3,8 @@ import {
   Card,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconButton, Tooltip } from '../..';
+import Tooltip from '../../ui/Tooltip';
+import IconButton from '../../ui/IconButton';
 
 const TOOLBAR_BUTTON_STYLE = { marginRight: 10, fontSize: 15 };
 

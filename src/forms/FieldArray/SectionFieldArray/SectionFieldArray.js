@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DropdownButton, FormField, Tooltip } from '../../..';
 import FieldArrayElement from '../FieldArrayElement';
 import { fieldArrayMeta, fieldArrayButtonBsStyle } from '../meta';
+import Tooltip from '../../../ui/Tooltip';
+import DropdownButton from '../../../ui/DropdownButton';
+import FormField from '../../FormField';
 
 /**
  * Component that renders a section field array using the provided innerComponent prop as its elements.
