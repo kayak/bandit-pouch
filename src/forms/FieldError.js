@@ -14,7 +14,7 @@ const FieldError = ({ style = {}, children = [] }) => (
         <FontAwesomeIcon icon="exclamation-circle" />
       </div>
       <div className="w-100">
-        <small className="validation-error">{children}</small>
+        <span className="validation-error">{children}</span>
       </div>
     </div>
   </Form.Control.Feedback>

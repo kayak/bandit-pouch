@@ -12,7 +12,7 @@ describe('<FieldError/>', () => {
     });
 
     it('renders feedback element', () => expect(fieldError.exists('Feedback')).toEqual(true));
-    it('renders error text', () => expect(fieldError.find('small').text()).toEqual(text));
+    it('renders error text', () => expect(fieldError.find('span').text()).toEqual(text));
     it('renders feedback element with invalid state', () => expect(
       fieldError.find('Feedback').prop('type'),
     ).toEqual('invalid'));
