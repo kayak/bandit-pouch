@@ -26,7 +26,7 @@ storiesOf('Forms|FormField', module)
   .addDecorator(withComponent)
   .add('default', () => ({}))
   .add('with an error but not touched', () => ({meta: {touched: false, error: 'You won\'t see this'}}))
-  .add('with a string error', () => ({meta: {touched: true, error: 'This has erroed'}}))
+  .add('with a string error', () => ({meta: {touched: true, error: 'This has errored'}}))
   .add('with a multi line string error',() => ({
     meta: {touched: true, error: 'That\'s a\nvery complex\nerror\nfor a single line'},
   }))

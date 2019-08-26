@@ -14925,14 +14925,14 @@ exports[`MyStoryshots Forms|FormField with a list error 1`] = `
             <div
               className="w-100"
             >
-              <small
+              <span
                 className="validation-error"
               >
                 This is wrong
                 <div>
                   That is wrong too
                 </div>
-              </small>
+              </span>
             </div>
           </div>
         </div>
@@ -16016,7 +16016,7 @@ exports[`MyStoryshots Forms|FormField with a multi line string error 1`] = `
             <div
               className="w-100"
             >
-              <small
+              <span
                 className="validation-error"
               >
                 That's a
@@ -16029,7 +16029,7 @@ exports[`MyStoryshots Forms|FormField with a multi line string error 1`] = `
                 <div>
                   for a single line
                 </div>
-              </small>
+              </span>
             </div>
           </div>
         </div>
@@ -17054,11 +17054,11 @@ exports[`MyStoryshots Forms|FormField with a string error 1`] = `
             <div
               className="w-100"
             >
-              <small
+              <span
                 className="validation-error"
               >
-                This has erroed
-              </small>
+                This has errored
+              </span>
             </div>
           </div>
         </div>
@@ -17345,7 +17345,7 @@ exports[`MyStoryshots Forms|FormField with a string error 1`] = `
                                   }
                                 }
                               >
-                                'This has erroed'
+                                'This has errored'
                               </span>
                               }
                             </span>
@@ -51968,11 +51968,11 @@ exports[`MyStoryshots Forms|SubmitResetRow with error 1`] = `
                     <div
                       className="w-100"
                     >
-                      <small
+                      <span
                         className="validation-error"
                       >
                         The error X ocurred.
-                      </small>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -53112,11 +53112,11 @@ exports[`MyStoryshots Forms|SubmitResetRow with submitFailed and error 1`] = `
                     <div
                       className="w-100"
                     >
-                      <small
+                      <span
                         className="validation-error"
                       >
                         The error X ocurred.
-                      </small>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -54778,11 +54778,11 @@ exports[`MyStoryshots Forms|SubmitResetRow with valid as false and error 1`] = `
                     <div
                       className="w-100"
                     >
-                      <small
+                      <span
                         className="validation-error"
                       >
                         The error X ocurred.
-                      </small>
+                      </span>
                     </div>
                   </div>
                 </div>
