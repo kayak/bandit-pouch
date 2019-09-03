@@ -5,9 +5,9 @@
     "browser": true,
     "es6": true,
     "node": true,
-    "jest": true
+    "jest/globals": true
   },
-  "plugins": ["react", "import"],
+  "plugins": ["react", "import", "jest"],
   "rules": {
     "max-len": ["error", { "code": 120 }],
     "react/jsx-filename-extension": "off",
