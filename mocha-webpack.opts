@@ -1,6 +1,0 @@
---colors
---recursive
---webpack-config webpack.config.js
---require test/setup.js
---glob "*.test.{js,jsx}"
-test

@@ -37,9 +37,11 @@ const SelectField = ({
         // onChangeValue.  If this is false, the entire option object is stored, meaning additional data
         // can be stored onChangeValue if needed.
         if (onChangeWithValue && !async && !creatable) {
-          value = multi
-            ? selection && _.map(selection, 'value')
-            : selection && selection.value;
+          if (multi) {
+            value = _.isNil(selection) ? [] : _.map(selection, 'value');
+          } else {
+            value = _.isNil(selection) ? null : selection.value;
+          }
         }
 
         input.onChange(value);
