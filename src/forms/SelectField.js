@@ -38,11 +38,13 @@ const SelectField = ({
         // can be stored onChangeValue if needed.
         if (onChangeWithValue && !async && !creatable) {
           if (multi) {
-            value = _.isNil(selection) ? [] : _.map(selection, 'value');
+            value = !_.isNil(selection) && _.map(selection, 'value');
           } else {
-            value = _.isNil(selection) ? null : selection.value;
+            value = !_.isNil(selection) && selection.value;
           }
         }
+
+        if (multi && _.isNil(value)) value = [];
 
         input.onChange(value);
         if (onChangeValue) onChangeValue(value);
