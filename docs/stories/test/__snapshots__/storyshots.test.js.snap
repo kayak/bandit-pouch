@@ -32,14 +32,14 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
                   checked={false}
                   className="form-check-input"
                   disabled={false}
-                  id={null}
+                  id="formField"
                   name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />
                 <label
                   className="form-check-label"
-                  htmlFor={null}
+                  htmlFor="formField"
                   title=""
                   type="checkbox"
                 >
@@ -704,14 +704,14 @@ exports[`MyStoryshots Forms|CheckboxField default 1`] = `
                   checked={false}
                   className="form-check-input"
                   disabled={false}
-                  id={null}
+                  id="formField"
                   name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />
                 <label
                   className="form-check-label"
-                  htmlFor={null}
+                  htmlFor="formField"
                   title=""
                   type="checkbox"
                 >
@@ -1347,14 +1347,14 @@ exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
                   checked={false}
                   className="form-check-input"
                   disabled={true}
-                  id={null}
+                  id="formField"
                   name="formField"
                   onChange={[Function]}
                   type="checkbox"
                 />
                 <label
                   className="form-check-label"
-                  htmlFor={null}
+                  htmlFor="formField"
                   title=""
                   type="checkbox"
                 >

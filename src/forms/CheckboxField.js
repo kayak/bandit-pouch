@@ -21,6 +21,7 @@ const CheckboxField = ({
 }) => (
   <FormField id={input.id} help={help} meta={meta}>
     <Form.Check
+      id={input.id || input.name}
       type="checkbox"
       name={input.name}
       label={label}
