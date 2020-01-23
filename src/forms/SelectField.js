@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import Select from '../ui/Select';
 import FormField from './FormField';
 
+export const transformMultiValue = selection => (_.isNil(selection) ? [] : _.map(selection, 'value'));
+
+export const transformSingularValue = selection => (_.isNil(selection) ? null : selection.value);
+
 /**
  * Component that encapsulates the `react-select` component.
  */
@@ -32,19 +36,18 @@ const SelectField = ({
       creatable={creatable}
       onChange={(selection) => {
         let value = selection;
+        if (multi && _.isNil(value)) value = [];
 
         // Passing the onChangeWithValue prop means the React-Select 'value' key will be used
         // onChangeValue.  If this is false, the entire option object is stored, meaning additional data
         // can be stored onChangeValue if needed.
         if (onChangeWithValue && !async && !creatable) {
           if (multi) {
-            value = !_.isNil(selection) && _.map(selection, 'value');
+            value = transformMultiValue(selection);
           } else {
-            value = !_.isNil(selection) && selection.value;
+            value = transformSingularValue(selection);
           }
         }
-
-        if (multi && _.isNil(value)) value = [];
 
         input.onChange(value);
         if (onChangeValue) onChangeValue(value);
