@@ -29,13 +29,17 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
                 className="form-check"
               >
                 <input
-                  checked={false}
                   className="form-check-input"
                   disabled={false}
                   id="formField"
                   name="formField"
+                  onBlur={[Function]}
                   onChange={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onFocus={[Function]}
                   type="checkbox"
+                  value=""
                 />
                 <label
                   className="form-check-label"
@@ -672,649 +676,6 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
 </div>
 `;
 
-exports[`MyStoryshots Forms|CheckboxField default 1`] = `
-<div
-  style={
-    Object {
-      "margin": "20px 50px",
-    }
-  }
->
-  <div>
-    <div
-      style={
-        Object {
-          "position": "relative",
-          "zIndex": 0,
-        }
-      }
-    >
-      <div>
-        <div>
-          <form
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group"
-            >
-              <div
-                className="form-check"
-              >
-                <input
-                  checked={false}
-                  className="form-check-input"
-                  disabled={false}
-                  id="formField"
-                  name="formField"
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor="formField"
-                  title=""
-                  type="checkbox"
-                >
-                  Checkbox
-                </label>
-              </div>
-              <small
-                className="text-muted form-text"
-              >
-                Type your help text.
-              </small>
-            </div>
-          </form>
-        </div>
-        <div>
-          <strong>
-            Redux-form state:
-          </strong>
-          <pre>
-            Change field to see redux state. Field name is formField.
-          </pre>
-        </div>
-      </div>
-    </div>
-    <button
-      className="info__show-button"
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#027ac5",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      type="button"
-    >
-      Show Info
-    </button>
-    <div
-      className="info__overlay"
-      style={
-        Object {
-          "background": "white",
-          "bottom": 0,
-          "display": "none",
-          "left": 0,
-          "overflow": "auto",
-          "padding": "0 40px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 99999,
-        }
-      }
-    >
-      <button
-        className="info__close-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        ×
-      </button>
-      <div>
-        <div
-          style={
-            Object {
-              "backgroundColor": "#fff",
-              "border": "1px solid #eee",
-              "borderRadius": "2px",
-              "color": "black",
-              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-              "fontSize": "15px",
-              "fontWeight": 300,
-              "lineHeight": 1.45,
-              "marginBottom": "20px",
-              "marginTop": "20px",
-              "padding": "20px 40px 40px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "borderBottom": "1px solid #eee",
-                "marginBottom": 10,
-                "paddingTop": 10,
-              }
-            }
-          >
-            <h1
-              style={
-                Object {
-                  "fontSize": "35px",
-                  "margin": 0,
-                  "padding": 0,
-                }
-              }
-            >
-              Forms|CheckboxField
-            </h1>
-            <h2
-              style={
-                Object {
-                  "fontSize": "22px",
-                  "fontWeight": 400,
-                  "margin": "0 0 10px 0",
-                  "padding": 0,
-                }
-              }
-            >
-              default
-            </h2>
-          </div>
-          
-          <div>
-            <h1
-              style={
-                Object {
-                  "borderBottom": "1px solid #EEE",
-                  "fontSize": "25px",
-                  "margin": "20px 0 0 0",
-                  "padding": "0 0 5px 0",
-                }
-              }
-            >
-              Story Source
-            </h1>
-            <pre
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#fafafa",
-                  "display": "flex",
-                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                  "fontSize": ".88em",
-                  "justifyContent": "space-between",
-                  "lineHeight": 1.5,
-                  "overflowX": "scroll",
-                  "padding": ".5rem",
-                }
-              }
-            >
-              <div>
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &lt;
-                      Provider
-                    </span>
-                    <span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          store
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            {
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span>
-                                  <br />
-                                    
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  dispatch
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                dispatch
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                    
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  subscribe
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                subscribe
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                    
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  getState
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                getState
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                    
-                                    
-                                </span>
-                                …
-                              </span>
-                              <span>
-                                <br />
-                                  
-                              </span>
-                              }
-                            </span>
-                            }
-                          </span>
-                        </span>
-                        
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &gt;
-                    </span>
-                  </div>
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#444",
-                          }
-                        }
-                      >
-                        &lt;
-                        ReduxForm
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#444",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 48,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#444",
-                          }
-                        }
-                      >
-                        &lt;
-                        Field
-                      </span>
-                      <span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            component
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                CheckboxField
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            name
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              "
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                formField
-                              </span>
-                              "
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            label
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              "
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                Checkbox
-                              </span>
-                              "
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            help
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              "
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                Type your help text.
-                              </span>
-                              "
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            onChange
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                actionHandler
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          <br />
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#444",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#444",
-                          }
-                        }
-                      >
-                        &lt;/
-                        ReduxForm
-                        &gt;
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &lt;/
-                      Provider
-                      &gt;
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={[Function]}
-                style={
-                  Object {
-                    "alignSelf": "flex-start",
-                    "backgroundColor": "rgb(255, 255, 255)",
-                    "borderColor": "rgb(238, 238, 238)",
-                    "borderImage": "initial",
-                    "borderRadius": "3px",
-                    "borderStyle": "solid",
-                    "borderWidth": "1px",
-                    "cursor": "pointer",
-                    "flexShrink": "0",
-                    "fontSize": "13px",
-                    "overflow": "hidden",
-                    "padding": "3px 10px",
-                  }
-                }
-                type="button"
-              >
-                Copy
-              </button>
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
 <div
   style={
@@ -1344,13 +705,17 @@ exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
                 className="form-check"
               >
                 <input
-                  checked={false}
                   className="form-check-input"
                   disabled={true}
                   id="formField"
                   name="formField"
+                  onBlur={[Function]}
                   onChange={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onFocus={[Function]}
                   type="checkbox"
+                  value=""
                 />
                 <label
                   className="form-check-label"
@@ -30635,7 +30000,7 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -30693,7 +30058,7 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -30706,7 +30071,7 @@ exports[`MyStoryshots Forms|SelectField Interactive Mode 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -31605,7 +30970,7 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -31663,7 +31028,7 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -31676,7 +31041,7 @@ exports[`MyStoryshots Forms|SelectField default 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -32371,7 +31736,7 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                       Type a github user login
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -32429,7 +31794,7 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -32442,7 +31807,7 @@ exports[`MyStoryshots Forms|SelectField with async 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -33177,7 +32542,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                       Option 1
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -33235,7 +32600,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <div
                       aria-hidden="true"
@@ -33245,7 +32610,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -33267,7 +32632,7 @@ exports[`MyStoryshots Forms|SelectField with clearable 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -34148,7 +33513,7 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -34206,7 +33571,7 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -34219,7 +33584,7 @@ exports[`MyStoryshots Forms|SelectField with creatable 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -34942,7 +34307,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                       >
                         <svg
                           aria-hidden="true"
-                          className="css-19bqh2r"
+                          className="css-tj5bde-Svg"
                           focusable="false"
                           height={14}
                           viewBox="0 0 20 20"
@@ -34955,7 +34320,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                       </div>
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -35013,7 +34378,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -35026,7 +34391,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom multi value
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -35979,7 +35344,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                       </span>
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -36037,7 +35402,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -36050,7 +35415,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue and custom single valu
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -36971,7 +36336,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                       Option 1
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -37029,7 +36394,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -37042,7 +36407,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -37061,7 +36426,7 @@ exports[`MyStoryshots Forms|SelectField with defaultValue, menu open by default 
                   onMouseMove={[Function]}
                 >
                   <div
-                    className="react-select__menu-list css-11unzgr"
+                    className="react-select__menu-list css-1ml51p6-MenuList"
                   >
                     <div
                       className="react-select__option react-select__option--is-selected css-9gakcf-option"
@@ -38018,7 +37383,7 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -38076,7 +37441,7 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-109onse-indicatorSeparator"
@@ -38089,7 +37454,7 @@ exports[`MyStoryshots Forms|SelectField with disabled 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -38790,7 +38155,7 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -38848,7 +38213,7 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -38861,7 +38226,7 @@ exports[`MyStoryshots Forms|SelectField with disabled options 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -39665,7 +39030,7 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -39723,20 +39088,20 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <div
                       aria-hidden="true"
                       className="react-select__indicator react-select__loading-indicator css-at12u2-loadingIndicator"
                     >
                       <span
-                        className="css-d0ptw1"
+                        className="css-155jui9-LoadingDot"
                       />
                       <span
-                        className="css-3utax6"
+                        className="css-1jmiv6o-LoadingDot"
                       />
                       <span
-                        className="css-1qyc6ze"
+                        className="css-fb4kmi-LoadingDot"
                       />
                     </div>
                     <span
@@ -39750,7 +39115,7 @@ exports[`MyStoryshots Forms|SelectField with isLoading 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -40456,7 +39821,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -40514,7 +39879,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -40527,7 +39892,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -40546,7 +39911,7 @@ exports[`MyStoryshots Forms|SelectField with menu open by default 1`] = `
                   onMouseMove={[Function]}
                 >
                   <div
-                    className="react-select__menu-list css-11unzgr"
+                    className="react-select__menu-list css-1ml51p6-MenuList"
                   >
                     <div
                       className="react-select__option css-yt9ioa-option"
@@ -41408,7 +40773,7 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -41466,7 +40831,7 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -41479,7 +40844,7 @@ exports[`MyStoryshots Forms|SelectField with multi 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -42331,7 +41696,7 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -42389,7 +41754,7 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -42402,7 +41767,7 @@ exports[`MyStoryshots Forms|SelectField with no label options 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -43184,7 +42549,7 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                       Object based element #1
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -43242,7 +42607,7 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -43255,7 +42620,7 @@ exports[`MyStoryshots Forms|SelectField with object based defaultValue 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -44170,7 +43535,7 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                       Option 1
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -44228,7 +43593,7 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -44241,7 +43606,7 @@ exports[`MyStoryshots Forms|SelectField with value based defaultValue 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
@@ -45111,7 +44476,7 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                       Type your placeholder text.
                     </div>
                     <div
-                      className="css-1g6gooi"
+                      className="css-w8afj7-Input"
                     >
                       <div
                         className="react-select__input"
@@ -45169,7 +44534,7 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                     </div>
                   </div>
                   <div
-                    className="react-select__indicators css-1wy0on6"
+                    className="react-select__indicators css-1g48xl4-IndicatorsContainer"
                   >
                     <span
                       className="react-select__indicator-separator css-1okebmr-indicatorSeparator"
@@ -45182,7 +44547,7 @@ exports[`MyStoryshots Forms|SelectField without onChangeWithValue 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="css-19bqh2r"
+                        className="css-tj5bde-Svg"
                         focusable="false"
                         height={20}
                         viewBox="0 0 20 20"
