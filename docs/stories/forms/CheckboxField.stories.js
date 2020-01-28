@@ -31,7 +31,6 @@ const withField = propsFn => (
 storiesOf('Forms|CheckboxField', module)
   .addDecorator(withField)
   .addDecorator(ReduxForm)
-  .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
   .add('Interactive Mode', () => ({
     disabled: disabled(),
