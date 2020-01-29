@@ -17,7 +17,8 @@ const CheckboxField = ({
       name={input.name}
       label={label}
       disabled={disabled}
-      {...input}
+      checked={input.value === true}
+      onChange={event => input.onChange(event.target.checked)}
       {...formControlValidationStates(meta)}
     />
   </FormField>
