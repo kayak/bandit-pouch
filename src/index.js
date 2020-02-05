@@ -31,6 +31,7 @@ export {
   DropdownButton,
   DatePicker,
   DateRangePicker,
+  Portal,
 } from './ui';
 
 export {
@@ -52,6 +53,7 @@ export {
   DateRangePickerField,
   SectionFieldArray,
   SortableSectionFieldArray,
+  ToggleField,
 } from './forms';
 
 export {

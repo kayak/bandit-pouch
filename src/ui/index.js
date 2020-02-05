@@ -14,6 +14,7 @@ export ValueLabel from './ValueLabel';
 export Headline from './Headline';
 export Popover from './Popover';
 export Tooltip from './Tooltip';
+export Portal from './Portal';
 export {
   Page,
   Left,
