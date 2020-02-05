@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormControl } from 'react-bootstrap';
 
@@ -13,77 +13,36 @@ import FormField, { formControlValidationStates } from './FormField';
  *  - textarea
  *  - select (but use the SelectField component instead)
  */
-class InputField extends Component {
-  constructor(props) {
-    super(props);
+function InputField({
+  input, label, help, meta, as, onChangeValue, ...props
+}) {
+  const [value, setValue] = React.useState(input.value);
 
-    this.onChange = this.onChange.bind(this);
-    this.onBlur = this.onBlur.bind(this);
-  }
+  const onChange = React.useCallback((event) => {
+    setValue(event.target.value);
+  });
 
-  state = {
-    value: _.get(this.props, 'input.value'),
-  };
-
-  componentWillReceiveProps(nextProps) {
-    if (_.get(this.props, 'input.value') !== _.get(nextProps, 'input.value')) {
-      this.setState({
-        value: nextProps.input.value,
-      });
-    }
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    const prevProps = this.props;
-    const prevState = this.state;
-
-    return (
-      _.get(prevProps, 'label') !== _.get(nextProps, 'label')
-      || _.get(prevProps, 'help') !== _.get(nextProps, 'help')
-      || _.get(prevProps, 'disabled') !== _.get(nextProps, 'disabled')
-      || _.get(prevProps, 'meta.touched') !== _.get(nextProps, 'meta.touched')
-      || _.get(prevProps, 'meta.error') !== _.get(nextProps, 'meta.error')
-      || !_.isEqual(prevState, nextState)
-    );
-  }
-
-  onChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
-  }
-
-  onBlur() {
-    const { input, onChangeValue } = this.props;
-    const { value } = this.state;
-
+  const onBlur = React.useCallback(() => {
     // React-final-form requires onChange to be called in order to set the value. Before, when using redux-forms,
     // onBlur would implicitly do that.
     input.onChange(value);
     input.onBlur(value);
     if (onChangeValue) onChangeValue(value);
-  }
+  }, [value]);
 
-  render() {
-    const {
-      input, label, help, meta, as, onChangeValue, ...props
-    } = this.props;
-    const { value } = this.state;
-
-    return (
-      <FormField id={input.id} label={label} help={help} meta={meta}>
-        <FormControl
-          {...input}
-          {...props}
-          value={value}
-          as={as}
-          onChange={this.onChange}
-          onBlur={this.onBlur}
-          {...formControlValidationStates(meta)}
-        />
-      </FormField>
-    );
-  }
+  return (
+    <FormField id={input.id} label={label} help={help} meta={meta}>
+      <FormControl
+        {...input}
+        {...props}
+        value={value}
+        as={as}
+        onChange={onChange}
+        onBlur={onBlur}
+        {...formControlValidationStates(meta)}
+      />
+    </FormField>
+  );
 }
 
 InputField.propTypes = {

@@ -13,7 +13,7 @@ const ToggleField = ({
 }) => (
   <FormField id={id} help={help} meta={meta}>
     {/* eslint-disable-next-line jsx-a11y/label-has-for */}
-    <label id={id} htmlFor={id}>
+    <label className="mb-0" id={id} htmlFor={id}>
       <Switch
         checked={value === true}
         onChange={() => onChange(!value)}
