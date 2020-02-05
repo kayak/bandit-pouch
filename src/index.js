@@ -31,6 +31,7 @@ export {
   DropdownButton,
   DatePicker,
   DateRangePicker,
+  Portal,
 } from './ui';
 
 export {
