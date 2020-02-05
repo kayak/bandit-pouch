@@ -17,4 +17,5 @@ export FormField from './FormField';
 export MonthPickerField from './MonthPickerField';
 export DatePickerField from './DatePickerField';
 export DateRangePickerField from './DateRangePickerField';
+export ToggleField from './ToggleField';
 export * as Validators from './validators';

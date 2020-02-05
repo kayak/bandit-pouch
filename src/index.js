@@ -52,6 +52,7 @@ export {
   DateRangePickerField,
   SectionFieldArray,
   SortableSectionFieldArray,
+  ToggleField,
 } from './forms';
 
 export {
