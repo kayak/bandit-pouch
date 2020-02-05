@@ -11,18 +11,29 @@ import { CHILDREN_PROP_TYPE, isValidValue } from '../utils';
 
 const VALIDATION_CLASS_NAME = { valid: 'text-success', invalid: 'text-danger' };
 
-const formatErrors = ({ error = [] }) => {
-  if (!isValidValue(error)) return [];
+function generateErrorArray(error) {
+  if (!isValidValue(error)) {
+    return [];
+  }
 
   // Split the error by new line if it is not an array (a string will come back from the grammar validation,
   // whereas an array is returned by the Django API). We split the grammar validation into multiple lines so
   // it will display properly under the field.
-  return ((error && _.isString(error)) ? error.split('\n') : error).filter(isValidValue);
-};
+  return (error && _.isString(error)) ? error.split('\n') : error;
+}
 
-const hasErrors = formatedErrors => !_.isEmpty(formatedErrors);
+function formatErrors({ error = [], submitError = [] }) {
+  return [
+    ...generateErrorArray(error),
+    ...generateErrorArray(submitError),
+  ].filter(isValidValue);
+}
 
-export const formControlValidationStates = ({ error = [], touched = false }) => {
+function hasErrors(formatedErrors) {
+  return !_.isEmpty(formatedErrors);
+}
+
+export function formControlValidationStates({ error = [], touched = false }) {
   const formatedErrors = formatErrors({ error });
   const isInvalid = hasErrors(formatedErrors);
 
@@ -30,7 +41,7 @@ export const formControlValidationStates = ({ error = [], touched = false }) => 
     isValid: touched && !isInvalid ? true : undefined,
     isInvalid: touched && isInvalid ? true : undefined,
   };
-};
+}
 
 /**
  * Component that wraps Bootstrap's FormGroup, ControlLabel and HelpBlock elements
