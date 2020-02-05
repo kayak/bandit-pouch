@@ -2,7 +2,6 @@ import React from 'react';
 import requireContext from 'require-context.macro';
 import {addDecorator, addParameters, configure} from '@storybook/react';
 import {withKnobs} from '@storybook/addon-knobs';
-import {withInfo} from '@storybook/addon-info';
 
 addParameters({
   options: {
@@ -14,12 +13,6 @@ addParameters({
 
 // Global decorators
 addDecorator(withKnobs);
-addDecorator(withInfo({
-  // Disabling propTables for now (https://github.com/storybooks/storybook/issues/3389),
-  // since it make snapshot tests fail in Travis. We should revisit this once we update
-  // react-boostrap again, given it's going to use hooks for versions after 1.0.0-beta.5.
-  propTables: false,
-}));
 
 const Wrapper = props => (
   <div style={{margin: '20px 50px'}}>
