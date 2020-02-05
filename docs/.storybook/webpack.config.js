@@ -8,6 +8,8 @@ module.exports = ({ config, mode }) => {
     resolve: {
       alias: {
         'bandit-pouch$': path.resolve(__dirname, '../../src/index'),
+        react: path.resolve(__dirname, '../../node_modules', 'react'),
+        'react-dom': path.resolve(__dirname, '../../node_modules', 'react-dom'),
       },
     },
     module: {
