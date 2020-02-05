@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Switch from 'rc-switch';
 import FormField from './FormField';
 
-import 'rc-switch/assets/index.css';
-
 /**
  * Component that renders an HTML Checkbox field
  */
