@@ -33,8 +33,8 @@ function hasErrors(formatedErrors) {
   return !_.isEmpty(formatedErrors);
 }
 
-export function formControlValidationStates({ error = [], touched = false }) {
-  const formatedErrors = formatErrors({ error });
+export function formControlValidationStates({ touched = false, ...metaRest }) {
+  const formatedErrors = formatErrors(metaRest);
   const isInvalid = hasErrors(formatedErrors);
 
   return {

@@ -6713,7 +6713,9 @@ exports[`MyStoryshots Forms|ToggleField Interactive Mode 1`] = `
         <div
           className="form-group"
         >
-          <label>
+          <label
+            className="mb-0"
+          >
             <button
               aria-checked={false}
               checked={false}
@@ -6774,7 +6776,9 @@ exports[`MyStoryshots Forms|ToggleField default 1`] = `
         <div
           className="form-group"
         >
-          <label>
+          <label
+            className="mb-0"
+          >
             <button
               aria-checked={false}
               checked={false}
@@ -6835,7 +6839,9 @@ exports[`MyStoryshots Forms|ToggleField with disabled 1`] = `
         <div
           className="form-group"
         >
-          <label>
+          <label
+            className="mb-0"
+          >
             <button
               aria-checked={false}
               checked={false}

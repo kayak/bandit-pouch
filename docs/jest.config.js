@@ -75,7 +75,9 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    'bandit-pouch$': '<rootDir>/../src/index',
+    '^bandit-pouch$': '<rootDir>/../src/index',
+    '^react$': '<rootDir>/../node_modules/react',
+    '^react-dom$': '<rootDir>/../node_modules/react-dom',
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/stories/test/fileMock.js",
     "\\.(s?css|less)$": "identity-obj-proxy"
   },
