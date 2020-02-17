@@ -18,6 +18,8 @@ function InputField({
 }) {
   const [value, setValue] = React.useState(input.value);
 
+  React.useEffect(() => setValue(input.value), [input]);
+
   const onChange = React.useCallback((event) => {
     setValue(event.target.value);
   });
