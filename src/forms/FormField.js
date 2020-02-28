@@ -22,10 +22,10 @@ function generateErrorArray(error) {
   return (error && _.isString(error)) ? error.split('\n') : error;
 }
 
-function formatErrors({ error = [], submitError = [] }) {
+function formatErrors({ error = [], submitError = [], dirtySinceLastSubmit = false }) {
   return [
     ...generateErrorArray(error),
-    ...generateErrorArray(submitError),
+    ...dirtySinceLastSubmit ? generateErrorArray(submitError) : [],
   ].filter(isValidValue);
 }
 
