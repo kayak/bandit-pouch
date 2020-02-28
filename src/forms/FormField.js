@@ -25,7 +25,7 @@ function generateErrorArray(error) {
 function formatErrors({ error = [], submitError = [], dirtySinceLastSubmit = false }) {
   return [
     ...generateErrorArray(error),
-    ...dirtySinceLastSubmit ? generateErrorArray(submitError) : [],
+    ...(dirtySinceLastSubmit ? [] : generateErrorArray(submitError)),
   ].filter(isValidValue);
 }
 
