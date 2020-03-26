@@ -18,6 +18,9 @@ const Tooltip = ({ text, children, ...props }) => (
         preventOverflow: {
           enabled: false,
         },
+        hide: {
+          enabled: false,
+        },
       },
     }}
     {...props}
