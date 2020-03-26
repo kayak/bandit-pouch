@@ -54,6 +54,8 @@ export {
   SectionFieldArray,
   SortableSectionFieldArray,
   ToggleField,
+  // eslint-disable-next-line import/named
+  Validators,
 } from './forms';
 
 export {
