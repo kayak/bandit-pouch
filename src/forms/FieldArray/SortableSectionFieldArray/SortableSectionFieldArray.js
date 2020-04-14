@@ -70,6 +70,14 @@ class VerticalFieldArray extends Component {
      */
     duplicable: PropTypes.bool,
     /**
+     * If elements can be added or not
+     */
+    canAdd: PropTypes.bool,
+    /**
+     * If elements can be removed or not
+     */
+    canRemove: PropTypes.bool,
+    /**
      * A function that receives the value object and its index and returns a key prop that will be used by the
      * element
      */
@@ -108,6 +116,8 @@ class VerticalFieldArray extends Component {
     minimizable: true,
     initiallyMinimized: true,
     duplicable: false,
+    canAdd: true,
+    canRemove: true,
     initialFieldValue: {},
     onAdd: null,
     onDuplicate: null,
@@ -146,6 +156,7 @@ class VerticalFieldArray extends Component {
         minimizable,
         initiallyMinimized,
         duplicable,
+        canRemove,
         onDuplicate,
         onRemove,
         innerRef,
@@ -178,6 +189,7 @@ class VerticalFieldArray extends Component {
         initiallyMinimized={initiallyMinimized && firstRender}
         minimizable={minimizable}
         duplicable={duplicable}
+        canRemove={canRemove}
         onRemove={() => {
           if (onRemove) onRemove(index);
           fields.remove(index);
@@ -202,6 +214,7 @@ class VerticalFieldArray extends Component {
         help,
         disabled,
         initialFieldValue,
+        canAdd,
         addTooltip,
         addChoices,
         onAdd,
@@ -247,18 +260,20 @@ class VerticalFieldArray extends Component {
         {emptyMessage && fields.length === 0 && (
           <div style={{ textAlign: 'center', margin: '10px 0px' }}>{emptyMessage}</div>
         )}
-        <Tooltip text={addTooltip} placement="top">
-          <DropdownButton
-            className="text-center"
-            title={<FontAwesomeIcon icon="plus" />}
-            style={{ display: 'block', marginTop: 10 }}
-            variant={buttonBsStyle}
-            disabled={disabled || (addChoices && addChoices.length === 0)}
-            onSelect={pushItem}
-          >
-            {addChoices}
-          </DropdownButton>
-        </Tooltip>
+        {canAdd && (
+          <Tooltip text={addTooltip} placement="top">
+            <DropdownButton
+              className="text-center"
+              title={<FontAwesomeIcon icon="plus" />}
+              style={{ display: 'block', marginTop: 10 }}
+              variant={buttonBsStyle}
+              disabled={disabled || (addChoices && addChoices.length === 0)}
+              onSelect={pushItem}
+            >
+              {addChoices}
+            </DropdownButton>
+          </Tooltip>
+        )}
       </FormField>
     );
   }

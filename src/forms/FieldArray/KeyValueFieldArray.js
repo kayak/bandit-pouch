@@ -19,7 +19,7 @@ class KeyValueFieldArray extends Component {
 
   render() {
     const {
-      fields, meta, label, help, disabled, keyField, valueField, emptyMessage,
+      fields, meta, label, help, disabled, keyField, valueField, emptyMessage, canAdd, canRemove,
     } = this.props;
     const { touched } = this.state;
     const buttonBsStyle = fieldArrayButtonBsStyle(meta);
@@ -30,18 +30,20 @@ class KeyValueFieldArray extends Component {
           <span>
             {label}
 
-            <Button
-              size="sm"
-              variant={buttonBsStyle}
-              style={{ marginLeft: 6 }}
-              disabled={disabled}
-              onClick={() => {
-                fields.push({});
-                this.setState({ touched: true });
-              }}
-            >
-              <FontAwesomeIcon icon="plus" />
-            </Button>
+            {canAdd && (
+              <Button
+                size="sm"
+                variant={buttonBsStyle}
+                style={{ marginLeft: 6 }}
+                disabled={disabled}
+                onClick={() => {
+                  fields.push({});
+                  this.setState({ touched: true });
+                }}
+              >
+                <FontAwesomeIcon icon="plus" />
+              </Button>
+            )}
           </span>
         )}
         help={help}
@@ -64,19 +66,21 @@ class KeyValueFieldArray extends Component {
                   <InputGroup.Append>
                     {keyField}
                     {valueField}
-                    <Tooltip text="Remove">
-                      <Button
-                        style={{ height: 38 }}
-                        variant={buttonBsStyle}
-                        disabled={disabled}
-                        onClick={() => {
-                          fields.remove(idx);
-                          this.setState({ touched: true });
-                        }}
-                      >
-                        <FontAwesomeIcon icon="times" />
-                      </Button>
-                    </Tooltip>
+                    {canRemove && (
+                      <Tooltip text="Remove">
+                        <Button
+                          style={{ height: 38 }}
+                          variant={buttonBsStyle}
+                          disabled={disabled}
+                          onClick={() => {
+                            fields.remove(idx);
+                            this.setState({ touched: true });
+                          }}
+                        >
+                          <FontAwesomeIcon icon="times" />
+                        </Button>
+                      </Tooltip>
+                    )}
                   </InputGroup.Append>
                 </InputGroup>
               </FormSection>
@@ -108,6 +112,14 @@ KeyValueFieldArray.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
+   * If elements can be added or not
+   */
+  canAdd: PropTypes.bool,
+  /**
+   * If elements can be removed or not
+   */
+  canRemove: PropTypes.bool,
+  /**
    * Metadata object that is passed by the React Form
    */
   meta: PropTypes.shape({
@@ -136,6 +148,8 @@ KeyValueFieldArray.defaultProps = {
   label: null,
   disabled: false,
   emptyMessage: null,
+  canAdd: true,
+  canRemove: true,
   meta: { touched: false, error: [] },
 };
 
