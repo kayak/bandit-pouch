@@ -1,13 +1,11 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 
 import { Field, FieldArray } from 'redux-form'; // theme css file
 import { KeyValueFieldArray, TextField, Validators } from 'bandit-pouch';
 import { Form, withStore } from '../ReduxForm';
-import moment from 'moment';
 
 // Knobs
 const label = () => text('label', 'KeyValueFieldArray');
@@ -15,9 +13,8 @@ const help = () => text('help', 'Type your help text.');
 const emptyMessage = () =>
   text('emptyMessage', 'At least one item is required.');
 const disabled = () => boolean('disabled', false);
-
-// Actions
-const onChange = () => action('onChange');
+const canAdd = () => boolean('canAdd', true);
+const canRemove = () => boolean('canRemove', true);
 
 // Component
 const withField = propsFn => {
@@ -50,6 +47,8 @@ const withField = propsFn => {
           />
         }
         validate={[Validators.required()]}
+        canAdd={canAdd()}
+        canRemove={canRemove()}
         help={help()}
         emptyMessage={<i className="text-muted">{emptyMessage()}</i>}
         {...fieldProps}
@@ -66,6 +65,11 @@ storiesOf('Forms|KeyValueFieldArray.DontTest', module)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
   .add('with one field', () => ({ formField: [{}] }))
+  .add('with one field and not canAdd', () => ({ formField: [{}], canAdd: false, }))
+  .add('with one field and not canRemove', () => ({ formField: [{}], canRemove: false, }))
   .add('Interactive Mode', () => ({
     disabled: disabled(),
+    canAdd: canAdd(),
+    canRemove: canRemove(),
+    emptyMessage: emptyMessage(),
   }));

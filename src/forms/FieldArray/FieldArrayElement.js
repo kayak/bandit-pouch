@@ -38,6 +38,7 @@ class FieldArrayElement extends Component {
       dragHandleProps,
       minimizable,
       duplicable,
+      canRemove,
       children,
       onRemove,
       onDuplicate,
@@ -94,7 +95,7 @@ class FieldArrayElement extends Component {
               </button>
             ) : headerLabel}
 
-            {onRemove && (
+            {canRemove && (
               <Tooltip text="Remove" placement="top">
                 <IconButton
                   icon="times"

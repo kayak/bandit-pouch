@@ -13,6 +13,8 @@ const label = () => text('label', 'SortableSectionFieldArray');
 const help = () => text('help', 'To add items to your forms.');
 const disabled = () => boolean('disabled', false);
 const duplicable = () => boolean('duplicable', false);
+const canAdd = () => boolean('canAdd', true);
+const canRemove = () => boolean('canRemove', true);
 const minimizable = () => boolean('minimizable', true);
 const emptyMessage = () =>
   text('emptyMessage', 'At least one item is required.');
@@ -48,6 +50,8 @@ const withField = propsFn => {
         validate={[Validators.required()]}
         help={help()}
         emptyMessage={<i className="text-muted">{emptyMessage()}</i>}
+        canAdd={canAdd()}
+        canRemove={canRemove()}
         onAdd={onAdd()}
         onRemove={onRemove()}
         {...propsFn()}
@@ -65,6 +69,8 @@ storiesOf('Forms|SortableSectionFieldArray.DontTest', module)
   .add('with disabled', () => ({ disabled: true }))
   .add('with one field and disabled', () => ({ formField: [{}] }))
   .add('with one field and duplicable', () => ({ formField: [{}], duplicable: true }))
+  .add('with one field and not canAdd', () => ({ formField: [{}], canAdd: false, }))
+  .add('with one field and not canRemove', () => ({ formField: [{}], canRemove: false, }))
   .add('with one field and not minimizable', () => ({ formField: [{}], minimizable: false }))
   .add('with one field and not initiallyMinimized', () => ({ formField: [{}], initiallyMinimized: false }))
   .add('with one field and labelDefault', () => ({ formField: [{}], labelDefault: 'Novo' }))
@@ -84,6 +90,9 @@ storiesOf('Forms|SortableSectionFieldArray.DontTest', module)
   .add('Interactive Mode', () => ({
     disabled: disabled(),
     duplicable: duplicable(),
+    canAdd: canAdd(),
+    canRemove: canRemove(),
     minimizable: minimizable(),
     addTooltip: addTooltip(),
+    emptyMessage: emptyMessage(),
   }));
