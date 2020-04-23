@@ -267,8 +267,8 @@ export const between = (min, max, errorTemplate) => {
  */
 // eslint-disable-next-line no-shadow
 export const combine = validators => (
-  (value) => {
-    const errors = validators.map(validator => validator(value)).filter(isValidValue);
+  (...args) => {
+    const errors = validators.map(validator => validator(...args)).filter(isValidValue);
 
     if (_.isEmpty(errors)) return undefined;
 
