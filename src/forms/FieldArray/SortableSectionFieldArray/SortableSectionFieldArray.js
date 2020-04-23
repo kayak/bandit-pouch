@@ -166,7 +166,9 @@ class VerticalFieldArray extends Component {
       firstRender,
     } = this.state;
 
-    const value = fields.get(index);
+    // eslint-disable-next-line no-underscore-dangle
+    const isFieldsFromReduxForm = fields_ => fields_._isFieldArray;
+    const value = isFieldsFromReduxForm(fields) ? fields.get(index) : fields.value[index];
     const key = renderKey(value, index);
     const label = renderLabel(value, index);
 
