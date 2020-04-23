@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tooltip from '../../ui/Tooltip';
 import IconButton from '../../ui/IconButton';
 
-const TOOLBAR_BUTTON_STYLE = { marginRight: 10, fontSize: 15 };
+const TOOLBAR_BUTTON_STYLE = { marginLeft: 10, fontSize: 15 };
 
 class FieldArrayElement extends Component {
   constructor(props) {
@@ -70,7 +70,10 @@ class FieldArrayElement extends Component {
     return (
       <Card variant={variant}>
         <Card.Body>
-          <div>
+          <div style={{
+            display: 'flex',
+          }}
+          >
             {dragHandleProps && (
               <span {...dragHandleProps}>
                 <FontAwesomeIcon
@@ -87,7 +90,12 @@ class FieldArrayElement extends Component {
               <button
                 type="button"
                 style={{
-                  border: 0, padding: 0, cursor: 'pointer', backgroundColor: 'inherit',
+                  border: 0,
+                  padding: 0,
+                  cursor: 'pointer',
+                  backgroundColor: 'inherit',
+                  flexGrow: 1,
+                  flexDirection: 'column',
                 }}
                 onClick={this.switchMinimizationState}
               >
