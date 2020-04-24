@@ -3,9 +3,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 
-import { Field, FieldArray } from 'redux-form'; // theme css file
 import { KeyValueFieldArray, TextField, Validators } from 'bandit-pouch';
-import { Form, withStore } from '../ReduxForm';
+import { Field } from 'react-final-form';
+import { FieldArray } from 'react-final-form-arrays';
+import withForm from '../withForm';
+
+const {required, combine} = Validators;
 
 // Knobs
 const label = () => text('label', 'KeyValueFieldArray');
@@ -18,55 +21,50 @@ const canRemove = () => boolean('canRemove', true);
 
 // Component
 const withField = propsFn => {
-  const { formField=[], ...fieldProps } = propsFn();
-
   return (
-    <Form
-      initialValues={{
-        formField: [...formField],
-      }}
-    >
       <FieldArray
         component={KeyValueFieldArray}
         name="formField"
         label={label()}
-        keyField={
+        keyField={({ field }) => (
           <Field
             component={TextField}
-            name="metric"
+            name={`${field}.metric`}
             placeholder="Metric..."
-            validate={[Validators.required()]}
+            validate={combine([required()])}
           />
-        }
-        valueField={
+        )}
+        valueField={({ field }) => (
           <Field
             component={TextField}
-            name="description"
+            name={`${field}.description`}
             placeholder="Description..."
-            validate={[Validators.required()]}
+            validate={combine([required()])}
           />
-        }
-        validate={[Validators.required()]}
+        )}
+        validate={combine([required()])}
         canAdd={canAdd()}
         canRemove={canRemove()}
         help={help()}
         emptyMessage={<i className="text-muted">{emptyMessage()}</i>}
-        {...fieldProps}
+        {...propsFn()}
       />
-    </Form>
   );
 };
+
+const parametersWithOneSection = {initialValues: {formField: [{}]}};
 
 // JSDom can't be used to test this, as it rely on refs. Try again once we update react-bootstrap
 // (currently on 1.0.0-beta.5).
 storiesOf('Forms|KeyValueFieldArray.DontTest', module)
   .addDecorator(withField)
-  .addDecorator(withStore)
+  .addDecorator(withForm)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
-  .add('with one field', () => ({ formField: [{}] }))
-  .add('with one field and not canAdd', () => ({ formField: [{}], canAdd: false, }))
-  .add('with one field and not canRemove', () => ({ formField: [{}], canRemove: false, }))
+  .add('with one field', () => ({}), parametersWithOneSection)
+  .add('with one field and disabled', () => ({ disabled: true }), parametersWithOneSection)
+  .add('with one field and not canAdd', () => ({ canAdd: false }), parametersWithOneSection)
+  .add('with one field and not canRemove', () => ({ canRemove: false }), parametersWithOneSection)
   .add('Interactive Mode', () => ({
     disabled: disabled(),
     canAdd: canAdd(),

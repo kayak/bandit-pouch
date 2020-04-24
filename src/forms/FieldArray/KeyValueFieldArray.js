@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button, Col, InputGroup } from 'react-bootstrap';
-import { FormSection } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fieldArrayButtonBsStyle, fieldArrayMeta } from './meta';
 import MagicRow from '../../ui/MagicRow';
@@ -19,7 +18,8 @@ class KeyValueFieldArray extends Component {
 
   render() {
     const {
-      fields, meta, label, help, disabled, keyField, valueField, emptyMessage, canAdd, canRemove,
+      fields, meta, label, help, disabled, keyField: KeyFieldComponent, valueField: ValueFieldComponent,
+      emptyMessage, canAdd, canRemove,
     } = this.props;
     const { touched } = this.state;
     const buttonBsStyle = fieldArrayButtonBsStyle(meta);
@@ -53,19 +53,32 @@ class KeyValueFieldArray extends Component {
         })}
       >
         <MagicRow colSizeKey="md">
-          {fields.map((field, idx) => (
-            <Col
-              key={field}
-              xs={12}
-              sm={6}
-              md={4}
-              style={{ marginBottom: 15 }}
-            >
-              <FormSection name={field}>
+          {fields.map((field, idx) => {
+            const keyFieldContent = (
+              <KeyFieldComponent
+                index={idx}
+                field={field}
+              />
+            );
+            const valueFieldContent = (
+              <ValueFieldComponent
+                index={idx}
+                field={field}
+              />
+            );
+
+            return (
+              <Col
+                key={field}
+                xs={12}
+                sm={6}
+                md={4}
+                style={{ marginBottom: 15 }}
+              >
                 <InputGroup>
                   <InputGroup.Append>
-                    {keyField}
-                    {valueField}
+                    {keyFieldContent}
+                    {valueFieldContent}
                     {canRemove && (
                       <Tooltip text="Remove">
                         <Button
@@ -83,9 +96,9 @@ class KeyValueFieldArray extends Component {
                     )}
                   </InputGroup.Append>
                 </InputGroup>
-              </FormSection>
-            </Col>
-          ))}
+              </Col>
+            );
+          })}
         </MagicRow>
 
         {emptyMessage && fields.length === 0 && emptyMessage}
@@ -136,11 +149,11 @@ KeyValueFieldArray.propTypes = {
   /**
    * A custom element that will be rendered as the key part.
    */
-  keyField: PropTypes.element.isRequired,
+  keyField: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
   /**
    * A custom element that will be rendered as the value part.
    */
-  valueField: PropTypes.element.isRequired,
+  valueField: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
 };
 
 KeyValueFieldArray.defaultProps = {

@@ -8,6 +8,7 @@ import { fieldArrayButtonBsStyle, fieldArrayMeta } from '../meta';
 import FormField from '../../FormField';
 import Tooltip from '../../../ui/Tooltip';
 import DropdownButton from '../../../ui/DropdownButton';
+import { getAllValues, getValueByIndex } from '../utils';
 
 
 /**
@@ -139,7 +140,7 @@ class VerticalFieldArray extends Component {
     } = this.props;
 
     return _.some([
-      !_.isEqual(fields.getAll() !== nextProps.fields.getAll()),
+      !_.isEqual(getAllValues(fields), getAllValues(nextProps.fields)),
     ]);
   }
 
@@ -166,9 +167,7 @@ class VerticalFieldArray extends Component {
       firstRender,
     } = this.state;
 
-    // eslint-disable-next-line no-underscore-dangle
-    const isFieldsFromReduxForm = fields_ => fields_._isFieldArray;
-    const value = isFieldsFromReduxForm(fields) ? fields.get(index) : fields.value[index];
+    const value = getValueByIndex(fields, index);
     const key = renderKey(value, index);
     const label = renderLabel(value, index);
 
@@ -197,7 +196,7 @@ class VerticalFieldArray extends Component {
           fields.remove(index);
         }}
         onDuplicate={() => {
-          const currentValue = fields.get(index);
+          const currentValue = getValueByIndex(fields, index);
           const item = onDuplicate ? onDuplicate(currentValue) : currentValue;
           fields.push(item);
         }}

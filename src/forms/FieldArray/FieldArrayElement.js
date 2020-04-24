@@ -101,7 +101,7 @@ class FieldArrayElement extends Component {
               >
                 {headerLabel}
               </button>
-            ) : headerLabel}
+            ) : <div style={{ flexGrow: 1 }}>{headerLabel}</div>}
 
             {canRemove && (
               <Tooltip text="Remove" placement="top">

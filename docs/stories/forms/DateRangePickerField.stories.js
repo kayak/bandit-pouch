@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 
-import { Field } from 'redux-form'; // theme css file
+import { Field } from 'react-final-form';
 import { DateRangePickerField } from 'bandit-pouch';
-import { Form, withStore } from '../ReduxForm';
+import withForm from '../withForm';
 
 // Knobs
 const label = () => text('label', 'Date');
@@ -60,36 +60,38 @@ function getFutureDatePickerRanges(now = moment()) {
 
 // Component
 const withField = propsFn => {
-  const { formField={}, ...fieldProps } = propsFn();
-
   return (
-    <Form
-      initialValues={{
-        formField: {
-          start: moment.utc('1990-02-02'),
-          end: moment.utc('1990-02-12'),
-          ...formField,
-        }
-      }}
-    >
       <Field
         component={DateRangePickerField}
         name="formField"
         label={label()}
         help={help()}
         onChangeValue={onChangeValue()}
-        {...fieldProps}
+        {...propsFn()}
       />
-    </Form>
   );
 };
 
+const parametersWithInitialValueRange = {initialValues: {
+  formField: {
+    start: moment.utc('1990-02-02'),
+    end: moment.utc('1990-02-12'),
+  }
+}};
+
+const parametersWithInitialValueWindow = {initialValues: {
+  formField: {
+    window: 'Yesterday',
+  }
+}};
+
 storiesOf('Forms|DateRangePickerField', module)
   .addDecorator(withField)
-  .addDecorator(withStore)
+  .addDecorator(withForm)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
-  .add('with window instead of range', () => ({ formField: {window: 'Yesterday'}}))
+  .add('with value range set', () => ({}), parametersWithInitialValueRange)
+  .add('with value window set', () => ({}), parametersWithInitialValueWindow)
   .add('with min date as yesterday', () => ({
     minDate: moment()
       .add(-1, 'days'),
