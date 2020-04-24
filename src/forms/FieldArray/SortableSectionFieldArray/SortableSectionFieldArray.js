@@ -8,6 +8,7 @@ import { fieldArrayButtonBsStyle, fieldArrayMeta } from '../meta';
 import FormField from '../../FormField';
 import Tooltip from '../../../ui/Tooltip';
 import DropdownButton from '../../../ui/DropdownButton';
+import { getAllValues, getValueByIndex } from '../utils';
 
 
 /**
@@ -139,7 +140,7 @@ class VerticalFieldArray extends Component {
     } = this.props;
 
     return _.some([
-      !_.isEqual(fields.getAll() !== nextProps.fields.getAll()),
+      !_.isEqual(getAllValues(fields), getAllValues(nextProps.fields)),
     ]);
   }
 
@@ -166,7 +167,7 @@ class VerticalFieldArray extends Component {
       firstRender,
     } = this.state;
 
-    const value = fields.get(index);
+    const value = getValueByIndex(fields, index);
     const key = renderKey(value, index);
     const label = renderLabel(value, index);
 
@@ -195,7 +196,7 @@ class VerticalFieldArray extends Component {
           fields.remove(index);
         }}
         onDuplicate={() => {
-          const currentValue = fields.get(index);
+          const currentValue = getValueByIndex(fields, index);
           const item = onDuplicate ? onDuplicate(currentValue) : currentValue;
           fields.push(item);
         }}

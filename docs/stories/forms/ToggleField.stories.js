@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 
-import { Field } from 'redux-form'; // theme css file
+import { Field } from 'react-final-form';
 import { ToggleField } from 'bandit-pouch';
-import ReduxForm from '../ReduxForm';
+import withForm from '../withForm';
 
 // Knobs
 const label = () => text('label', 'Togglefield');
@@ -30,7 +30,7 @@ const withField = propsFn => (
 
 storiesOf('Forms|ToggleField', module)
   .addDecorator(withField)
-  .addDecorator(ReduxForm)
+  .addDecorator(withForm)
   .add('default', () => ({}))
   .add('with disabled', () => ({ disabled: true }))
   .add('Interactive Mode', () => ({

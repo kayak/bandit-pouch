@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { SubmitResetRow } from 'bandit-pouch';
-import ReduxForm from '../ReduxForm';
+import withForm from '../withForm';
 
 // Knobs
 const valid = () => boolean('valid', true);
@@ -22,7 +22,7 @@ const withField = propsFn => <SubmitResetRow reset={reset()} {...propsFn()} />;
 
 storiesOf('Forms|SubmitResetRow', module)
   .addDecorator(withField)
-  .addDecorator(ReduxForm)
+  .addDecorator(withForm)
   .add('default', () => ({}))
   .add('with enabled as false', () => ({ enabled: false }))
   .add('with pristine as false', () => ({ pristine: false }))

@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FieldArrayElement from '../FieldArrayElement';
-import { fieldArrayMeta, fieldArrayButtonBsStyle } from '../meta';
+import { fieldArrayButtonBsStyle, fieldArrayMeta } from '../meta';
 import Tooltip from '../../../ui/Tooltip';
 import DropdownButton from '../../../ui/DropdownButton';
 import FormField from '../../FormField';
+import { getValueByIndex } from '../utils';
 
 /**
  * Component that renders a section field array using the provided innerComponent prop as its elements.
@@ -136,6 +137,7 @@ class SectionFieldArray extends Component {
         variant,
         minimizable,
         initiallyMinimized,
+        disabled,
         duplicable,
         canRemove,
         onDuplicate,
@@ -146,9 +148,7 @@ class SectionFieldArray extends Component {
       firstRender,
     } = this.state;
 
-    // eslint-disable-next-line no-underscore-dangle
-    const isFieldsFromReduxForm = fields_ => fields_._isFieldArray;
-    const value = isFieldsFromReduxForm(fields) ? fields.get(index) : fields.value;
+    const value = getValueByIndex(fields, index);
     const key = renderKey(value, index);
     const label = renderLabel(value, index);
 
@@ -167,14 +167,14 @@ class SectionFieldArray extends Component {
         variant={variant}
         initiallyMinimized={initiallyMinimized && firstRender}
         minimizable={minimizable}
-        duplicable={duplicable}
-        canRemove={canRemove}
+        duplicable={duplicable && !disabled}
+        canRemove={canRemove && !disabled}
         onRemove={() => {
           if (onRemove) onRemove(index);
           fields.remove(index);
         }}
         onDuplicate={() => {
-          const currentValue = fields.get(index);
+          const currentValue = getValueByIndex(fields, index);
           const item = onDuplicate ? onDuplicate(currentValue) : currentValue;
           fields.push(item);
         }}
