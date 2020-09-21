@@ -29,7 +29,6 @@ exports[`MyStoryshots Forms|CheckboxField Interactive Mode 1`] = `
             className="form-check-label"
             htmlFor="formField"
             title=""
-            type="checkbox"
           >
             Checkbox
           </label>
@@ -82,7 +81,6 @@ exports[`MyStoryshots Forms|CheckboxField default 1`] = `
             className="form-check-label"
             htmlFor="formField"
             title=""
-            type="checkbox"
           >
             Checkbox
           </label>
@@ -135,7 +133,6 @@ exports[`MyStoryshots Forms|CheckboxField with disabled 1`] = `
             className="form-check-label"
             htmlFor="formField"
             title=""
-            type="checkbox"
           >
             Checkbox
           </label>
@@ -329,7 +326,7 @@ exports[`MyStoryshots Forms|DateRangePickerField with different ranges 1`] = `
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="2020-04-24 - 2020-04-24"
+            value="2020-09-22 - 2020-09-22"
           />
         </span>
         <small
@@ -626,7 +623,7 @@ exports[`MyStoryshots Forms|DateRangePickerField without both ranges and input r
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="2020-04-24 - 2020-04-24"
+            value="2020-09-22 - 2020-09-22"
           />
         </span>
         <small
@@ -722,7 +719,7 @@ exports[`MyStoryshots Forms|DateRangePickerField without ranges 1`] = `
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="2020-04-24 - 2020-04-24"
+            value="2020-09-22 - 2020-09-22"
           />
         </span>
         <small
@@ -1201,7 +1198,7 @@ exports[`MyStoryshots Forms|MonthPickerField Interactive Mode 1`] = `
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="April, 2020"
+            value="September, 2020"
           />
         </span>
         <small
@@ -1249,7 +1246,7 @@ exports[`MyStoryshots Forms|MonthPickerField default 1`] = `
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="April, 2020"
+            value="September, 2020"
           />
         </span>
         <small
@@ -1297,7 +1294,7 @@ exports[`MyStoryshots Forms|MonthPickerField with disabled 1`] = `
             id={null}
             onChange={[Function]}
             onClick={[Function]}
-            value="April, 2020"
+            value="September, 2020"
           />
         </span>
         <small
@@ -7246,6 +7243,10 @@ exports[`MyStoryshots UI|IconButton Interactive Mode 1`] = `
   <button
     className="btn-icon btn btn-primary"
     disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     <svg
@@ -7343,6 +7344,44 @@ exports[`MyStoryshots UI|IconButton with an icon and label 1`] = `
     >
       Edit me
     </span>
+  </button>
+</div>
+`;
+
+exports[`MyStoryshots UI|IconButton with tooltip and placement 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 50px",
+    }
+  }
+>
+  <button
+    className="btn-icon btn btn-primary"
+    disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-times fa-w-11 "
+      data-icon="times"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 352 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </button>
 </div>
 `;
