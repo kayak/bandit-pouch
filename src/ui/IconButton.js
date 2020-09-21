@@ -8,6 +8,7 @@ import {
 import {
   Button,
 } from 'react-bootstrap';
+import Tooltip from './Tooltip';
 
 /**
  * Component that renders a button with a Font Awesome Icon.
@@ -19,14 +20,26 @@ const IconButton = ({
   placement,
   className,
   ...props
-}) => (
-  <Button className={classNames('btn-icon', className)} {...props}>
-    <FontAwesomeIcon icon={icon} />
-    {_.isEmpty(label) ? null : (
-      <span className="btn-icon-label">{label}</span>
-    )}
-  </Button>
-);
+}) => {
+  const button = (
+    <Button className={classNames('btn-icon', className)} {...props}>
+      <FontAwesomeIcon icon={icon} />
+      {_.isEmpty(label) ? null : (
+        <span className="btn-icon-label">{label}</span>
+      )}
+    </Button>
+  );
+
+  if (!tooltip) {
+    return button;
+  }
+
+  return (
+    <Tooltip placement={placement} text={tooltip}>
+      {button}
+    </Tooltip>
+  );
+};
 
 IconButton.propTypes = {
   /**
@@ -41,11 +54,21 @@ IconButton.propTypes = {
    * Label that will be displayed next to the icon
    */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  /**
+   * Placement prop passed to the OverlayTrigger of the Tooltip
+   */
+  placement: PropTypes.string,
+  /**
+   * Text that is shown within the tooltip
+   */
+  tooltip: PropTypes.string,
 };
 
 IconButton.defaultProps = {
   className: '',
   label: null,
+  tooltip: null,
+  placement: undefined,
 };
 
 export default IconButton;

@@ -7,6 +7,8 @@ import { IconButton } from 'bandit-pouch';
 // Knobs
 const icon = () => text('icon', 'times');
 const label = () => text('label', 'Edit me');
+const tooltip = () => text('tooltip', 'Edit me');
+const placement = () => text('placement', 'auto');
 
 // Actions
 
@@ -20,6 +22,12 @@ storiesOf('UI|IconButton', module)
     icon: 'plus',
     label: 'Edit me',
   }))
+  .add('with tooltip and placement', () => ({
+    tooltip: 'A Tooltip',
+    placement: 'right',
+  }))
   .add('Interactive Mode', () => ({
     label: label(),
+    tooltip: tooltip(),
+    placement: placement(),
   }));
