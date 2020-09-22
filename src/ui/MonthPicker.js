@@ -59,6 +59,8 @@ class MonthPicker extends Component {
 
     this.onToggle = this.onToggle.bind(this);
 
+    this.ref = React.createRef();
+
     this.state = {
       show: false,
       months: moment.monthsShort(),
@@ -122,7 +124,7 @@ class MonthPicker extends Component {
     } = this.state;
 
     return (
-      <span>
+      <span ref={this.ref}>
         <FormControl
           value={display}
           disabled={disabled}
@@ -133,7 +135,7 @@ class MonthPicker extends Component {
           }}
         />
         <DatePickerOverlay
-          container={this}
+          container={this.ref}
           show={show && !disabled}
           onHide={this.onToggle}
           placement={placement}

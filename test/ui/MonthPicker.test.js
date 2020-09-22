@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { mount } from 'enzyme';
-import { FormControl } from 'react-bootstrap';
 import MonthPicker, { formatDisplay, formatValue, toState } from '../../src/ui/MonthPicker';
 
 describe('MonthPicker', () => {

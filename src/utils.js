@@ -35,7 +35,10 @@ export const tooltip = (text) => {
  * @return {*}
  */
 export const popover = (title, content) => (
-  <Popover id="popover" title={title}>{content}</Popover>
+  <Popover id="popover">
+    {title && <Popover.Title>{title}</Popover.Title>}
+    {content && <Popover.Content>{content}</Popover.Content>}
+  </Popover>
 );
 
 /**

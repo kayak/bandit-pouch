@@ -7,19 +7,21 @@ import { Button } from 'react-bootstrap';
 
 // Knobs
 const title = () => text('title', 'Title');
-const tooltipText = () => text('text', 'You are hovering me!');
+const popoverText = () => text('text', 'You are hovering me!');
 
 // Actions
 
 // Component
 const withComponent = propsFn => (
-  <Popover {...propsFn()} title={title()} text={tooltipText()}>
+  <Popover title='Popover Title' text='Popover Content' placement='right' {...propsFn()}>
     <Button>Hover me!</Button>
   </Popover>
 );
 
-// JSDom can't be used to test this, as it rely on refs. Try again once we update react-bootstrap
-// (currently on 1.0.0-beta.5).
-storiesOf('UI|Popover.DontTest', module)
+storiesOf('UI|Popover', module)
   .addDecorator(withComponent)
-  .add('default', () => ({}));
+  .add('default', () => ({}))
+  .add('Interactive Mode', () => ({
+    title: title(),
+    text: popoverText(),
+  }));;

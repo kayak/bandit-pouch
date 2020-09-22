@@ -11,7 +11,6 @@ export const DatePickerPopover = ({ children }) => (
       boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
       border: '1px solid #CCC',
       borderRadius: 3,
-      marginLeft: -5,
       marginTop: 5,
       padding: 10,
     }}
@@ -23,8 +22,7 @@ export const DatePickerPopover = ({ children }) => (
 const DatePickerOverlay = ({ children, ...props }) => (
   <Overlay
     rootClose
-    trigger="click"
-    animation={false}
+    transition={false}
     {...props}
   >
     <DatePickerPopover>
