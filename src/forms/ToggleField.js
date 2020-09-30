@@ -9,12 +9,13 @@ import FormField from './FormField';
 const ToggleField = ({
   input: {
     id, value, onChange,
-  }, label, help, meta, disabled,
+  }, label, help, meta, disabled, ...props
 }) => (
   <FormField id={id} help={help} meta={meta}>
     {/* eslint-disable-next-line jsx-a11y/label-has-for */}
     <label className="mb-0" id={id} htmlFor={id}>
       <Switch
+        {...props}
         checked={value === true}
         onChange={() => onChange(!value)}
         onClick={() => onChange(!value)}
