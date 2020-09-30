@@ -8,9 +8,10 @@ import InputField from './InputField';
  * This component is meant to be passed into a Redux Forms Field component.
  */
 const SpinnerField = ({
-  input, label, placeholder, min, max, step, disabled, help, meta, onChangeValue,
+  input, label, placeholder, min, max, step, disabled, help, meta, onChangeValue, ...props
 }) => (
   <InputField
+    {...props}
     as="input"
     type="number"
     placeholder={placeholder}

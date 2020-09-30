@@ -8,10 +8,11 @@ import FormField, { formControlValidationStates } from './FormField';
  * Component that renders an HTML Checkbox field
  */
 const CheckboxField = ({
-  input, label, help, meta, disabled,
+  input, label, help, meta, disabled, ...props
 }) => (
   <FormField id={input.id} help={help} meta={meta}>
     <Form.Check
+      {...props}
       id={input.id || input.name}
       type="checkbox"
       name={input.name}

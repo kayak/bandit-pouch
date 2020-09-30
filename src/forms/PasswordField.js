@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import InputField from './InputField';
 
 const PasswordField = ({
-  input, label, placeholder, help, meta, disabled, onChangeValue,
+  input, label, placeholder, help, meta, disabled, onChangeValue, ...props
 }) => (
   <InputField
+    {...props}
     type="password"
     input={input}
     label={label}

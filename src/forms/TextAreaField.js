@@ -8,9 +8,10 @@ import InputField from './InputField';
  * Component that renders the Textarea input field
  */
 const TextAreaField = ({
-  input, label, placeholder, rows, cols, help, meta, disabled, onChangeValue,
+  input, label, placeholder, rows, cols, help, meta, disabled, onChangeValue, ...props
 }) => (
   <InputField
+    {...props}
     input={input}
     label={label}
     help={help}

@@ -8,9 +8,10 @@ import InputField from './InputField';
  * Component that renders an HTML input field
  */
 const TextField = ({
-  input, label, placeholder, help, meta, disabled, type, onChangeValue,
+  input, label, placeholder, help, meta, disabled, type, onChangeValue, ...props
 }) => (
   <InputField
+    {...props}
     type={type}
     input={input}
     label={label}
