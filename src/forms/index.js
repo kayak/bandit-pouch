@@ -14,7 +14,6 @@ export SubmitResetRow from './SubmitResetRow';
 export TextAreaField from './TextAreaField';
 export TextField from './TextField';
 export FormField from './FormField';
-export MonthPickerField from './MonthPickerField';
 export DatePickerField from './DatePickerField';
 export DateRangePickerField from './DateRangePickerField';
 export ToggleField from './ToggleField';

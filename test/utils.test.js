@@ -45,8 +45,8 @@ describe('utils', () => {
 
   describe('popover', () => {
     const wrapper = mount(popover('Title', 'Contents'));
-    it('should contain title', () => expect(wrapper.find('.popover-header').text()).toEqual('Title'));
-    it('should contain text', () => expect(wrapper.find('.popover-body').text()).toEqual('Contents'));
+    it('should contain title', () => expect(wrapper.find('.popover').first().instance().title).toEqual('Title'));
+    it('should contain text', () => expect(wrapper.find('.popover').text()).toEqual('Contents'));
   });
 
   describe('tooltip', () => {
