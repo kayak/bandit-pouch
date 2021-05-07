@@ -9,11 +9,9 @@ addons:
 
 install:
   - npm install
-  - npm --prefix docs/ install
 
 script:
   - npm run test:coverage
-  - npm --prefix docs/ run test:coverage
 
 after_success:
-  - lcov --add-tracefile coverage/lcov.info --add-tracefile docs/coverage/lcov.info | npm run coveralls
+  - lcov --add-tracefile coverage/lcov.info | npm run coveralls
