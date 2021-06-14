@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const cssnano = require('cssnano');
 const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 const postCssImport = require('postcss-import');
@@ -11,7 +10,6 @@ module.exports = () => ({
     autoprefixer({
       overrideBrowserslist: ['last 4 versions', 'not ie <= 8'],
     }),
-    cssnano(),
     reporter(),
   ],
 });
